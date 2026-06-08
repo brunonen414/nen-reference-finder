@@ -142,11 +142,7 @@ HOOKS = build_hooks()
 
 app = Flask(__name__)
 
-@app.before_request
-def _auth():
-    a = request.authorization
-    if not a or a.password != PASSWORD:
-        return Response("login required", 401, {"WWW-Authenticate": 'Basic realm="Nen"'})
+# (no auth — unlisted: anyone with the URL can access. Don't share the link publicly.)
 
 @app.route("/")
 def index(): return send_from_directory(HERE, "index.html")
