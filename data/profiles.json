@@ -1,0 +1,2271 @@
+{
+  "_schema": {
+    "broad_archetypes": [
+      "Testimonial / Customer-Proof",
+      "Founder / Talking-Head Explainer",
+      "UI-Walkthrough Demo",
+      "Kinetic / Motion-Graphics",
+      "Skit-Hybrid",
+      "Cinematic Narrative",
+      "Lifestyle / Real-World"
+    ],
+    "fields": "id, brand, folder(db|nov), broad, fine, delivery, walk_and_talk, vibe[], cold_open, motion_level(min|moderate|heavy), motion_types[], production(mid|high|cinematic), vertical, has[], hero_sec"
+  },
+  "videos": [
+    {
+      "id": "novella",
+      "brand": "Novella",
+      "folder": "nov",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Multi-speaker testimonial explainer",
+      "delivery": "multi-speaker testimonial",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "premium",
+        "human"
+      ],
+      "cold_open": "big-number card",
+      "motion_level": "moderate",
+      "motion_types": [
+        "big-number-card",
+        "kinetic-typography",
+        "product-ui-insert",
+        "lower-thirds",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "wholesale insurance",
+      "has": [
+        "demo",
+        "testimonial",
+        "funding",
+        "customer_logos"
+      ],
+      "hero_sec": 3,
+      "version": "v1"
+    },
+    {
+      "id": "profound",
+      "brand": "Profound",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Founder + customer-proof UI explainer",
+      "delivery": "founder + customer quote cards",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "premium"
+      ],
+      "cold_open": "big-number card",
+      "motion_level": "heavy",
+      "motion_types": [
+        "big-number-card",
+        "fullscreen-ui",
+        "screen-recording",
+        "customer-quote-cards",
+        "lower-thirds",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "AI marketing / AEO",
+      "has": [
+        "demo",
+        "testimonial",
+        "funding",
+        "customer_logos"
+      ],
+      "hero_sec": 2,
+      "version": "v1"
+    },
+    {
+      "id": "fulcrum",
+      "brand": "Fulcrum",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Multi-speaker testimonial explainer",
+      "delivery": "multi-speaker testimonial",
+      "walk_and_talk": false,
+      "vibe": [
+        "warm",
+        "credible",
+        "human"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [
+        "big-number-card",
+        "product-ui-insert",
+        "lower-thirds"
+      ],
+      "production": "high",
+      "vertical": "insurance brokerage",
+      "has": [
+        "demo",
+        "testimonial",
+        "funding"
+      ],
+      "hero_sec": 28,
+      "version": "v1"
+    },
+    {
+      "id": "lassie",
+      "brand": "Lassie",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Multi-speaker testimonial + real-world b-roll",
+      "delivery": "multi-speaker testimonial",
+      "walk_and_talk": false,
+      "vibe": [
+        "warm",
+        "credible",
+        "human"
+      ],
+      "cold_open": "logo-reveal",
+      "motion_level": "moderate",
+      "motion_types": [
+        "logo-reveal",
+        "lower-thirds",
+        "product-ui-insert",
+        "real-world-broll"
+      ],
+      "production": "high",
+      "vertical": "healthcare / SMB",
+      "has": [
+        "demo",
+        "testimonial",
+        "funding"
+      ],
+      "hero_sec": 12,
+      "version": "v1"
+    },
+    {
+      "id": "auctor",
+      "brand": "Auctor",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Founder + multi-speaker + UI",
+      "delivery": "founder + multi-speaker",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "premium"
+      ],
+      "cold_open": "animated counter",
+      "motion_level": "heavy",
+      "motion_types": [
+        "animated-counter",
+        "fullscreen-ui",
+        "stat-cards",
+        "lower-thirds",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "enterprise software",
+      "has": [
+        "demo",
+        "testimonial",
+        "funding"
+      ],
+      "hero_sec": 1,
+      "version": "v1"
+    },
+    {
+      "id": "enterpret",
+      "brand": "Enterpret AI",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Heavy-UI single-founder walkthrough",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "direct"
+      ],
+      "cold_open": "big-number card",
+      "motion_level": "heavy",
+      "motion_types": [
+        "big-number-card",
+        "fullscreen-ui",
+        "kinetic-typography",
+        "customer-logos",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "customer feedback AI",
+      "has": [
+        "demo",
+        "funding",
+        "customer_logos"
+      ],
+      "hero_sec": 0,
+      "version": "v1"
+    },
+    {
+      "id": "listen-labs",
+      "brand": "Listen Labs",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Feature-walkthrough explainer",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "friendly",
+        "product-focused"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [
+        "fullscreen-ui",
+        "feature-lower-thirds",
+        "screen-recording"
+      ],
+      "production": "high",
+      "vertical": "research / interviews AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 30,
+      "version": "v1"
+    },
+    {
+      "id": "highlight",
+      "brand": "Highlight",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "conversational",
+        "modern"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "heavy",
+      "motion_types": [
+        "fullscreen-ui",
+        "app-icon-montage",
+        "text-overlay",
+        "product-ui-insert"
+      ],
+      "production": "high",
+      "vertical": "work OS",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 10,
+      "version": "v1"
+    },
+    {
+      "id": "console-assistant",
+      "brand": "Console Assistant",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Conversational screen-demo explainer",
+      "delivery": "founder conversational + 2-person scene",
+      "walk_and_talk": false,
+      "vibe": [
+        "conversational",
+        "practical"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [
+        "screen-recording",
+        "fullscreen-ui",
+        "lower-thirds"
+      ],
+      "production": "high",
+      "vertical": "IT automation",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 35,
+      "version": "v1"
+    },
+    {
+      "id": "edra",
+      "brand": "Edra",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Two-founder + UI explainer",
+      "delivery": "two-founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "calm"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [
+        "product-ui-insert",
+        "city-broll",
+        "text-overlay"
+      ],
+      "production": "high",
+      "vertical": "enterprise process AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 5,
+      "version": "v1"
+    },
+    {
+      "id": "melisatokmak",
+      "brand": "Netic",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Concept-diagram explainer",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "technical",
+        "premium"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [
+        "concept-diagram",
+        "fullscreen-ui",
+        "data-table-ui",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "home-services AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 5,
+      "version": "v1"
+    },
+    {
+      "id": "post-7465436843",
+      "brand": "Byron",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Two-founder + UI explainer",
+      "delivery": "two-founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "friendly",
+        "credible"
+      ],
+      "cold_open": "logo-reveal",
+      "motion_level": "heavy",
+      "motion_types": [
+        "logo-reveal",
+        "big-number-card",
+        "product-ui-insert",
+        "broll"
+      ],
+      "production": "high",
+      "vertical": "accounting / tax AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 8,
+      "version": "v1"
+    },
+    {
+      "id": "post-7460007851",
+      "brand": "Champ AI",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Two-founder + UI explainer",
+      "delivery": "two-founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "warm",
+        "credible"
+      ],
+      "cold_open": "broll + counter",
+      "motion_level": "moderate",
+      "motion_types": [
+        "animated-counter",
+        "fullscreen-ui",
+        "broll"
+      ],
+      "production": "mid",
+      "vertical": "hospitality AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 7,
+      "version": "v1"
+    },
+    {
+      "id": "lotus",
+      "brand": "Lotus",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Kinetic-typography product explainer",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "inspirational",
+        "urgent",
+        "premium"
+      ],
+      "cold_open": "big-number -> kinetic text",
+      "motion_level": "heavy",
+      "motion_types": [
+        "big-number-card",
+        "kinetic-typography",
+        "phone-demo",
+        "product-ui-insert",
+        "stat-text",
+        "abstract-broll"
+      ],
+      "production": "cinematic",
+      "vertical": "healthcare / AI doctor",
+      "has": [
+        "demo",
+        "funding",
+        "metaphor"
+      ],
+      "hero_sec": 1,
+      "version": "v1"
+    },
+    {
+      "id": "sonic3",
+      "brand": "Sonic-3 (Cartesia)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Brand-motion + live-demo explainer",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "playful",
+        "techy",
+        "confident"
+      ],
+      "cold_open": "big-number card",
+      "motion_level": "heavy",
+      "motion_types": [
+        "big-number-card",
+        "brand-motion-orb",
+        "comparison-cards",
+        "call-demo-ui",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "voice AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 5,
+      "version": "v1"
+    },
+    {
+      "id": "nooks-sdr",
+      "brand": "Nooks (SDR launch)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Founder + kinetic-text + UI",
+      "delivery": "single founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "energetic",
+        "bold"
+      ],
+      "cold_open": "logo-reveal",
+      "motion_level": "heavy",
+      "motion_types": [
+        "kinetic-typography",
+        "fullscreen-ui",
+        "logo-reveal",
+        "lower-thirds"
+      ],
+      "production": "high",
+      "vertical": "sales / SDR",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 58,
+      "version": "v1"
+    },
+    {
+      "id": "nooks",
+      "brand": "Nooks",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Walk-and-talk kinetic + UI",
+      "delivery": "founder walk-and-talk",
+      "walk_and_talk": true,
+      "vibe": [
+        "energetic",
+        "bold",
+        "modern"
+      ],
+      "cold_open": "big-number kinetic",
+      "motion_level": "heavy",
+      "motion_types": [
+        "kinetic-typography",
+        "fullscreen-ui",
+        "brand-motion-particles",
+        "big-number-card"
+      ],
+      "production": "high",
+      "vertical": "sales / GTM",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 2,
+      "version": "v1"
+    },
+    {
+      "id": "operand",
+      "brand": "Operand",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Walk-and-talk caption-driven",
+      "delivery": "founder walk-and-talk",
+      "walk_and_talk": true,
+      "vibe": [
+        "bold",
+        "provocative",
+        "punchy"
+      ],
+      "cold_open": "bold claim / direct-address",
+      "motion_level": "heavy",
+      "motion_types": [
+        "kinetic-captions",
+        "animated-counter",
+        "comparison-cards"
+      ],
+      "production": "high",
+      "vertical": "data science / strategy AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 37,
+      "version": "v1"
+    },
+    {
+      "id": "cora",
+      "brand": "Cora",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Narrative-skit metaphor + founder",
+      "delivery": "skit-led + founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "playful",
+        "emotional",
+        "clever",
+        "cinematic"
+      ],
+      "cold_open": "dramatized skit",
+      "motion_level": "moderate",
+      "motion_types": [
+        "product-ui-insert",
+        "brand-cards"
+      ],
+      "production": "cinematic",
+      "vertical": "customer success AI",
+      "has": [
+        "demo",
+        "skit",
+        "metaphor"
+      ],
+      "hero_sec": 6,
+      "version": "v1"
+    },
+    {
+      "id": "artifact",
+      "brand": "Artifact",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Skit-intro + UI-demo",
+      "delivery": "skit intro + founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "cinematic-intro",
+        "energetic",
+        "practical"
+      ],
+      "cold_open": "dramatized skit (pain)",
+      "motion_level": "heavy",
+      "motion_types": [
+        "screen-recording",
+        "fullscreen-ui",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "accounting AI",
+      "has": [
+        "demo",
+        "skit"
+      ],
+      "hero_sec": 5,
+      "version": "v1"
+    },
+    {
+      "id": "greenboard",
+      "brand": "Greenboard",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Skit-intro + branded-kinetic",
+      "delivery": "skit intro + founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "playful",
+        "bold",
+        "branded"
+      ],
+      "cold_open": "dramatized skit",
+      "motion_level": "heavy",
+      "motion_types": [
+        "brand-kinetic-cards",
+        "stat-cards",
+        "fullscreen-ui",
+        "logo-reveal"
+      ],
+      "production": "high",
+      "vertical": "compliance / fintech",
+      "has": [
+        "demo",
+        "skit",
+        "funding"
+      ],
+      "hero_sec": 3,
+      "version": "v1"
+    },
+    {
+      "id": "illoca",
+      "brand": "Illoca",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Process-intro design explainer",
+      "delivery": "process intro + founder",
+      "walk_and_talk": false,
+      "vibe": [
+        "creative",
+        "inspirational",
+        "design-forward"
+      ],
+      "cold_open": "process b-roll (sketching)",
+      "motion_level": "heavy",
+      "motion_types": [
+        "big-number-card",
+        "product-ui-insert",
+        "3d-renders",
+        "kinetic-typography"
+      ],
+      "production": "high",
+      "vertical": "architecture / design SaaS",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 8,
+      "version": "v1"
+    },
+    {
+      "id": "asendia",
+      "brand": "Asendia",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Bold-text multi-speaker",
+      "delivery": "bold-text intro + multi-speaker",
+      "walk_and_talk": false,
+      "vibe": [
+        "bold",
+        "punchy",
+        "confident"
+      ],
+      "cold_open": "bold full-screen text",
+      "motion_level": "moderate",
+      "motion_types": [
+        "bold-text",
+        "lower-thirds",
+        "text-overlay"
+      ],
+      "production": "high",
+      "vertical": "recruiting AI",
+      "has": [
+        "testimonial"
+      ],
+      "hero_sec": 1,
+      "version": "v1"
+    },
+    {
+      "id": "sphinx",
+      "brand": "Sphinx",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic metaphor film",
+      "delivery": "founder in cinematic environment",
+      "walk_and_talk": true,
+      "vibe": [
+        "cinematic",
+        "serious",
+        "premium",
+        "tense"
+      ],
+      "cold_open": "macro b-roll (metaphor)",
+      "motion_level": "moderate",
+      "motion_types": [
+        "environmental-metaphor",
+        "evidence-board-graphic",
+        "logo-reveal"
+      ],
+      "production": "cinematic",
+      "vertical": "compliance / fintech",
+      "has": [
+        "funding",
+        "metaphor"
+      ],
+      "hero_sec": 0,
+      "version": "v1"
+    },
+    {
+      "id": "naren-loan",
+      "brand": "Balerion AI",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder talking head + cinematic b-roll",
+      "delivery": "single founder + cinematic b-roll",
+      "walk_and_talk": false,
+      "vibe": [
+        "dramatic",
+        "premium",
+        "edgy"
+      ],
+      "cold_open": "cinematic b-roll intro",
+      "motion_level": "moderate",
+      "motion_types": [
+        "big-number-card",
+        "cinematic-broll"
+      ],
+      "production": "high",
+      "vertical": "mortgage / lending AI",
+      "has": [
+        "funding"
+      ],
+      "hero_sec": 30,
+      "version": "v1"
+    },
+    {
+      "id": "crosby",
+      "brand": "Crosby",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder explainer + inspirational cinematic-b-roll intro",
+      "delivery": "single founder + cinematic b-roll intro",
+      "walk_and_talk": false,
+      "vibe": [
+        "inspirational",
+        "worldly",
+        "aspirational",
+        "premium"
+      ],
+      "cold_open": "inspirational cinematic b-roll montage",
+      "motion_level": "moderate",
+      "motion_types": [
+        "cinematic-broll",
+        "stat-cards",
+        "product-ui-insert"
+      ],
+      "production": "high",
+      "vertical": "legal / contracts AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 4,
+      "version": "v1"
+    },
+    {
+      "id": "tulu",
+      "brand": "Tulu",
+      "folder": "db",
+      "broad": "Lifestyle / Real-World",
+      "fine": "Physical-product lifestyle explainer",
+      "delivery": "spokesperson + real-world b-roll",
+      "walk_and_talk": false,
+      "vibe": [
+        "inspirational",
+        "lifestyle",
+        "warm"
+      ],
+      "cold_open": "real-world b-roll",
+      "motion_level": "moderate",
+      "motion_types": [
+        "physical-product-broll",
+        "phone-demo",
+        "animated-counter"
+      ],
+      "production": "high",
+      "vertical": "proptech / retail",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 8,
+      "version": "v1"
+    },
+    {
+      "id": "console-inbox",
+      "brand": "Console (Inbox)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + product-UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "practical",
+        "modern"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "IT service desk",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 49,
+      "version": "v2"
+    },
+    {
+      "id": "console-synthesia-story",
+      "brand": "Console (Synthesia story)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Customer testimonial",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "human"
+      ],
+      "cold_open": "customer talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "IT",
+      "has": [
+        "testimonial",
+        "demo"
+      ],
+      "hero_sec": 81,
+      "version": "v2"
+    },
+    {
+      "id": "lassie-story",
+      "brand": "Lassie (customer story)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Practitioner testimonial + real-world b-roll",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "warm",
+        "human"
+      ],
+      "cold_open": "customer talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "healthcare SMB",
+      "has": [
+        "testimonial",
+        "demo"
+      ],
+      "hero_sec": 47,
+      "version": "v2"
+    },
+    {
+      "id": "li-7239995295562932226",
+      "brand": "Aviary",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "YC product explainer (minimal)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "clean",
+        "product"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "mid",
+      "vertical": "AI video search",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 25,
+      "version": "v2"
+    },
+    {
+      "id": "li-7316127925580300290",
+      "brand": "Aleph",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Heavy-UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "product"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI FP&A",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 63,
+      "version": "v2"
+    },
+    {
+      "id": "li-7323365246096633856",
+      "brand": "Structify",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "approachable",
+        "product"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "data extraction AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 66,
+      "version": "v2"
+    },
+    {
+      "id": "li-7361808564790677506",
+      "brand": "TBD (Abhay Kalra)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Customer-story explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "mid",
+      "vertical": "unknown",
+      "has": [
+        "testimonial"
+      ],
+      "hero_sec": 38,
+      "version": "v2"
+    },
+    {
+      "id": "li-7379542048447791104",
+      "brand": "Coris (Navi)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "product"
+      ],
+      "cold_open": "text-hook",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "risk/fin-ops AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 50,
+      "version": "v2"
+    },
+    {
+      "id": "li-7381736552110063616",
+      "brand": "David AI",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "premium"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "audio data AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 59,
+      "version": "v2"
+    },
+    {
+      "id": "li-7384588798766026752",
+      "brand": "Aboon",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible"
+      ],
+      "cold_open": "funding",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "mid",
+      "vertical": "401k / fintech",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 52,
+      "version": "v2"
+    },
+    {
+      "id": "li-7386793491064008704",
+      "brand": "Reflex",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Product walkthrough (long)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "techy"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI app builder",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 75,
+      "version": "v2"
+    },
+    {
+      "id": "li-7389300003623833601",
+      "brand": "Arya Health",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder explainer + lifestyle b-roll",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "inspirational",
+        "warm"
+      ],
+      "cold_open": "b-roll intro",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "healthcare AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 66,
+      "version": "v2"
+    },
+    {
+      "id": "li-7396593067597860864",
+      "brand": "Robyn",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic product reveal (minimal dialogue)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "emotional",
+        "premium",
+        "intimate"
+      ],
+      "cold_open": "product reveal",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "AI companion",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 21,
+      "version": "v2"
+    },
+    {
+      "id": "li-7399492221072371712",
+      "brand": "Pylon (Skills Routing)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Feature-launch UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "clean"
+      ],
+      "cold_open": "feature-text",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "support platform",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 27,
+      "version": "v2"
+    },
+    {
+      "id": "li-7429876115592302592",
+      "brand": "Harlem Capital (brand film)",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic brand film",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "premium",
+        "aspirational",
+        "bold"
+      ],
+      "cold_open": "cinematic b-roll",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "VC",
+      "has": [
+        "metaphor"
+      ],
+      "hero_sec": 23,
+      "version": "v2"
+    },
+    {
+      "id": "li-7433141381407191040",
+      "brand": "Harlem Capital (10yr)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Multi-speaker brand/testimonial",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "warm",
+        "aspirational",
+        "human"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "VC",
+      "has": [
+        "testimonial"
+      ],
+      "hero_sec": 51,
+      "version": "v2"
+    },
+    {
+      "id": "li-7444773752418025472",
+      "brand": "Variance",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "product"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "investigations AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 52,
+      "version": "v2"
+    },
+    {
+      "id": "li-7444776027047784448",
+      "brand": "Pylon (Phone Support)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Feature-launch UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "clean"
+      ],
+      "cold_open": "feature-text",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "support platform",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 37,
+      "version": "v2"
+    },
+    {
+      "id": "li-7444783206769291264",
+      "brand": "Rox (Autopilot)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "UI + kinetic-text explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "bold",
+        "energetic"
+      ],
+      "cold_open": "bold-text",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "revenue AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 62,
+      "version": "v2"
+    },
+    {
+      "id": "li-7445173379998834688",
+      "brand": "daydream",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Skit / commercial (in-house actress)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "playful",
+        "bold"
+      ],
+      "cold_open": "skit",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI SEO agency",
+      "has": [
+        "funding"
+      ],
+      "hero_sec": 26,
+      "version": "v2"
+    },
+    {
+      "id": "li-7463268474828591104",
+      "brand": "Console (Cursor story)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Customer testimonial",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "human"
+      ],
+      "cold_open": "customer talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "IT",
+      "has": [
+        "testimonial",
+        "demo"
+      ],
+      "hero_sec": 94,
+      "version": "v2"
+    },
+    {
+      "id": "metal",
+      "brand": "Metal",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "premium"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "fundraising AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 34,
+      "version": "v2"
+    },
+    {
+      "id": "osmosis",
+      "brand": "Osmosis",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder explainer + scenic b-roll intro",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "inspirational",
+        "techy"
+      ],
+      "cold_open": "cinematic b-roll",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "RL platform",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 25,
+      "version": "v2"
+    },
+    {
+      "id": "paraform",
+      "brand": "Paraform",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "premium"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "agentic hiring",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 23,
+      "version": "v2"
+    },
+    {
+      "id": "stardrift",
+      "brand": "Stardrift",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Narrative product demo (a day-in-the-life)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "playful",
+        "aspirational"
+      ],
+      "cold_open": "narrative",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "travel assistant",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 49,
+      "version": "v2"
+    },
+    {
+      "id": "wispr-flow",
+      "brand": "Wispr Flow",
+      "folder": "db",
+      "broad": "Skit-Hybrid",
+      "fine": "Skit / stunt (Porsche challenge)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "playful",
+        "bold",
+        "fun"
+      ],
+      "cold_open": "skit",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "voice dictation",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 77,
+      "version": "v2"
+    },
+    {
+      "id": "x-a_reichenbach_-789013",
+      "brand": "Structify (Flows)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "confident"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "data extraction AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 31,
+      "version": "v2"
+    },
+    {
+      "id": "x-amazonscience-312882",
+      "brand": "Amazon Nova Act",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Product/UI demo",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "techy"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI agents",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 67,
+      "version": "v2"
+    },
+    {
+      "id": "x-amypretzel-742531",
+      "brand": "Taya",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Emotional/consumer product film",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "emotional",
+        "premium",
+        "intimate"
+      ],
+      "cold_open": "cinematic product",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "consumer jewelry tech",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 53,
+      "version": "v2"
+    },
+    {
+      "id": "x-annarmonaco-133252",
+      "brand": "Paradigm",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "confident"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI spreadsheet",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 35,
+      "version": "v2"
+    },
+    {
+      "id": "x-ashwingop-284987",
+      "brand": "Sentra",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI + kinetic-text",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "product"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "org memory AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 22,
+      "version": "v2"
+    },
+    {
+      "id": "x-audrlo-852057",
+      "brand": "Quo Labs (Sam)",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Emotional/consumer product film",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "emotional",
+        "warm",
+        "intimate"
+      ],
+      "cold_open": "cinematic product",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "senior caretaker AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 45,
+      "version": "v2"
+    },
+    {
+      "id": "x-bnj-095039",
+      "brand": "Variant (UI)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Creative-tool UI demo + brand motion",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "creative",
+        "modern"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "generative design",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 36,
+      "version": "v2"
+    },
+    {
+      "id": "x-bnj-690333",
+      "brand": "Variant (Boards)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Near-silent product-motion",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "creative",
+        "sleek"
+      ],
+      "cold_open": "product motion",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "generative design",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 25,
+      "version": "v2"
+    },
+    {
+      "id": "x-browserbase-288502",
+      "brand": "Browserbase x Ramp",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Co-marketing testimonial",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "product"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "agent infra",
+      "has": [
+        "testimonial",
+        "demo"
+      ],
+      "hero_sec": 38,
+      "version": "v2"
+    },
+    {
+      "id": "x-cartesia_ai-664216",
+      "brand": "Cartesia (Line)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Brand-motion + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "techy",
+        "playful",
+        "confident"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "voice AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 143,
+      "version": "v2"
+    },
+    {
+      "id": "x-decagonai-918146",
+      "brand": "Decagon",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI + brand motion",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "confident"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "conversational AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 38,
+      "version": "v2"
+    },
+    {
+      "id": "x-emkara-217696",
+      "brand": "Sim Studio",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "UI demo (minimal dialogue)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "clean"
+      ],
+      "cold_open": "product reveal",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI agent builder",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 39,
+      "version": "v2"
+    },
+    {
+      "id": "x-florafaunaai-369484",
+      "brand": "FLORA (Alpha)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Creative-tool UI demo + brand motion",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "creative",
+        "sleek"
+      ],
+      "cold_open": "product reveal",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "generative creative tool",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 11,
+      "version": "v2"
+    },
+    {
+      "id": "x-itsalfredw-411730",
+      "brand": "TBD (Alfred Wahlforss)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "confident"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "voice/agents",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 41,
+      "version": "v2"
+    },
+    {
+      "id": "x-jackhcable-434782",
+      "brand": "Corridor (?) (Jack Cable)",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder explainer + UI",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "confident",
+        "techy"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI code security",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 87,
+      "version": "v2"
+    },
+    {
+      "id": "x-jgreze-548549",
+      "brand": "Town",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "approachable",
+        "product"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI assistant",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 44,
+      "version": "v2"
+    },
+    {
+      "id": "x-josephsemrai-551986",
+      "brand": "Context",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Product/UI demo",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "confident"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI office suite",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 16,
+      "version": "v2"
+    },
+    {
+      "id": "x-josephsemrai-970015",
+      "brand": "Context (Autopilot)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "UI + animated-counter explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "bold",
+        "confident"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI office suite",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 98,
+      "version": "v2"
+    },
+    {
+      "id": "x-karim_rc-959487",
+      "brand": "Ongo",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Emotional/consumer product film",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "emotional",
+        "premium",
+        "whimsical"
+      ],
+      "cold_open": "cinematic product",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "consumer robot lamp",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 22,
+      "version": "v2"
+    },
+    {
+      "id": "x-lina_colucci-806334",
+      "brand": "Lemon Slice",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Product demo (talking AI faces)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "techy"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI video model",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 55,
+      "version": "v2"
+    },
+    {
+      "id": "x-mehul-448873",
+      "brand": "Matic",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Emotional/consumer product film",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "premium",
+        "aspirational"
+      ],
+      "cold_open": "cinematic product",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "home robotics",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 89,
+      "version": "v2"
+    },
+    {
+      "id": "x-mercor_ai-215207",
+      "brand": "Mercor (APEX process)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Long process/product explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "premium"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "talent marketplace",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 436,
+      "version": "v2"
+    },
+    {
+      "id": "x-mercor_ai-536653",
+      "brand": "Mercor (PhDs)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Multi-speaker explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "human"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "talent marketplace",
+      "has": [
+        "testimonial"
+      ],
+      "hero_sec": 36,
+      "version": "v2"
+    },
+    {
+      "id": "x-mercor_ai-603752",
+      "brand": "Mercor (brand)",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic brand film (short)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "emotional",
+        "premium"
+      ],
+      "cold_open": "cinematic b-roll",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "talent marketplace",
+      "has": [
+        "metaphor"
+      ],
+      "hero_sec": 12,
+      "version": "v2"
+    },
+    {
+      "id": "x-mercor_ai-788268",
+      "brand": "Mercor (talent brand)",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic brand film + stat",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "premium",
+        "aspirational"
+      ],
+      "cold_open": "cinematic b-roll",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "talent marketplace",
+      "has": [
+        "metaphor"
+      ],
+      "hero_sec": 21,
+      "version": "v2"
+    },
+    {
+      "id": "x-neiltewari-088657",
+      "brand": "Conversion (Agents)",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "UI + kinetic explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "bold",
+        "product"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "marketing AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 28,
+      "version": "v2"
+    },
+    {
+      "id": "x-neiltewari-671960",
+      "brand": "Conversion (Series A)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "product",
+        "confident"
+      ],
+      "cold_open": "funding",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "marketing AI",
+      "has": [
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 46,
+      "version": "v2"
+    },
+    {
+      "id": "x-otimlabs-389307",
+      "brand": "Otim",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Near-silent brand/motion film",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "sleek",
+        "techy"
+      ],
+      "cold_open": "motion-graphics",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "onchain asset OS",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 11,
+      "version": "v2"
+    },
+    {
+      "id": "x-pleaseplatforms-482959",
+      "brand": "Please (Agent Q)",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Product reveal (minimal dialogue)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "techy",
+        "sleek"
+      ],
+      "cold_open": "product reveal",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI research/agents",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 24,
+      "version": "v2"
+    },
+    {
+      "id": "x-rogoai-654303",
+      "brand": "Rogo (Felix)",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic product reveal (minimal dialogue)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "premium",
+        "sleek",
+        "intimate"
+      ],
+      "cold_open": "product reveal",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "finance AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 14,
+      "version": "v2"
+    },
+    {
+      "id": "x-rronak_-730624",
+      "brand": "Trajectory",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder explainer + cinematic intro",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "cinematic-intro",
+        "confident"
+      ],
+      "cold_open": "cinematic b-roll",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "AI (Trajectory)",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 24,
+      "version": "v2"
+    },
+    {
+      "id": "x-rspineanu-757649",
+      "brand": "Humble",
+      "folder": "db",
+      "broad": "Kinetic / Motion-Graphics",
+      "fine": "Kinetic-text + UI explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "bold",
+        "confident"
+      ],
+      "cold_open": "bold-claim",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "manufacturing AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 117,
+      "version": "v2"
+    },
+    {
+      "id": "x-ryanjdaniels-571641",
+      "brand": "Crosby (Series B)",
+      "folder": "db",
+      "broad": "Testimonial / Customer-Proof",
+      "fine": "Multi-speaker customer-proof",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "credible",
+        "premium",
+        "human"
+      ],
+      "cold_open": "big-number",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "legal AI",
+      "has": [
+        "testimonial",
+        "demo",
+        "funding"
+      ],
+      "hero_sec": 23,
+      "version": "v2"
+    },
+    {
+      "id": "x-tilderesearch-131334",
+      "brand": "Tilde",
+      "folder": "db",
+      "broad": "UI-Walkthrough Demo",
+      "fine": "Founder + UI + viz explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "techy",
+        "product"
+      ],
+      "cold_open": "direct-address",
+      "motion_level": "heavy",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "interpretability AI",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 54,
+      "version": "v2"
+    },
+    {
+      "id": "x-weberwongwong-396954",
+      "brand": "FLORA (brand film)",
+      "folder": "db",
+      "broad": "Cinematic Narrative",
+      "fine": "Cinematic brand film (minimal dialogue)",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "artistic",
+        "premium",
+        "evocative"
+      ],
+      "cold_open": "cinematic b-roll",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "cinematic",
+      "vertical": "generative creative tool",
+      "has": [
+        "metaphor"
+      ],
+      "hero_sec": 30,
+      "version": "v2"
+    },
+    {
+      "id": "x-brendanfoody-376149",
+      "brand": "Mercor (mission)",
+      "folder": "db",
+      "broad": "Founder / Talking-Head Explainer",
+      "fine": "Founder/brand explainer",
+      "delivery": "talking head / mixed",
+      "walk_and_talk": false,
+      "vibe": [
+        "premium",
+        "aspirational"
+      ],
+      "cold_open": "talking-head",
+      "motion_level": "moderate",
+      "motion_types": [],
+      "production": "high",
+      "vertical": "talent marketplace",
+      "has": [
+        "demo"
+      ],
+      "hero_sec": 44,
+      "version": "v2"
+    }
+  ]
+}

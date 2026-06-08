@@ -1,0 +1,104 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 7.0,
+    "text": "Remember the first time you used a computer? You could see everything happening on screen."
+  },
+  {
+    "index": 1,
+    "start": 7.0,
+    "end": 12.0,
+    "text": "Now imagine being handed a computer with no display, just inputs and outputs."
+  },
+  {
+    "index": 2,
+    "start": 12.0,
+    "end": 17.0,
+    "text": "That's essentially how we're using AI today. Powerful, but blind."
+  },
+  {
+    "index": 3,
+    "start": 17.0,
+    "end": 22.0,
+    "text": "At Tilda, we've built the controls for AI. We're not just opening the black box."
+  },
+  {
+    "index": 4,
+    "start": 22.0,
+    "end": 25.0,
+    "text": "We're installing Windows and giving you the command you've always wanted."
+  },
+  {
+    "index": 5,
+    "start": 25.0,
+    "end": 31.0,
+    "text": "Now you can see how your AI thinks, why it makes decisions, and most importantly, how to make it better."
+  },
+  {
+    "index": 6,
+    "start": 31.0,
+    "end": 35.0,
+    "text": "Let's dive into a problem-solving task with Lama 3."
+  },
+  {
+    "index": 7,
+    "start": 38.0,
+    "end": 42.0,
+    "text": "Here we're trying to solve a brain teaser that emits a slick math trick."
+  },
+  {
+    "index": 8,
+    "start": 42.0,
+    "end": 58.0,
+    "text": "Unfortunately, the model fails to spot the trick and doesn't give the correct answer."
+  },
+  {
+    "index": 9,
+    "start": 58.0,
+    "end": 63.0,
+    "text": "Then we'll apply Tilda's interventions and show you the difference."
+  },
+  {
+    "index": 10,
+    "start": 64.0,
+    "end": 71.0,
+    "text": "This time, the trick is found and the model nails the brain teaser."
+  },
+  {
+    "index": 11,
+    "start": 71.0,
+    "end": 76.0,
+    "text": "Now let's give a fun example. Video generation."
+  },
+  {
+    "index": 12,
+    "start": 76.0,
+    "end": 82.0,
+    "text": "Again, you'll see both the plain model-generated video and also the Tilda-steered outputs."
+  },
+  {
+    "index": 13,
+    "start": 93.0,
+    "end": 97.0,
+    "text": "Notice the improvement in accuracy and adherence to user preferences."
+  },
+  {
+    "index": 14,
+    "start": 102.0,
+    "end": 109.0,
+    "text": "At Tilda, we see interpretability as the gateway to unlocking new levels of AI performance without compromising on safety."
+  },
+  {
+    "index": 15,
+    "start": 109.0,
+    "end": 113.0,
+    "text": "This is just the tip of the iceberg and we're excited to share more of what we're working on."
+  },
+  {
+    "index": 16,
+    "start": 113.0,
+    "end": 116.0,
+    "text": "If this sounds interesting to you, come join us."
+  }
+]

@@ -1,0 +1,488 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 23.88,
+    "text": "Hi, I'm Joe, and today I'm excited to introduce Context Autopilot."
+  },
+  {
+    "index": 1,
+    "start": 23.88,
+    "end": 27.72,
+    "text": "Powered by the world's first Context engine, Autopilot thinks like you do, using the very"
+  },
+  {
+    "index": 2,
+    "start": 27.72,
+    "end": 29.52,
+    "text": "same tools you use."
+  },
+  {
+    "index": 3,
+    "start": 29.52,
+    "end": 33.68,
+    "text": "It's connected to all your data, agnostic of platform, and capable of doing most information"
+  },
+  {
+    "index": 4,
+    "start": 33.68,
+    "end": 34.68,
+    "text": "work today."
+  },
+  {
+    "index": 5,
+    "start": 34.68,
+    "end": 48.4,
+    "text": "Let's see it in action."
+  },
+  {
+    "index": 6,
+    "start": 48.4,
+    "end": 51.96,
+    "text": "In this competition, requirements were sent over email."
+  },
+  {
+    "index": 7,
+    "start": 51.96,
+    "end": 55.28,
+    "text": "Autopilot proactively gets started, creating a planned document for the project and performing"
+  },
+  {
+    "index": 8,
+    "start": 55.28,
+    "end": 56.88,
+    "text": "deep research in parallel."
+  },
+  {
+    "index": 9,
+    "start": 57.52,
+    "end": 62.12,
+    "text": "It has access to an entire office suite, browser, coding capabilities, and more."
+  },
+  {
+    "index": 10,
+    "start": 62.12,
+    "end": 66.64,
+    "text": "These apps are designed for Autopilot, allowing for direct state manipulation."
+  },
+  {
+    "index": 11,
+    "start": 66.64,
+    "end": 71.2,
+    "text": "You can see it using its browsing capabilities to pull up competitors and market insights."
+  },
+  {
+    "index": 12,
+    "start": 71.2,
+    "end": 76.16,
+    "text": "It also chooses to connect to CAPIQ and other sources to gather financial data."
+  },
+  {
+    "index": 13,
+    "start": 76.16,
+    "end": 79.76,
+    "text": "Autopilot uses the Context engine to align its reasoning to the individual and company,"
+  },
+  {
+    "index": 14,
+    "start": 79.76,
+    "end": 82.88,
+    "text": "recalling all relevant information in the process."
+  },
+  {
+    "index": 15,
+    "start": 82.88,
+    "end": 86.48,
+    "text": "In doing so, it identifies that an eternal Excel sheet tracking industry benchmarks"
+  },
+  {
+    "index": 16,
+    "start": 86.48,
+    "end": 87.48,
+    "text": "is incorrect."
+  },
+  {
+    "index": 17,
+    "start": 87.48,
+    "end": 91.24,
+    "text": "Autopilot flags the issue and compares it against other verified sources."
+  },
+  {
+    "index": 18,
+    "start": 91.24,
+    "end": 94.32,
+    "text": "To make it visible to the user, it pulls up the sheet in the editor for the user to"
+  },
+  {
+    "index": 19,
+    "start": 94.32,
+    "end": 97.32,
+    "text": "examine."
+  },
+  {
+    "index": 20,
+    "start": 97.32,
+    "end": 99.72,
+    "text": "Autopilot asks for guidance when onshore."
+  },
+  {
+    "index": 21,
+    "start": 99.72,
+    "end": 103.88,
+    "text": "Here, the user decides to exclude the sheet from the analysis."
+  },
+  {
+    "index": 22,
+    "start": 103.88,
+    "end": 108.0,
+    "text": "Autopilot then uses its code environment to perform deeper data analysis and create financial"
+  },
+  {
+    "index": 23,
+    "start": 108.0,
+    "end": 110.04,
+    "text": "models and visualizations."
+  },
+  {
+    "index": 24,
+    "start": 110.04,
+    "end": 114.12,
+    "text": "It saves these models as spreadsheets to the Sync SharePoint folder."
+  },
+  {
+    "index": 25,
+    "start": 114.12,
+    "end": 118.92,
+    "text": "Combining all of these files, Autopilot creates an extensive report deliverable."
+  },
+  {
+    "index": 26,
+    "start": 118.92,
+    "end": 123.92,
+    "text": "Using this context, Autopilot then plans a presentation and asks the user for review."
+  },
+  {
+    "index": 27,
+    "start": 123.92,
+    "end": 127.48,
+    "text": "Upon approval, Autopilot duplicates itself into a swarm of mini-pilots to create the"
+  },
+  {
+    "index": 28,
+    "start": 127.48,
+    "end": 128.8,
+    "text": "slides."
+  },
+  {
+    "index": 29,
+    "start": 128.8,
+    "end": 132.32,
+    "text": "This scales infinitely with large projects."
+  },
+  {
+    "index": 30,
+    "start": 132.32,
+    "end": 135.72,
+    "text": "The presentation is then created and saved to the workspace."
+  },
+  {
+    "index": 31,
+    "start": 135.72,
+    "end": 141.04,
+    "text": "Each element of the presentation has a citation to the original data source."
+  },
+  {
+    "index": 32,
+    "start": 141.04,
+    "end": 147.6,
+    "text": "Exported as PowerPoint, we now have all of the deliverables for the project."
+  },
+  {
+    "index": 33,
+    "start": 147.6,
+    "end": 151.16,
+    "text": "As LLMs become increasingly intelligent, we need to equip them with the foundational"
+  },
+  {
+    "index": 34,
+    "start": 151.16,
+    "end": 154.32,
+    "text": "infrastructure to become true economic workers."
+  },
+  {
+    "index": 35,
+    "start": 154.32,
+    "end": 157.68,
+    "text": "Workers that can collaborate with humans on today's tasks without requiring changes in"
+  },
+  {
+    "index": 36,
+    "start": 157.68,
+    "end": 158.8,
+    "text": "workflow."
+  },
+  {
+    "index": 37,
+    "start": 158.8,
+    "end": 163.28,
+    "text": "Workers that think exactly like we do as individuals and groups."
+  },
+  {
+    "index": 38,
+    "start": 163.28,
+    "end": 164.96,
+    "text": "Autopilot is that infrastructure."
+  },
+  {
+    "index": 39,
+    "start": 164.96,
+    "end": 170.2,
+    "text": "An LLM based operating system where AI, the context engine and software seamlessly intertwine,"
+  },
+  {
+    "index": 40,
+    "start": 170.2,
+    "end": 174.24,
+    "text": "treating both AI and human workers as first class citizens."
+  },
+  {
+    "index": 41,
+    "start": 174.24,
+    "end": 176.2,
+    "text": "Autopilot doesn't require you to change your workflow."
+  },
+  {
+    "index": 42,
+    "start": 176.2,
+    "end": 179.92,
+    "text": "It integrates seamlessly with your existing tools, for example connected to your SharePoint"
+  },
+  {
+    "index": 43,
+    "start": 179.92,
+    "end": 184.48,
+    "text": "or Google Drive folders and watches it collaborates on files just like a co-worker."
+  },
+  {
+    "index": 44,
+    "start": 184.48,
+    "end": 187.84,
+    "text": "This means you get AI assistance within your familiar workspace without being locked into"
+  },
+  {
+    "index": 45,
+    "start": 187.84,
+    "end": 189.32,
+    "text": "any platform."
+  },
+  {
+    "index": 46,
+    "start": 189.32,
+    "end": 193.68,
+    "text": "This enables seamless human-to-loop collaboration, requesting additional context, paralyzing"
+  },
+  {
+    "index": 47,
+    "start": 193.68,
+    "end": 195.44,
+    "text": "tasks and more."
+  },
+  {
+    "index": 48,
+    "start": 195.44,
+    "end": 199.24,
+    "text": "When Facebook complex challenges, Autopilot can self-replicate, creating a swarm of agents"
+  },
+  {
+    "index": 49,
+    "start": 199.24,
+    "end": 201.8,
+    "text": "working together towards a common goal."
+  },
+  {
+    "index": 50,
+    "start": 201.8,
+    "end": 205.8,
+    "text": "Such interactions are only possible when AI completely understands application and file"
+  },
+  {
+    "index": 51,
+    "start": 205.8,
+    "end": 206.8,
+    "text": "state."
+  },
+  {
+    "index": 52,
+    "start": 206.8,
+    "end": 210.44,
+    "text": "This all serves as additional context, highlighting the need to rethink our software for this"
+  },
+  {
+    "index": 53,
+    "start": 210.44,
+    "end": 212.4,
+    "text": "new world."
+  },
+  {
+    "index": 54,
+    "start": 212.4,
+    "end": 215.68,
+    "text": "What we're most excited about though is Autopilot's memory stack."
+  },
+  {
+    "index": 55,
+    "start": 215.68,
+    "end": 219.48,
+    "text": "In addition to a shared workspace and file system, Autopilot works seamlessly with the"
+  },
+  {
+    "index": 56,
+    "start": 219.48,
+    "end": 224.52,
+    "text": "context engine, constantly reflecting on and critiquing its outputs."
+  },
+  {
+    "index": 57,
+    "start": 224.52,
+    "end": 228.28,
+    "text": "Modeled after the human hippocampus, the context engine is staple, bringing a new paradigm"
+  },
+  {
+    "index": 58,
+    "start": 228.28,
+    "end": 231.04,
+    "text": "for connecting intelligence and data."
+  },
+  {
+    "index": 59,
+    "start": 231.04,
+    "end": 234.88,
+    "text": "We've achieved state-of-the-art on key benchmarks and greatly outperform long context models"
+  },
+  {
+    "index": 60,
+    "start": 234.88,
+    "end": 240.04,
+    "text": "and rag techniques like GraphRag."
+  },
+  {
+    "index": 61,
+    "start": 240.04,
+    "end": 244.0,
+    "text": "Rag techniques are fundamentally constrained by the architecture of search."
+  },
+  {
+    "index": 62,
+    "start": 244.0,
+    "end": 247.08,
+    "text": "Autopilot extends beyond a few semantically similar pieces of data."
+  },
+  {
+    "index": 63,
+    "start": 247.08,
+    "end": 250.96,
+    "text": "With every request, it reases over the entire body of ingested knowledge with true understanding"
+  },
+  {
+    "index": 64,
+    "start": 250.96,
+    "end": 253.88,
+    "text": "rather than a few retrieved documents."
+  },
+  {
+    "index": 65,
+    "start": 253.88,
+    "end": 257.44,
+    "text": "Swarms of agents relentlessly traverse their knowledge base, tracing new paths, discovering"
+  },
+  {
+    "index": 66,
+    "start": 257.44,
+    "end": 259.96,
+    "text": "connections and uncovering novel insights."
+  },
+  {
+    "index": 67,
+    "start": 259.96,
+    "end": 263.4,
+    "text": "By distilling thousands of interactions, we deliver cutting-edge intelligence over huge"
+  },
+  {
+    "index": 68,
+    "start": 263.4,
+    "end": 268.76,
+    "text": "context, without the intelligence degradation of overloading long context models."
+  },
+  {
+    "index": 69,
+    "start": 268.76,
+    "end": 270.96,
+    "text": "Context is also dynamic."
+  },
+  {
+    "index": 70,
+    "start": 270.96,
+    "end": 274.72,
+    "text": "Autopilot constantly monitors incoming information and refines itself with autonomous queries"
+  },
+  {
+    "index": 71,
+    "start": 274.72,
+    "end": 276.96,
+    "text": "to external data sources."
+  },
+  {
+    "index": 72,
+    "start": 276.96,
+    "end": 281.88,
+    "text": "This expanded in-context learning enables deep task understanding and skill acquisition."
+  },
+  {
+    "index": 73,
+    "start": 281.88,
+    "end": 286.12,
+    "text": "Autopilot can be taught like an employee with any instructions that you choose."
+  },
+  {
+    "index": 74,
+    "start": 286.12,
+    "end": 289.44,
+    "text": "Our mission is to dramatically reduce the time the world spends on wrote work, whether"
+  },
+  {
+    "index": 75,
+    "start": 289.44,
+    "end": 292.68,
+    "text": "it's writing an email just as you would or assembling that crucial presentation for a"
+  },
+  {
+    "index": 76,
+    "start": 292.68,
+    "end": 294.84,
+    "text": "major company decision."
+  },
+  {
+    "index": 77,
+    "start": 294.84,
+    "end": 300.04,
+    "text": "Today, we're bridging the gap between humans and LLMs to create AI-driven workers."
+  },
+  {
+    "index": 78,
+    "start": 300.04,
+    "end": 305.48,
+    "text": "Tomorrow, we'll be unifying AI workers and humans in AI-driven companies."
+  },
+  {
+    "index": 79,
+    "start": 305.48,
+    "end": 308.68,
+    "text": "Working today, we'll be releasing people gradually off of the waitlist and we can't"
+  },
+  {
+    "index": 80,
+    "start": 308.68,
+    "end": 309.68,
+    "text": "wait to share more soon."
+  }
+]

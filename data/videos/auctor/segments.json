@@ -1,0 +1,260 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 4.4,
+    "text": "Today, we're excited to announce that we've closed our Series A and have raised a total"
+  },
+  {
+    "index": 1,
+    "start": 4.4,
+    "end": 9.6,
+    "text": "of $20 million led by Sequoia Capital with the participation from Y Combinator and the"
+  },
+  {
+    "index": 2,
+    "start": 9.6,
+    "end": 15.32,
+    "text": "venture funds of Microsoft, Workday, HubSpot, One Stream, and leaders across the professional"
+  },
+  {
+    "index": 3,
+    "start": 15.32,
+    "end": 18.14,
+    "text": "services and system integrator industry."
+  },
+  {
+    "index": 4,
+    "start": 18.14,
+    "end": 21.6,
+    "text": "Software is one of the most powerful tools in the world, but it only creates value when"
+  },
+  {
+    "index": 5,
+    "start": 21.6,
+    "end": 23.52,
+    "text": "it's actually implemented correctly."
+  },
+  {
+    "index": 6,
+    "start": 23.52,
+    "end": 26.04,
+    "text": "Most implementations fail to deliver on that promise."
+  },
+  {
+    "index": 7,
+    "start": 26.04,
+    "end": 29.84,
+    "text": "Okta is here to help teams deliver on the promise of software and actually unlock its"
+  },
+  {
+    "index": 8,
+    "start": 29.84,
+    "end": 30.84,
+    "text": "value."
+  },
+  {
+    "index": 9,
+    "start": 30.84,
+    "end": 34.48,
+    "text": "Teams go through months of discovery calls, endless back and forth between stakeholders."
+  },
+  {
+    "index": 10,
+    "start": 34.48,
+    "end": 39.6,
+    "text": "Critical information is scattered across documents, chats, emails, and even worse,"
+  },
+  {
+    "index": 11,
+    "start": 39.6,
+    "end": 40.72,
+    "text": "stuck in their heads."
+  },
+  {
+    "index": 12,
+    "start": 40.72,
+    "end": 44.96,
+    "text": "And then six months in, their customer says, wait, that's not what we agreed on."
+  },
+  {
+    "index": 13,
+    "start": 44.96,
+    "end": 46.8,
+    "text": "That's why implementations take so long."
+  },
+  {
+    "index": 14,
+    "start": 46.8,
+    "end": 51.28,
+    "text": "Margin and trust erode, customers wait months or even years to see a fraction of the value"
+  },
+  {
+    "index": 15,
+    "start": 51.28,
+    "end": 52.56,
+    "text": "from software they've already bought."
+  },
+  {
+    "index": 16,
+    "start": 52.68,
+    "end": 54.8,
+    "text": "It's not because people aren't working hard."
+  },
+  {
+    "index": 17,
+    "start": 54.8,
+    "end": 58.76,
+    "text": "It's because there's no unified system for how this work actually gets done."
+  },
+  {
+    "index": 18,
+    "start": 58.76,
+    "end": 60.6,
+    "text": "That's why we built Okta."
+  },
+  {
+    "index": 19,
+    "start": 60.6,
+    "end": 64.96,
+    "text": "Okta is an AI native system of action for software implementations."
+  },
+  {
+    "index": 20,
+    "start": 64.96,
+    "end": 71.16,
+    "text": "Okta curates execution ready artifacts like rough orders of magnitude, resource plans,"
+  },
+  {
+    "index": 21,
+    "start": 71.16,
+    "end": 75.28,
+    "text": "process flows, user stories, and so much more."
+  },
+  {
+    "index": 22,
+    "start": 75.28,
+    "end": 79.92,
+    "text": "Everything stays beautifully connected in one system, perfectly traceable across the"
+  },
+  {
+    "index": 23,
+    "start": 79.92,
+    "end": 80.92,
+    "text": "entire journey."
+  },
+  {
+    "index": 24,
+    "start": 80.92,
+    "end": 86.8,
+    "text": "So you know exactly what was decided, why it was decided, and how it impacts the rest"
+  },
+  {
+    "index": 25,
+    "start": 86.8,
+    "end": 87.8,
+    "text": "of the engagement."
+  },
+  {
+    "index": 26,
+    "start": 87.8,
+    "end": 93.28,
+    "text": "Okta helps teams standardize what great looks like, turning their best work into repeatable,"
+  },
+  {
+    "index": 27,
+    "start": 93.28,
+    "end": 96.32,
+    "text": "reusable practices across every project."
+  },
+  {
+    "index": 28,
+    "start": 96.32,
+    "end": 101.88,
+    "text": "All inside a platform built with relentless attention to detail, flexible to fit how you"
+  },
+  {
+    "index": 29,
+    "start": 101.88,
+    "end": 102.88,
+    "text": "work."
+  },
+  {
+    "index": 30,
+    "start": 102.88,
+    "end": 105.68,
+    "text": "It's one system for every implementation."
+  },
+  {
+    "index": 31,
+    "start": 105.68,
+    "end": 109.72,
+    "text": "Teams are driving up to 80% efficiency gains across discovery and design."
+  },
+  {
+    "index": 32,
+    "start": 109.72,
+    "end": 115.04,
+    "text": "The result is faster time to value, stronger, more predictable execution, and a fundamentally"
+  },
+  {
+    "index": 33,
+    "start": 115.04,
+    "end": 117.24,
+    "text": "better way to run implementations."
+  },
+  {
+    "index": 34,
+    "start": 117.24,
+    "end": 124.8,
+    "text": "My team completed a very complex enterprise-sized CPQ and billing project with half the size"
+  },
+  {
+    "index": 35,
+    "start": 124.8,
+    "end": 128.04,
+    "text": "project team that we would normally have all because of Okta."
+  },
+  {
+    "index": 36,
+    "start": 128.04,
+    "end": 132.0,
+    "text": "Okta has sped up the delivery of our deliverables."
+  },
+  {
+    "index": 37,
+    "start": 132.0,
+    "end": 135.04,
+    "text": "Over the years I've seen a lot of inefficiency in this industry."
+  },
+  {
+    "index": 38,
+    "start": 135.04,
+    "end": 140.6,
+    "text": "Even the work we were doing before we implemented Okta was very manual."
+  },
+  {
+    "index": 39,
+    "start": 140.6,
+    "end": 146.0,
+    "text": "To our partners and customers, thank you for choosing us over the status quo and for helping"
+  },
+  {
+    "index": 40,
+    "start": 146.0,
+    "end": 147.8,
+    "text": "shape Okta into what it is today."
+  },
+  {
+    "index": 41,
+    "start": 147.8,
+    "end": 152.68,
+    "text": "If you want to see how Okta can transform how your team works or join us in redefining"
+  },
+  {
+    "index": 42,
+    "start": 152.68,
+    "end": 155.16,
+    "text": "how software gets implemented, we'd love to hear from you."
+  }
+]

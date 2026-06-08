@@ -1,0 +1,158 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 4.88,
+    "text": "Hi everyone, I'm Fred, head of product here at Consul, and today I'm excited to tell you about"
+  },
+  {
+    "index": 1,
+    "start": 4.88,
+    "end": 10.8,
+    "text": "our AI service desk. Consul auto resolves 50 to 80% of your internal support requests,"
+  },
+  {
+    "index": 2,
+    "start": 10.8,
+    "end": 15.44,
+    "text": "from access requests to MFA resets to group management. For the other requests that require"
+  },
+  {
+    "index": 3,
+    "start": 15.44,
+    "end": 22.08,
+    "text": "human judgment, Consul routes them with full context. This is fundamentally a new way to run IT."
+  },
+  {
+    "index": 4,
+    "start": 22.08,
+    "end": 26.88,
+    "text": "Let's look at an example. Isabelle messages, my laptop has been slow lately. Consul responds"
+  },
+  {
+    "index": 5,
+    "start": 26.88,
+    "end": 31.44,
+    "text": "instantly in the thread by asking useful clarifying questions. Have you tried restarting it?"
+  },
+  {
+    "index": 6,
+    "start": 31.44,
+    "end": 35.12,
+    "text": "How long has it been happening for? Consul is pulling context from your device management"
+  },
+  {
+    "index": 7,
+    "start": 35.12,
+    "end": 39.76,
+    "text": "software, your identity provider, and anything that's relevant to servicing the request."
+  },
+  {
+    "index": 8,
+    "start": 39.76,
+    "end": 44.08,
+    "text": "Isabelle confirms that she's already restarted her laptop and the issue is ongoing with no"
+  },
+  {
+    "index": 9,
+    "start": 44.08,
+    "end": 49.44,
+    "text": "clear trigger. At that point, Consul recognizes there's no obvious automated fix and lets her know"
+  },
+  {
+    "index": 10,
+    "start": 49.44,
+    "end": 54.56,
+    "text": "that it's looping in desktop support. Now, here's what the IT team sees in Consul."
+  },
+  {
+    "index": 11,
+    "start": 55.44,
+    "end": 60.08,
+    "text": "Requests that were escalated to the support team landed the Consul inbox. Consul has already"
+  },
+  {
+    "index": 12,
+    "start": 60.08,
+    "end": 65.12,
+    "text": "summarized the conversation, categorized the issue, set priority based on user role and impact,"
+  },
+  {
+    "index": 13,
+    "start": 65.12,
+    "end": 70.08,
+    "text": "and routed it to the right owner. It also pulls device details automatically so IT knows exactly"
+  },
+  {
+    "index": 14,
+    "start": 70.08,
+    "end": 74.88,
+    "text": "which device is affected. The admin replies, the update syncs back to Slack, and it's done."
+  },
+  {
+    "index": 15,
+    "start": 74.88,
+    "end": 78.32,
+    "text": "Now, let's look under the hood to see just how easy this was to set up."
+  },
+  {
+    "index": 16,
+    "start": 78.96,
+    "end": 84.24,
+    "text": "Here's where you configure your priorities. Urgent, high, medium, low, each with SLAs."
+  },
+  {
+    "index": 17,
+    "start": 84.24,
+    "end": 88.64,
+    "text": "You just tell Consul in plain English what each level means. For example, all requests from"
+  },
+  {
+    "index": 18,
+    "start": 88.64,
+    "end": 93.44,
+    "text": "BPs or above are urgent. Anything that blocks someone's data to work is also urgent. Consul"
+  },
+  {
+    "index": 19,
+    "start": 93.44,
+    "end": 99.2,
+    "text": "understands that and applies it automatically. Routing works the same way. You just tell Consul"
+  },
+  {
+    "index": 20,
+    "start": 99.2,
+    "end": 104.72,
+    "text": "in plain English that device issues go to Tina. When a ticket comes in, Consul's AI is also reading"
+  },
+  {
+    "index": 21,
+    "start": 104.72,
+    "end": 109.68,
+    "text": "the request and automatically classifies it against your schema so it lands in the right category."
+  },
+  {
+    "index": 22,
+    "start": 109.68,
+    "end": 115.84,
+    "text": "To recap, Consul instantly replies to every request with useful suggestions, escalates it"
+  },
+  {
+    "index": 23,
+    "start": 115.84,
+    "end": 120.24,
+    "text": "directly to the right person with all the context they might need, and intelligently"
+  },
+  {
+    "index": 24,
+    "start": 120.24,
+    "end": 124.32,
+    "text": "automates the issue the next time it comes up, all with minimal configuration."
+  },
+  {
+    "index": 25,
+    "start": 125.12,
+    "end": 139.52,
+    "text": "That's Consul. The AI Service Desk IT teams have been waiting for. It's IT's time to build."
+  }
+]

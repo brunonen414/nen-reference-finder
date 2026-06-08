@@ -1,0 +1,146 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 9.76,
+    "text": "Every year, American industrial businesses spend over $2.9 trillion sourcing the materials,"
+  },
+  {
+    "index": 1,
+    "start": 9.76,
+    "end": 12.8,
+    "text": "equipment, and parts that keep our factories running."
+  },
+  {
+    "index": 2,
+    "start": 12.8,
+    "end": 17.6,
+    "text": "Globally, that number climbs past $9 trillion."
+  },
+  {
+    "index": 3,
+    "start": 17.6,
+    "end": 23.8,
+    "text": "But what happens when the people who know how to run America's factories leave?"
+  },
+  {
+    "index": 4,
+    "start": 23.8,
+    "end": 33.8,
+    "text": "We believe there's always room for improvement, so we're always trying to upgrade things and improve things."
+  },
+  {
+    "index": 5,
+    "start": 33.8,
+    "end": 36.8,
+    "text": "They can't afford to get the wrong thing or wait too long."
+  },
+  {
+    "index": 6,
+    "start": 36.8,
+    "end": 41.8,
+    "text": "They need someone who knows exactly what fits their machines and get it to them fast."
+  },
+  {
+    "index": 7,
+    "start": 41.8,
+    "end": 44.8,
+    "text": "Factories run on tight schedules."
+  },
+  {
+    "index": 8,
+    "start": 44.8,
+    "end": 47.8,
+    "text": "If a critical part fails, every minute counts."
+  },
+  {
+    "index": 9,
+    "start": 47.8,
+    "end": 52.8,
+    "text": "Getting the right part fast is the difference between a quick fix and a costly downtime."
+  },
+  {
+    "index": 10,
+    "start": 52.8,
+    "end": 58.8,
+    "text": "I come, check my diary, see who visited yesterday, what they need, and get their quotes ready."
+  },
+  {
+    "index": 11,
+    "start": 58.8,
+    "end": 62.8,
+    "text": "I push through as many as I can before heading out to see customers."
+  },
+  {
+    "index": 12,
+    "start": 62.8,
+    "end": 65.8,
+    "text": "Then come back and try to finish the rest."
+  },
+  {
+    "index": 13,
+    "start": 65.8,
+    "end": 72.8,
+    "text": "It's a balancing act between staying on top of what's pending and tackling what's just come in."
+  },
+  {
+    "index": 14,
+    "start": 72.8,
+    "end": 75.8,
+    "text": "In industrial America, a silent crisis is brewing."
+  },
+  {
+    "index": 15,
+    "start": 75.8,
+    "end": 86.8,
+    "text": "The software powering this industry is decades old and with over 2 million unfulfilled jobs by 2030 and half the sales knowledge set to retire, the cracks are showing."
+  },
+  {
+    "index": 16,
+    "start": 86.8,
+    "end": 91.8,
+    "text": "We can't build the future on top of a broken foundation."
+  },
+  {
+    "index": 17,
+    "start": 91.8,
+    "end": 96.8,
+    "text": "That's why we built Avid, the future of industrial commerce."
+  },
+  {
+    "index": 18,
+    "start": 96.8,
+    "end": 101.8,
+    "text": "An AI agent that sits inside the tools you already use."
+  },
+  {
+    "index": 19,
+    "start": 101.8,
+    "end": 105.8,
+    "text": "It tracks incoming requests from email, fax, and phone."
+  },
+  {
+    "index": 20,
+    "start": 105.8,
+    "end": 112.8,
+    "text": "When a customer sends in an RFQ, the system finds the right pricing, generates a code, and sends it out."
+  },
+  {
+    "index": 21,
+    "start": 112.8,
+    "end": 119.8,
+    "text": "When a purchase order comes in, it's matched against the code that sales order is created and entered into the ERP."
+  },
+  {
+    "index": 22,
+    "start": 119.8,
+    "end": 123.8,
+    "text": "A human still reviews everything before it goes out."
+  },
+  {
+    "index": 23,
+    "start": 123.8,
+    "end": 130.8,
+    "text": "With Avid, your team can focus on what truly matters, building strong customer relationships."
+  }
+]

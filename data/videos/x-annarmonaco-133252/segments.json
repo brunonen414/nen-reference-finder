@@ -1,0 +1,68 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 26.56,
+    "text": "Hi, I'm Anna. A few months ago, we launched Paradigm in closed beta. Since then, we've"
+  },
+  {
+    "index": 1,
+    "start": 26.56,
+    "end": 33.04,
+    "text": "generated millions of data points for thousands of users. I'm excited to announce that as of today,"
+  },
+  {
+    "index": 2,
+    "start": 33.04,
+    "end": 37.76,
+    "text": "Paradigm is now generally available. Let me walk you through how it works."
+  },
+  {
+    "index": 3,
+    "start": 37.76,
+    "end": 42.72,
+    "text": "First, start by uploading your data or asking chat for the information you need."
+  },
+  {
+    "index": 4,
+    "start": 45.36,
+    "end": 53.68,
+    "text": "You can add columns with specific details, prompts, formats, types, choose from the latest models,"
+  },
+  {
+    "index": 5,
+    "start": 53.76,
+    "end": 60.4,
+    "text": "and click Generate to surface the information you need. Each agent is able to handle complex"
+  },
+  {
+    "index": 6,
+    "start": 60.4,
+    "end": 66.48,
+    "text": "multi-step reasoning, access custom tools, and leverage context from the rest of the workspace."
+  },
+  {
+    "index": 7,
+    "start": 67.28,
+    "end": 72.96,
+    "text": "And this is just the beginning. Collaborate live with your team. Create shared folders,"
+  },
+  {
+    "index": 8,
+    "start": 72.96,
+    "end": 79.04,
+    "text": "sheets, and docs across your org. Drive impact with automated workflows, personalized emails,"
+  },
+  {
+    "index": 9,
+    "start": 79.04,
+    "end": 84.96,
+    "text": "and more. I'm also very excited to share that we've raised $7 million in seed funding,"
+  },
+  {
+    "index": 10,
+    "start": 84.96,
+    "end": 94.96,
+    "text": "led by General Catalyst. Paradigm is free to try. Give it a spin and let us know what you think."
+  }
+]

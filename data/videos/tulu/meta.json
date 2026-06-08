@@ -1,0 +1,22 @@
+{
+  "video_id": "tulu",
+  "source": "https://www.linkedin.com/feed/update/urn:li:activity:7396909850548457473/",
+  "title": "Tulu — Launch Video",
+  "duration": "1:37",
+  "res": "1280×720",
+  "speakers": "—",
+  "width": 1280,
+  "height": 720,
+  "duration_s": 96.6,
+  "n_lines": 28,
+  "sheet": {
+    "video_id": "tulu",
+    "brand": "Tulu",
+    "platform_used": "linkedin",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7396909850548457473/",
+    "x_url": "",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7396909850548457473/",
+    "length_stated": "1:37",
+    "type_of_video": "Standard Explainer: static founder delivery + UI/motion support"
+  }
+}

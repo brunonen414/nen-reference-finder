@@ -1,0 +1,164 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 7.0,
+    "text": "I think we should break up."
+  },
+  {
+    "index": 1,
+    "start": 7.0,
+    "end": 9.0,
+    "text": "This feels like it's coming out of nowhere."
+  },
+  {
+    "index": 2,
+    "start": 9.0,
+    "end": 12.0,
+    "text": "We haven't spoken in months. I mean, what did you expect?"
+  },
+  {
+    "index": 3,
+    "start": 12.0,
+    "end": 14.0,
+    "text": "But I have a support chatbot."
+  },
+  {
+    "index": 4,
+    "start": 14.0,
+    "end": 19.0,
+    "text": "It's not about your chatbot. It's that you only want to talk when I tell you I have a problem."
+  },
+  {
+    "index": 5,
+    "start": 19.0,
+    "end": 24.0,
+    "text": "It was the handoffs, the implementation, the onboarding, the adoption,"
+  },
+  {
+    "index": 6,
+    "start": 24.0,
+    "end": 27.0,
+    "text": "how you went about the renewal and upsell."
+  },
+  {
+    "index": 7,
+    "start": 27.0,
+    "end": 35.0,
+    "text": "You missed all the signals. Good bye, Amir."
+  },
+  {
+    "index": 8,
+    "start": 35.0,
+    "end": 40.0,
+    "text": "Unfortunately, a support chatbot won't save your customer relationship."
+  },
+  {
+    "index": 9,
+    "start": 40.0,
+    "end": 44.0,
+    "text": "Even though we've seen billions of dollars go to AI for CX companies,"
+  },
+  {
+    "index": 10,
+    "start": 44.0,
+    "end": 47.0,
+    "text": "most are just solving for reactive support."
+  },
+  {
+    "index": 11,
+    "start": 47.0,
+    "end": 50.0,
+    "text": "Your customers don't usually leave because of a support issue."
+  },
+  {
+    "index": 12,
+    "start": 50.0,
+    "end": 54.0,
+    "text": "They leave because of all the small signals that no one has time to act on."
+  },
+  {
+    "index": 13,
+    "start": 54.0,
+    "end": 57.0,
+    "text": "Sales teams track actions in Salesforce or HubSpot,"
+  },
+  {
+    "index": 14,
+    "start": 57.0,
+    "end": 60.0,
+    "text": "support teams triage tickets in Zendesk and Intercom,"
+  },
+  {
+    "index": 15,
+    "start": 60.0,
+    "end": 65.0,
+    "text": "but the customer experience lives in these scattered emails, calls and slack threads."
+  },
+  {
+    "index": 16,
+    "start": 65.0,
+    "end": 70.0,
+    "text": "Even the best teams can miss opportunities because they're in reactive firefighting mode."
+  },
+  {
+    "index": 17,
+    "start": 70.0,
+    "end": 75.0,
+    "text": "That's why we built Cora, a team of AI agents that are always listening across every account."
+  },
+  {
+    "index": 18,
+    "start": 75.0,
+    "end": 80.0,
+    "text": "Agents that run the customer lifecycle proactively at scale."
+  },
+  {
+    "index": 19,
+    "start": 80.0,
+    "end": 85.0,
+    "text": "Like launch agents that implement and onboard customers to drive time to value."
+  },
+  {
+    "index": 20,
+    "start": 85.0,
+    "end": 88.0,
+    "text": "Adoption agents that drive healthy engagement."
+  },
+  {
+    "index": 21,
+    "start": 88.0,
+    "end": 92.0,
+    "text": "Value agents that prove ROI to the right buyer at the right time."
+  },
+  {
+    "index": 22,
+    "start": 92.0,
+    "end": 95.0,
+    "text": "And renewal agents that drive retention and upsell."
+  },
+  {
+    "index": 23,
+    "start": 95.0,
+    "end": 99.0,
+    "text": "All while knowing when to pull in the right teammate at the right time."
+  },
+  {
+    "index": 24,
+    "start": 99.0,
+    "end": 104.0,
+    "text": "So your team can focus on the human moments that require judgment, creativity and care."
+  },
+  {
+    "index": 25,
+    "start": 111.0,
+    "end": 114.0,
+    "text": "There's a difference now."
+  },
+  {
+    "index": 26,
+    "start": 114.0,
+    "end": 118.0,
+    "text": "I learned what actually matters."
+  }
+]

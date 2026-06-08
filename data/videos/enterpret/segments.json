@@ -1,0 +1,176 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.0,
+    "text": "We've raised $25 million, building the world's best customer feedback AI that notion,"
+  },
+  {
+    "index": 1,
+    "start": 5.0,
+    "end": 9.5,
+    "text": "perplexity, canva, webflow, hinge, linear, already use."
+  },
+  {
+    "index": 2,
+    "start": 9.5,
+    "end": 14.5,
+    "text": "I'm recording this for Nikita and Elon to help X become the greatest app of all time,"
+  },
+  {
+    "index": 3,
+    "start": 14.5,
+    "end": 17.0,
+    "text": "and it'd been an honor to help. Let me show you how."
+  },
+  {
+    "index": 4,
+    "start": 17.0,
+    "end": 20.0,
+    "text": "Right now, ideas and complaints are everywhere."
+  },
+  {
+    "index": 5,
+    "start": 20.0,
+    "end": 24.0,
+    "text": "Tweets, app reviews, support tickets, Reddit, and more."
+  },
+  {
+    "index": 6,
+    "start": 24.0,
+    "end": 30.5,
+    "text": "Step one, Enterprise AI ingests all feedback and categorizes it into a five-level taxonomy."
+  },
+  {
+    "index": 7,
+    "start": 30.5,
+    "end": 34.0,
+    "text": "When someone says, my card is getting declined at the checkout page,"
+  },
+  {
+    "index": 8,
+    "start": 34.0,
+    "end": 39.0,
+    "text": "one complaint can refer to multiple product issues, so Enterprise passes them out."
+  },
+  {
+    "index": 9,
+    "start": 39.0,
+    "end": 43.0,
+    "text": "It knows that the L1 is billing, L2 is subscription management,"
+  },
+  {
+    "index": 10,
+    "start": 43.0,
+    "end": 46.5,
+    "text": "L3 is checkout with themes like checkout flow errors."
+  },
+  {
+    "index": 11,
+    "start": 46.5,
+    "end": 50.5,
+    "text": "This is done for millions of feedback records automatically in real time."
+  },
+  {
+    "index": 12,
+    "start": 50.5,
+    "end": 55.5,
+    "text": "Step two, the quality monitor agent sends slack alerts to the correct team when something breaks."
+  },
+  {
+    "index": 13,
+    "start": 55.5,
+    "end": 61.5,
+    "text": "Teams stay in touch with feedback through an escalation agent that flags frustrated premium users' feedback."
+  },
+  {
+    "index": 14,
+    "start": 61.5,
+    "end": 69.0,
+    "text": "The news feed agent sends weekly metric reports for each team's focus area, and custom agents too."
+  },
+  {
+    "index": 15,
+    "start": 69.0,
+    "end": 73.5,
+    "text": "Step three, Nikita can deep research what's blocking premium signups in India."
+  },
+  {
+    "index": 16,
+    "start": 74.0,
+    "end": 75.5,
+    "text": "Instant answer."
+  },
+  {
+    "index": 17,
+    "start": 75.5,
+    "end": 82.5,
+    "text": "Payment failure, Prime Error 402 affects 43% of Indian users on HDFC and ICICI bank cards."
+  },
+  {
+    "index": 18,
+    "start": 82.5,
+    "end": 86.5,
+    "text": "X already listens to Grok, but Grok is generative and undeterministic,"
+  },
+  {
+    "index": 19,
+    "start": 86.5,
+    "end": 89.5,
+    "text": "without category-specific memory to identify trends."
+  },
+  {
+    "index": 20,
+    "start": 89.5,
+    "end": 96.5,
+    "text": "Enterprise structures millions of monthly active users' feedback into X's actual product architecture."
+  },
+  {
+    "index": 21,
+    "start": 96.5,
+    "end": 102.0,
+    "text": "A living knowledge graph, we've saved millions of dollars for Notion, Webflow, and Proplexity through our AI."
+  },
+  {
+    "index": 22,
+    "start": 102.0,
+    "end": 109.0,
+    "text": "If you're a product with 250k users, Enterprise will save you $1 million guaranteed on mis-engined engineering,"
+  },
+  {
+    "index": 23,
+    "start": 109.0,
+    "end": 111.0,
+    "text": "user churn, and critical errors."
+  },
+  {
+    "index": 24,
+    "start": 111.0,
+    "end": 114.0,
+    "text": "With Enterprise, X can fix its top issues in just 30 days."
+  },
+  {
+    "index": 25,
+    "start": 114.0,
+    "end": 121.0,
+    "text": "We've already created an instance of Enterprise for X, and I'll personally fly down to XHQ to show you how Nikita and Elon."
+  },
+  {
+    "index": 26,
+    "start": 121.0,
+    "end": 125.0,
+    "text": "If you watch this far, I'm giving away 20 iPhone Airs."
+  },
+  {
+    "index": 27,
+    "start": 125.0,
+    "end": 130.0,
+    "text": "To get one, code tweet with your feedback about X and tag Nikita and Elon."
+  },
+  {
+    "index": 28,
+    "start": 130.0,
+    "end": 135.0,
+    "text": "The top 20 suggestions that get the most likes and resonate with people win an iPhone Air."
+  }
+]

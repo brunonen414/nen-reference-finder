@@ -1,0 +1,158 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 4.0,
+    "text": "Ladies and gentlemen, this is how we get our data."
+  },
+  {
+    "index": 1,
+    "start": 5.5,
+    "end": 8.7,
+    "text": "You simply ask Data Guy for anything you want and he'll get it for you."
+  },
+  {
+    "index": 2,
+    "start": 8.7,
+    "end": 12.5,
+    "text": "Marketing, sales, product, it all runs through the pipeline."
+  },
+  {
+    "index": 3,
+    "start": 12.5,
+    "end": 13.7,
+    "text": "It's handcrafted."
+  },
+  {
+    "index": 4,
+    "start": 13.7,
+    "end": 15.7,
+    "text": "Last week I asked Data Guy,"
+  },
+  {
+    "index": 5,
+    "start": 15.7,
+    "end": 19.7,
+    "text": "can you give me a list of every tech company hiring VPs of marketing in North America?"
+  },
+  {
+    "index": 6,
+    "start": 24.7,
+    "end": 26.0,
+    "text": "I never got anything."
+  },
+  {
+    "index": 7,
+    "start": 26.0,
+    "end": 28.5,
+    "text": "We built our internal data system from scratch."
+  },
+  {
+    "index": 8,
+    "start": 28.5,
+    "end": 31.5,
+    "text": "Air table, handle schema, Zapier can lose it all together."
+  },
+  {
+    "index": 9,
+    "start": 31.5,
+    "end": 33.5,
+    "text": "And uh..."
+  },
+  {
+    "index": 10,
+    "start": 33.5,
+    "end": 36.5,
+    "text": "We have a spreadsheet that handles version control and Dropbox."
+  },
+  {
+    "index": 11,
+    "start": 36.5,
+    "end": 39.5,
+    "text": "Sometimes data just disappears from prod,"
+  },
+  {
+    "index": 12,
+    "start": 39.5,
+    "end": 43.5,
+    "text": "but I slack Data Guy and sometimes it gets fixed."
+  },
+  {
+    "index": 13,
+    "start": 43.5,
+    "end": 46.5,
+    "text": "This looks great. Thanks, Data Guy."
+  },
+  {
+    "index": 14,
+    "start": 46.5,
+    "end": 59.5,
+    "text": "Last month we sent a campaign to the customers in our database."
+  },
+  {
+    "index": 15,
+    "start": 59.5,
+    "end": 62.5,
+    "text": "Turns out we sent 400 emails to the same guy."
+  },
+  {
+    "index": 16,
+    "start": 62.5,
+    "end": 64.5,
+    "text": "Turns out we had a lot of Alex's in the database."
+  },
+  {
+    "index": 17,
+    "start": 64.5,
+    "end": 66.5,
+    "text": "All at the same last name."
+  },
+  {
+    "index": 18,
+    "start": 66.5,
+    "end": 67.5,
+    "text": "But it's okay."
+  },
+  {
+    "index": 19,
+    "start": 67.5,
+    "end": 70.5,
+    "text": "I had Data Guy creating entity resolution system from scratch."
+  },
+  {
+    "index": 20,
+    "start": 70.5,
+    "end": 73.5,
+    "text": "We had to find all the single family home foreclosures in Bushwick."
+  },
+  {
+    "index": 21,
+    "start": 76.5,
+    "end": 78.5,
+    "text": "We hired interns."
+  },
+  {
+    "index": 22,
+    "start": 78.5,
+    "end": 83.5,
+    "text": "Boss had Data Guy set up chat GPT to handle all of our compliance document ingestors."
+  },
+  {
+    "index": 23,
+    "start": 83.5,
+    "end": 86.5,
+    "text": "I've had to change my social security five times."
+  },
+  {
+    "index": 24,
+    "start": 86.5,
+    "end": 89.5,
+    "text": "And I got a cease and desist from the State Department."
+  },
+  {
+    "index": 25,
+    "start": 136.5,
+    "end": 139.5,
+    "text": "you"
+  }
+]

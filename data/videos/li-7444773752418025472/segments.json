@@ -1,0 +1,152 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 3.04,
+    "text": "America's financial institutions are under pressure."
+  },
+  {
+    "index": 1,
+    "start": 3.04,
+    "end": 8.56,
+    "text": "Every 22 seconds, another American becomes a victim of fraud and identity theft,"
+  },
+  {
+    "index": 2,
+    "start": 8.56,
+    "end": 14.48,
+    "text": "part of a global system that launders up to $2 trillion a year towards America's adversaries."
+  },
+  {
+    "index": 3,
+    "start": 14.48,
+    "end": 19.92,
+    "text": "Today we announced we raised $21 million to build a new standard for identity investigations"
+  },
+  {
+    "index": 4,
+    "start": 19.92,
+    "end": 24.96,
+    "text": "and enhanced due diligence. Financial crime investigators are the last line of defense."
+  },
+  {
+    "index": 5,
+    "start": 24.96,
+    "end": 29.28,
+    "text": "They have to navigate hundreds of counter parties, nested shell company structures,"
+  },
+  {
+    "index": 6,
+    "start": 29.28,
+    "end": 34.4,
+    "text": "and years of transactions and relationships using tools that were never designed for a post-AI world,"
+  },
+  {
+    "index": 7,
+    "start": 34.4,
+    "end": 39.12,
+    "text": "even as fraud grows faster, more complex, and better at exploiting gaps and controls."
+  },
+  {
+    "index": 8,
+    "start": 39.76,
+    "end": 44.16,
+    "text": "Every risk team will eventually need to move from manual casework to agentic investigations."
+  },
+  {
+    "index": 9,
+    "start": 45.44,
+    "end": 50.24,
+    "text": "Over the past two years, our AI agents have run investigations across the deepest parts of the"
+  },
+  {
+    "index": 10,
+    "start": 50.24,
+    "end": 55.52,
+    "text": "internet for some of the largest companies in the world. Through that process, we build the graph,"
+  },
+  {
+    "index": 11,
+    "start": 55.52,
+    "end": 60.56,
+    "text": "a system that lets AI agents conduct investigations in a structured, auditable way."
+  },
+  {
+    "index": 12,
+    "start": 60.56,
+    "end": 64.32,
+    "text": "Here's what that looks like. A high-risk customer is flagged for review."
+  },
+  {
+    "index": 13,
+    "start": 64.32,
+    "end": 68.72,
+    "text": "Variance is able to automatically trace the owner of that account through adverse media,"
+  },
+  {
+    "index": 14,
+    "start": 68.72,
+    "end": 71.84,
+    "text": "web lookups, and relationships with other customers through the graph."
+  },
+  {
+    "index": 15,
+    "start": 72.4,
+    "end": 79.12,
+    "text": "Everything our agents find lives on the graph. People, businesses, transactions, relationships."
+  },
+  {
+    "index": 16,
+    "start": 79.12,
+    "end": 83.76,
+    "text": "Every claim is backed by a query with an audit-ready map of evidence supporting each conclusion."
+  },
+  {
+    "index": 17,
+    "start": 84.48,
+    "end": 88.96,
+    "text": "Our tech has already deployed at scale across multiple Fortune 500s, running hundreds of"
+  },
+  {
+    "index": 18,
+    "start": 88.96,
+    "end": 93.44,
+    "text": "thousands of investigations a day across risk compliance and enhanced due diligence."
+  },
+  {
+    "index": 19,
+    "start": 93.44,
+    "end": 97.44,
+    "text": "Our agents are 10 times more accurate than conventional models and 100 times faster than"
+  },
+  {
+    "index": 20,
+    "start": 97.44,
+    "end": 103.6,
+    "text": "manual review. This is the transformation AI agents make possible. Investigations no longer"
+  },
+  {
+    "index": 21,
+    "start": 103.6,
+    "end": 109.6,
+    "text": "end when a case is closed. They add to a growing body of context and evidence that makes it harder"
+  },
+  {
+    "index": 22,
+    "start": 109.6,
+    "end": 114.8,
+    "text": "to exploit America's financial system. If you're a risk team looking to scale faster,"
+  },
+  {
+    "index": 23,
+    "start": 114.8,
+    "end": 118.48,
+    "text": "we would love to talk. And if you're excited by solving real,"
+  },
+  {
+    "index": 24,
+    "start": 118.48,
+    "end": 129.44,
+    "text": "hard, and adversarial problems, join the team."
+  }
+]

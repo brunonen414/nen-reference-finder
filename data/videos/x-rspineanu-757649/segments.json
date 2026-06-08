@@ -1,0 +1,518 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.56,
+    "text": "Up to 40% of manufacturing productivity is lost to system chaos."
+  },
+  {
+    "index": 1,
+    "start": 5.56,
+    "end": 10.64,
+    "text": "The work gets done, the people show up, but critical information never gets where it's"
+  },
+  {
+    "index": 2,
+    "start": 10.64,
+    "end": 11.64,
+    "text": "needed."
+  },
+  {
+    "index": 3,
+    "start": 11.64,
+    "end": 14.88,
+    "text": "We're still running factories on Excel and Post-it notes."
+  },
+  {
+    "index": 4,
+    "start": 14.88,
+    "end": 17.4,
+    "text": "The ERP doesn't talk to the MES."
+  },
+  {
+    "index": 5,
+    "start": 17.4,
+    "end": 20.48,
+    "text": "The quality system lives on its own island."
+  },
+  {
+    "index": 6,
+    "start": 20.48,
+    "end": 25.84,
+    "text": "And when your best operator retires, decades of know-how walk right out the door."
+  },
+  {
+    "index": 7,
+    "start": 25.84,
+    "end": 32.84,
+    "text": "But Humble were set to retire every ERP, MES, QMS, and a three-layer system that's failing"
+  },
+  {
+    "index": 8,
+    "start": 32.84,
+    "end": 36.24,
+    "text": "manufacturers today, without a rip and replace."
+  },
+  {
+    "index": 9,
+    "start": 36.24,
+    "end": 38.64,
+    "text": "Let me show you how."
+  },
+  {
+    "index": 10,
+    "start": 38.64,
+    "end": 39.64,
+    "text": "Meet Mike."
+  },
+  {
+    "index": 11,
+    "start": 39.64,
+    "end": 45.36,
+    "text": "He runs a craft brewery with 150 employees across production, bottling, and distribution."
+  },
+  {
+    "index": 12,
+    "start": 45.36,
+    "end": 48.12,
+    "text": "Humble works with what he already has."
+  },
+  {
+    "index": 13,
+    "start": 48.12,
+    "end": 52.2,
+    "text": "In step one, he describes his actual workflow in plain English."
+  },
+  {
+    "index": 14,
+    "start": 52.68,
+    "end": 58.96,
+    "text": "We receive grants at DOC2, we check moisture content, and move with silo-free below 12%."
+  },
+  {
+    "index": 15,
+    "start": 58.96,
+    "end": 64.6,
+    "text": "24 hours later, not months, he has working software."
+  },
+  {
+    "index": 16,
+    "start": 64.6,
+    "end": 71.4,
+    "text": "Raw material intake, brain procedures, fermentation tracking, packaging schedules, built exactly"
+  },
+  {
+    "index": 17,
+    "start": 71.4,
+    "end": 73.28,
+    "text": "for how he works."
+  },
+  {
+    "index": 18,
+    "start": 73.28,
+    "end": 75.48,
+    "text": "But here's the twist."
+  },
+  {
+    "index": 19,
+    "start": 75.48,
+    "end": 78.64,
+    "text": "Mike keeps all his legacy systems running."
+  },
+  {
+    "index": 20,
+    "start": 78.64,
+    "end": 83.48,
+    "text": "Then Humble sits on top, connecting them all."
+  },
+  {
+    "index": 21,
+    "start": 83.48,
+    "end": 85.56,
+    "text": "Next week, things changed."
+  },
+  {
+    "index": 22,
+    "start": 85.56,
+    "end": 88.28,
+    "text": "Mike lends a massive distribution."
+  },
+  {
+    "index": 23,
+    "start": 88.28,
+    "end": 94.68,
+    "text": "But the new client is a major retailer, and they require full pallet-level trustability,"
+  },
+  {
+    "index": 24,
+    "start": 94.68,
+    "end": 97.48,
+    "text": "something his old ERP was never built to do."
+  },
+  {
+    "index": 25,
+    "start": 97.48,
+    "end": 99.96,
+    "text": "The old way, he calls the vendor."
+  },
+  {
+    "index": 26,
+    "start": 99.96,
+    "end": 102.68,
+    "text": "Three weeks just to get a scope of work."
+  },
+  {
+    "index": 27,
+    "start": 102.68,
+    "end": 107.92,
+    "text": "15 grand for the custom module that's going to break with the next software update."
+  },
+  {
+    "index": 28,
+    "start": 107.92,
+    "end": 111.64,
+    "text": "But with Humble, Mike just described the new workflow."
+  },
+  {
+    "index": 29,
+    "start": 111.64,
+    "end": 117.08,
+    "text": "But packaging creates the pallet ID and link it to the bruised lot number."
+  },
+  {
+    "index": 30,
+    "start": 117.08,
+    "end": 121.68,
+    "text": "Tomorrow morning, it's a new, scannable step on his operator's talents."
+  },
+  {
+    "index": 31,
+    "start": 121.68,
+    "end": 126.8,
+    "text": "Therefore, when he adds seasonal bruise next month, he just tells the system."
+  },
+  {
+    "index": 32,
+    "start": 126.8,
+    "end": 131.68,
+    "text": "And it's done in 24 hours."
+  },
+  {
+    "index": 33,
+    "start": 131.68,
+    "end": 137.8,
+    "text": "Operators enter data wrong one in five times, and half of the data never gets captured at"
+  },
+  {
+    "index": 34,
+    "start": 138.36,
+    "end": 140.36,
+    "text": "We fixed both."
+  },
+  {
+    "index": 35,
+    "start": 140.36,
+    "end": 143.0,
+    "text": "Mike's operator starts the fermentation check."
+  },
+  {
+    "index": 36,
+    "start": 143.0,
+    "end": 146.0,
+    "text": "His tablet shows check tank three."
+  },
+  {
+    "index": 37,
+    "start": 146.0,
+    "end": 149.64,
+    "text": "They read the gauge, they enter 72 degrees."
+  },
+  {
+    "index": 38,
+    "start": 149.64,
+    "end": 154.92,
+    "text": "Humble instantly compares it to the curve, pulls the last three readings, and flags if"
+  },
+  {
+    "index": 39,
+    "start": 154.92,
+    "end": 156.42,
+    "text": "it's trending wrong."
+  },
+  {
+    "index": 40,
+    "start": 156.42,
+    "end": 158.36,
+    "text": "This is not a paper fork."
+  },
+  {
+    "index": 41,
+    "start": 158.36,
+    "end": 162.2,
+    "text": "This is a smart interface that did not exist yesterday."
+  },
+  {
+    "index": 42,
+    "start": 162.44,
+    "end": 166.04,
+    "text": "Therefore, every step captures perfect data."
+  },
+  {
+    "index": 43,
+    "start": 166.04,
+    "end": 169.32,
+    "text": "And when operators get stuck, they just ask."
+  },
+  {
+    "index": 44,
+    "start": 169.32,
+    "end": 172.84,
+    "text": "And Humble knows your manuals, your SOPs, your tribal knowledge."
+  },
+  {
+    "index": 45,
+    "start": 172.84,
+    "end": 179.36,
+    "text": "In this way, your best operator's brain becomes softer than everyone uses."
+  },
+  {
+    "index": 46,
+    "start": 179.36,
+    "end": 186.04,
+    "text": "Now, because everything's unified, planning and replanning kind of just happens."
+  },
+  {
+    "index": 47,
+    "start": 186.04,
+    "end": 191.12,
+    "text": "One system sees all orders, all tank capacity, all scheduled."
+  },
+  {
+    "index": 48,
+    "start": 191.12,
+    "end": 195.24,
+    "text": "It knows IPAs sell three times faster than Pilsners."
+  },
+  {
+    "index": 49,
+    "start": 195.24,
+    "end": 200.4,
+    "text": "It knows tank three runs warm, and it knows that your supplier needs 10 days for special"
+  },
+  {
+    "index": 50,
+    "start": 200.4,
+    "end": 201.4,
+    "text": "comps."
+  },
+  {
+    "index": 51,
+    "start": 201.4,
+    "end": 208.2,
+    "text": "The Tetris that took Mike hours to make it sell now takes him minutes."
+  },
+  {
+    "index": 52,
+    "start": 208.2,
+    "end": 213.48,
+    "text": "At Humble, we think integrations can be done better, so we let our agents write them for"
+  },
+  {
+    "index": 53,
+    "start": 213.48,
+    "end": 214.48,
+    "text": "us."
+  },
+  {
+    "index": 54,
+    "start": 214.48,
+    "end": 219.36,
+    "text": "Mike, let ancient canning line with the weird API just drop the manual and Humble will write"
+  },
+  {
+    "index": 55,
+    "start": 219.36,
+    "end": 220.68,
+    "text": "it for you."
+  },
+  {
+    "index": 56,
+    "start": 220.68,
+    "end": 223.84,
+    "text": "App equipment from 2015 connected."
+  },
+  {
+    "index": 57,
+    "start": 223.84,
+    "end": 228.2,
+    "text": "That German sensors that only speaks Modbus integrated."
+  },
+  {
+    "index": 58,
+    "start": 228.2,
+    "end": 232.84,
+    "text": "You describe what you need or upload the docs and we handle the code."
+  },
+  {
+    "index": 59,
+    "start": 232.84,
+    "end": 237.84,
+    "text": "IT will be happy with full audit logs and role-based access."
+  },
+  {
+    "index": 60,
+    "start": 237.84,
+    "end": 242.44,
+    "text": "And when the vendor's API breaks, just feed it the new docs and your connection will be"
+  },
+  {
+    "index": 61,
+    "start": 242.44,
+    "end": 244.84,
+    "text": "rebuilt in minutes."
+  },
+  {
+    "index": 62,
+    "start": 244.84,
+    "end": 248.84,
+    "text": "Finally, meet Eva, your operations brain."
+  },
+  {
+    "index": 63,
+    "start": 248.84,
+    "end": 254.04,
+    "text": "You can ask her anything, like why did you drop 10% yesterday?"
+  },
+  {
+    "index": 64,
+    "start": 254.04,
+    "end": 260.28,
+    "text": "She'll dig through thousands of data points from your MES, your QMS, and even your spreadsheets"
+  },
+  {
+    "index": 65,
+    "start": 260.28,
+    "end": 262.48,
+    "text": "and find your answer in minutes."
+  },
+  {
+    "index": 66,
+    "start": 262.48,
+    "end": 266.32,
+    "text": "Eva is also able to pull in specialist agents with you."
+  },
+  {
+    "index": 67,
+    "start": 266.32,
+    "end": 271.2,
+    "text": "They discover that the cooling system cycled off at 2am and then the fermentation temperature"
+  },
+  {
+    "index": 68,
+    "start": 271.2,
+    "end": 272.64,
+    "text": "spiked."
+  },
+  {
+    "index": 69,
+    "start": 272.64,
+    "end": 276.24,
+    "text": "Problem found, fixed documented procedure update."
+  },
+  {
+    "index": 70,
+    "start": 276.24,
+    "end": 279.68,
+    "text": "We love Mike, but this isn't just for breweries."
+  },
+  {
+    "index": 71,
+    "start": 279.68,
+    "end": 283.4,
+    "text": "Solar panels, aircraft parts, food warehouses."
+  },
+  {
+    "index": 72,
+    "start": 283.4,
+    "end": 286.8,
+    "text": "If you make it, we can optimize it."
+  },
+  {
+    "index": 73,
+    "start": 286.8,
+    "end": 292.08,
+    "text": "We start where pain is the biggest and then scale across your operation."
+  },
+  {
+    "index": 74,
+    "start": 292.08,
+    "end": 297.32,
+    "text": "Here's what happens when systems connect and workflows guide every step."
+  },
+  {
+    "index": 75,
+    "start": 297.32,
+    "end": 302.72,
+    "text": "Mike's on time delivery went from 68% to 94%."
+  },
+  {
+    "index": 76,
+    "start": 302.72,
+    "end": 309.84,
+    "text": "Because of the same equipment, he has 25% more throughput and rework is down 40%."
+  },
+  {
+    "index": 77,
+    "start": 309.84,
+    "end": 316.72,
+    "text": "His ops manager stopped threatening to quit and Mike, well, Mike sleeps through the night."
+  },
+  {
+    "index": 78,
+    "start": 316.72,
+    "end": 322.76,
+    "text": "Traditional vendors profit from your chaos, more modules, more consultants, more complexity."
+  },
+  {
+    "index": 79,
+    "start": 322.76,
+    "end": 330.08,
+    "text": "We profit from your success with one price and unlimited changes forever."
+  },
+  {
+    "index": 80,
+    "start": 330.08,
+    "end": 332.4,
+    "text": "So send us your morning chaos."
+  },
+  {
+    "index": 81,
+    "start": 332.4,
+    "end": 334.96,
+    "text": "Show us the Excel sheets running your operation."
+  },
+  {
+    "index": 82,
+    "start": 334.96,
+    "end": 338.72,
+    "text": "In 24 hours, we'll show you working software."
+  },
+  {
+    "index": 83,
+    "start": 338.72,
+    "end": 342.16,
+    "text": "No surprises, every promise kept."
+  },
+  {
+    "index": 84,
+    "start": 342.16,
+    "end": 344.92,
+    "text": "One truth that everyone trusts."
+  },
+  {
+    "index": 85,
+    "start": 344.92,
+    "end": 347.52,
+    "text": "Because you deserve software that works the way you do."
+  }
+]

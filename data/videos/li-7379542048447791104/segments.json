@@ -1,0 +1,248 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.36,
+    "text": "Your merchant portfolio grew 3x, but you're not getting it count to grow your risk team."
+  },
+  {
+    "index": 1,
+    "start": 5.36,
+    "end": 10.52,
+    "text": "We've been there, buried in manual reviews, juggling spreadsheets, flipping through tabs"
+  },
+  {
+    "index": 2,
+    "start": 10.52,
+    "end": 14.36,
+    "text": "of Google searches and tools that don't talk to each other."
+  },
+  {
+    "index": 3,
+    "start": 14.36,
+    "end": 17.8,
+    "text": "And after all that, a big fraud loss still gets to me."
+  },
+  {
+    "index": 4,
+    "start": 17.8,
+    "end": 20.96,
+    "text": "The old way just doesn't work anymore."
+  },
+  {
+    "index": 5,
+    "start": 20.96,
+    "end": 24.96,
+    "text": "We know because we have run risk and compliance programs ourselves."
+  },
+  {
+    "index": 6,
+    "start": 24.96,
+    "end": 29.08,
+    "text": "That's why we built Quarris, AI agents purpose built for merchant risk."
+  },
+  {
+    "index": 7,
+    "start": 29.08,
+    "end": 32.08,
+    "text": "We're training AI models with the deep domain expertise."
+  },
+  {
+    "index": 8,
+    "start": 32.08,
+    "end": 34.72,
+    "text": "So what does Quarris actually look like in practice?"
+  },
+  {
+    "index": 9,
+    "start": 34.72,
+    "end": 40.08,
+    "text": "Then the application comes in and in seconds our AI gets the business details,"
+  },
+  {
+    "index": 10,
+    "start": 40.08,
+    "end": 43.4,
+    "text": "reputational risks, litigation history and more."
+  },
+  {
+    "index": 11,
+    "start": 43.4,
+    "end": 47.0,
+    "text": "All in one place to automate underwriting with the neat summary."
+  },
+  {
+    "index": 12,
+    "start": 47.0,
+    "end": 51.8,
+    "text": "And with our always on monitoring of all your merchants and their transactions,"
+  },
+  {
+    "index": 13,
+    "start": 51.8,
+    "end": 54.88,
+    "text": "no matter how many, we get one view of your old book."
+  },
+  {
+    "index": 14,
+    "start": 54.88,
+    "end": 57.88,
+    "text": "All of these run in our risk platform."
+  },
+  {
+    "index": 15,
+    "start": 57.88,
+    "end": 61.44,
+    "text": "One place to handle onboarding, fraud detection and monitoring."
+  },
+  {
+    "index": 16,
+    "start": 61.44,
+    "end": 67.24,
+    "text": "With no code integrations to popular processors like Stripe Connect, Agion and Teasis."
+  },
+  {
+    "index": 17,
+    "start": 67.24,
+    "end": 72.44,
+    "text": "Imagine not having to balance between spreadsheets and tools, but having it all in one platform."
+  },
+  {
+    "index": 18,
+    "start": 72.44,
+    "end": 75.36,
+    "text": "Quarris has been AI first from the start."
+  },
+  {
+    "index": 19,
+    "start": 75.36,
+    "end": 80.52,
+    "text": "Now we are taking it further with new capabilities that make risk work even faster."
+  },
+  {
+    "index": 20,
+    "start": 80.52,
+    "end": 85.04,
+    "text": "Instead of digging, you just ask and Quarris gives you the answers instantly."
+  },
+  {
+    "index": 21,
+    "start": 85.04,
+    "end": 86.16,
+    "text": "Let's try it."
+  },
+  {
+    "index": 22,
+    "start": 86.16,
+    "end": 90.24,
+    "text": "Pull up the latest risk profile for American Standard doc training."
+  },
+  {
+    "index": 23,
+    "start": 90.24,
+    "end": 94.84,
+    "text": "Quarris pulls the full picture right away, the score and what's driving it."
+  },
+  {
+    "index": 24,
+    "start": 94.84,
+    "end": 99.64,
+    "text": "Here you see volume spiking, refunds on the rise and ratings dipping,"
+  },
+  {
+    "index": 25,
+    "start": 99.64,
+    "end": 101.8,
+    "text": "but also prove they're a real business."
+  },
+  {
+    "index": 26,
+    "start": 101.8,
+    "end": 106.24,
+    "text": "You can also ask it to do things for you, such as adding a note or taking actions."
+  },
+  {
+    "index": 27,
+    "start": 106.24,
+    "end": 108.68,
+    "text": "So the chat board gives you instant answers."
+  },
+  {
+    "index": 28,
+    "start": 108.68,
+    "end": 112.64,
+    "text": "The next step, AI agents that follow your playbooks."
+  },
+  {
+    "index": 29,
+    "start": 112.64,
+    "end": 113.8,
+    "text": "Here's an example."
+  },
+  {
+    "index": 30,
+    "start": 113.8,
+    "end": 118.72,
+    "text": "Disputes are climbing, business is marked as closed, back account recently switched."
+  },
+  {
+    "index": 31,
+    "start": 118.72,
+    "end": 124.08,
+    "text": "Normally an analyst would pass payouts, draft the merchant email and log everything."
+  },
+  {
+    "index": 32,
+    "start": 124.08,
+    "end": 126.08,
+    "text": "Quarris does it automatically."
+  },
+  {
+    "index": 33,
+    "start": 126.08,
+    "end": 129.2,
+    "text": "With Quarris, the agent just follows your playbook."
+  },
+  {
+    "index": 34,
+    "start": 129.2,
+    "end": 132.6,
+    "text": "Imagine your playbooks running on autopilot,"
+  },
+  {
+    "index": 35,
+    "start": 132.6,
+    "end": 136.12,
+    "text": "while your team focuses on the few cases that really matter."
+  },
+  {
+    "index": 36,
+    "start": 136.12,
+    "end": 139.16,
+    "text": "Quarris is building the trust layer for global commerce,"
+  },
+  {
+    "index": 37,
+    "start": 139.16,
+    "end": 142.32,
+    "text": "already pouring some of the world's fastest growing companies."
+  },
+  {
+    "index": 38,
+    "start": 142.32,
+    "end": 147.44,
+    "text": "If you're ready to adopt AI, keep your losses low and want your business to grow faster."
+  },
+  {
+    "index": 39,
+    "start": 147.44,
+    "end": 148.68,
+    "text": "We would love to show you more."
+  },
+  {
+    "index": 40,
+    "start": 148.68,
+    "end": 150.84,
+    "text": "Book a demo at Quarris.ai."
+  }
+]

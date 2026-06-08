@@ -1,0 +1,320 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.48,
+    "text": "Hey, I'm Andre, co-founder and CEO at Console."
+  },
+  {
+    "index": 1,
+    "start": 5.48,
+    "end": 9.28,
+    "text": "We just launched our most popular feature yet, Console Assistant."
+  },
+  {
+    "index": 2,
+    "start": 9.28,
+    "end": 13.32,
+    "text": "Now working in Console is like talking to another member of your team who always has"
+  },
+  {
+    "index": 3,
+    "start": 13.32,
+    "end": 14.32,
+    "text": "great ideas."
+  },
+  {
+    "index": 4,
+    "start": 14.32,
+    "end": 18.4,
+    "text": "We think that using Console should be as easy as telling Console what you want it to do."
+  },
+  {
+    "index": 5,
+    "start": 18.4,
+    "end": 23.92,
+    "text": "With Assistant, you can build, investigate, and handle tier two tasks all in natural language."
+  },
+  {
+    "index": 6,
+    "start": 23.92,
+    "end": 26.16,
+    "text": "Let's take a look at what it can do."
+  },
+  {
+    "index": 7,
+    "start": 26.16,
+    "end": 28.72,
+    "text": "Last week, we hired eight new employees."
+  },
+  {
+    "index": 8,
+    "start": 28.8,
+    "end": 31.16,
+    "text": "Normally, onboarding them would take hours."
+  },
+  {
+    "index": 9,
+    "start": 31.16,
+    "end": 34.32,
+    "text": "Today, we can automate it entirely with Assistant."
+  },
+  {
+    "index": 10,
+    "start": 34.32,
+    "end": 36.12,
+    "text": "This is Assistant in action."
+  },
+  {
+    "index": 11,
+    "start": 36.12,
+    "end": 40.2,
+    "text": "I just tell it what I need, answer a few clarifying questions, and it gets to work."
+  },
+  {
+    "index": 12,
+    "start": 40.2,
+    "end": 45.0,
+    "text": "Here, it's building me an onboarding playbook that handles getting all new employees up"
+  },
+  {
+    "index": 13,
+    "start": 45.0,
+    "end": 47.64,
+    "text": "and running with Okta, Google, and Slack."
+  },
+  {
+    "index": 14,
+    "start": 47.64,
+    "end": 51.56,
+    "text": "It works with you to understand exactly what you need to do, pulls in the relevant tools,"
+  },
+  {
+    "index": 15,
+    "start": 51.56,
+    "end": 52.8,
+    "text": "and generates the playbook for you."
+  },
+  {
+    "index": 16,
+    "start": 52.8,
+    "end": 56.04,
+    "text": "So you'll never have to build a manual workflow again."
+  },
+  {
+    "index": 17,
+    "start": 56.12,
+    "end": 57.28,
+    "text": "Hey, Sandeel."
+  },
+  {
+    "index": 18,
+    "start": 57.28,
+    "end": 58.68,
+    "text": "How's your first week been?"
+  },
+  {
+    "index": 19,
+    "start": 58.68,
+    "end": 59.68,
+    "text": "Great."
+  },
+  {
+    "index": 20,
+    "start": 59.68,
+    "end": 63.96,
+    "text": "But I have been trying to see if anyone's laptop has been compromised since I got here."
+  },
+  {
+    "index": 21,
+    "start": 63.96,
+    "end": 64.96,
+    "text": "Can Console do that?"
+  },
+  {
+    "index": 22,
+    "start": 64.96,
+    "end": 66.08,
+    "text": "Of course."
+  },
+  {
+    "index": 23,
+    "start": 66.08,
+    "end": 67.96,
+    "text": "We'll just ask Assistant."
+  },
+  {
+    "index": 24,
+    "start": 67.96,
+    "end": 72.04,
+    "text": "Assistant can check CrowdStrike and see if any malware ran on employee devices in the"
+  },
+  {
+    "index": 25,
+    "start": 72.04,
+    "end": 73.84,
+    "text": "last 30 days."
+  },
+  {
+    "index": 26,
+    "start": 73.84,
+    "end": 76.24,
+    "text": "You can just prompt it, and then Assistant gets to work."
+  },
+  {
+    "index": 27,
+    "start": 76.24,
+    "end": 80.32,
+    "text": "It reaches into connected systems, pulls what it needs, and then acts on what it finds."
+  },
+  {
+    "index": 28,
+    "start": 80.32,
+    "end": 83.8,
+    "text": "Unlike legacy products, Console doesn't rely on pre-built connectors."
+  },
+  {
+    "index": 29,
+    "start": 83.8,
+    "end": 87.4,
+    "text": "It knows how to read API docs and build the appropriate connectors on its own."
+  },
+  {
+    "index": 30,
+    "start": 87.4,
+    "end": 92.48,
+    "text": "It runs its own tests to make sure everything is working, and then it runs the action."
+  },
+  {
+    "index": 31,
+    "start": 92.48,
+    "end": 96.0,
+    "text": "Assistant can handle Tier 2 work just like this in real time."
+  },
+  {
+    "index": 32,
+    "start": 96.0,
+    "end": 97.52,
+    "text": "All right."
+  },
+  {
+    "index": 33,
+    "start": 97.52,
+    "end": 100.2,
+    "text": "Looks like it found two suspicious devices."
+  },
+  {
+    "index": 34,
+    "start": 100.2,
+    "end": 103.28,
+    "text": "Let's send them a DM and then lock their device the next 5 minutes."
+  },
+  {
+    "index": 35,
+    "start": 103.28,
+    "end": 104.28,
+    "text": "Oh, great."
+  },
+  {
+    "index": 36,
+    "start": 104.28,
+    "end": 106.24,
+    "text": "What do let's think to worry about?"
+  },
+  {
+    "index": 37,
+    "start": 106.24,
+    "end": 108.4,
+    "text": "Assistant is accessible from anywhere in Console."
+  },
+  {
+    "index": 38,
+    "start": 108.4,
+    "end": 112.12,
+    "text": "For example, I just got a ticket that someone spilled water on their laptop."
+  },
+  {
+    "index": 39,
+    "start": 112.12,
+    "end": 113.72,
+    "text": "And it's perfect for that kind of work."
+  },
+  {
+    "index": 40,
+    "start": 113.72,
+    "end": 114.72,
+    "text": "Let's delegate it."
+  },
+  {
+    "index": 41,
+    "start": 114.72,
+    "end": 118.32,
+    "text": "We've already got Console connected to CDW, so I can just tell it to order a new laptop"
+  },
+  {
+    "index": 42,
+    "start": 118.32,
+    "end": 120.0,
+    "text": "without having to leave the ticket view."
+  },
+  {
+    "index": 43,
+    "start": 120.0,
+    "end": 124.8,
+    "text": "And just like that, new laptop's on its way."
+  },
+  {
+    "index": 44,
+    "start": 124.8,
+    "end": 128.88,
+    "text": "We built Assistant because this is how people expect to work today."
+  },
+  {
+    "index": 45,
+    "start": 128.88,
+    "end": 130.92,
+    "text": "Engineering teams figured it out first."
+  },
+  {
+    "index": 46,
+    "start": 130.92,
+    "end": 133.48,
+    "text": "They stopped writing code and started delegating to agents."
+  },
+  {
+    "index": 47,
+    "start": 133.48,
+    "end": 135.44,
+    "text": "We bring that same leverage to IT."
+  },
+  {
+    "index": 48,
+    "start": 135.44,
+    "end": 139.08,
+    "text": "Console knows your systems, your policies, and the full context of your organization."
+  },
+  {
+    "index": 49,
+    "start": 139.08,
+    "end": 142.8,
+    "text": "So when Tier 2 work lands in your queue, you don't have to route it, build a workflow,"
+  },
+  {
+    "index": 50,
+    "start": 142.8,
+    "end": 145.28,
+    "text": "or jump between tools."
+  },
+  {
+    "index": 51,
+    "start": 145.28,
+    "end": 147.36,
+    "text": "Tell it what needs to happen, and it happens."
+  },
+  {
+    "index": 52,
+    "start": 147.36,
+    "end": 148.6,
+    "text": "And that's Console Assistant."
+  }
+]

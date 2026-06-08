@@ -1,0 +1,332 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.5,
+    "text": "Hi, I'm Kern from Cartesia. Today I'm introducing Line, the developer first voice agent platform."
+  },
+  {
+    "index": 1,
+    "start": 5.92,
+    "end": 11.52,
+    "text": "Line is how we believe modern voice agents should be built. Watch me spin up an agent using just text."
+  },
+  {
+    "index": 2,
+    "start": 11.64,
+    "end": 18.2,
+    "text": "I'll then extend it in ways that teams can do today with no code tools. It's all really fast and it scales."
+  },
+  {
+    "index": 3,
+    "start": 18.88,
+    "end": 20.44,
+    "text": "Let's build."
+  },
+  {
+    "index": 4,
+    "start": 20.44,
+    "end": 23.72,
+    "text": "I'll start in the Cartesia Playground on our agents tab."
+  },
+  {
+    "index": 5,
+    "start": 24.24,
+    "end": 28.68,
+    "text": "A major problem today is that building your first agent takes a lot of time and effort."
+  },
+  {
+    "index": 6,
+    "start": 28.96,
+    "end": 33.4,
+    "text": "We help you create your first agent quickly using our text to agent feature."
+  },
+  {
+    "index": 7,
+    "start": 34.12,
+    "end": 38.0,
+    "text": "I can write any prompt to generate a voice agent. Let's try"
+  },
+  {
+    "index": 8,
+    "start": 38.6,
+    "end": 44.68,
+    "text": "You are a helpful voice agent meant to answer any questions about Cartesia."
+  },
+  {
+    "index": 9,
+    "start": 45.72,
+    "end": 47.72,
+    "text": "And then I'm going to hit generate."
+  },
+  {
+    "index": 10,
+    "start": 47.96,
+    "end": 50.68,
+    "text": "Which creates a page for my new agent?"
+  },
+  {
+    "index": 11,
+    "start": 51.28,
+    "end": 57.4,
+    "text": "We want you to have the best possible agent so we create many candidate agents on our platform."
+  },
+  {
+    "index": 12,
+    "start": 57.64,
+    "end": 64.64,
+    "text": "We automatically deploy them, create scenarios to test them and actually run those tests to identify the best agent."
+  },
+  {
+    "index": 13,
+    "start": 65.28,
+    "end": 68.36,
+    "text": "It's all done in five minutes, so let's skip ahead."
+  },
+  {
+    "index": 14,
+    "start": 70.0,
+    "end": 74.24,
+    "text": "We show you the best agents we found and you can pick a voice that you like."
+  },
+  {
+    "index": 15,
+    "start": 75.16,
+    "end": 79.08,
+    "text": "Let me choose my own voice, but with a British accent so it sounds more posh."
+  },
+  {
+    "index": 16,
+    "start": 79.88,
+    "end": 83.8,
+    "text": "And now I have a few agents to try to talk to. Let's try calling them."
+  },
+  {
+    "index": 17,
+    "start": 83.8,
+    "end": 91.48,
+    "text": "Hi, I'm a voice agent from Cartesia. Who am I speaking with and how can I help you?"
+  },
+  {
+    "index": 18,
+    "start": 93.0,
+    "end": 96.6,
+    "text": "Hey, I'm Kern. Nice to meet you. Tell me what makes Cartesia special?"
+  },
+  {
+    "index": 19,
+    "start": 98.36,
+    "end": 103.64,
+    "text": "Cartesia offers state-of-the-art voice models including Sonic for text to speech and Ink for speech to text."
+  },
+  {
+    "index": 20,
+    "start": 104.36,
+    "end": 106.52,
+    "text": "Do you want to learn more?"
+  },
+  {
+    "index": 21,
+    "start": 106.52,
+    "end": 108.52,
+    "text": "Awesome. I'll check it out. Bye."
+  },
+  {
+    "index": 22,
+    "start": 109.16,
+    "end": 114.84,
+    "text": "What I'm going to do now is download the code and continue building the agent that I like in my own dev environment."
+  },
+  {
+    "index": 23,
+    "start": 117.16,
+    "end": 122.6,
+    "text": "Lions SDK is designed to make it easy to go from your first agent to your best agent."
+  },
+  {
+    "index": 24,
+    "start": 123.32,
+    "end": 128.12,
+    "text": "Here's what we have already. This is the auto-generated code that our agent used."
+  },
+  {
+    "index": 25,
+    "start": 129.0,
+    "end": 136.92,
+    "text": "Now we just launched voice agents and I would love to make sure our agent can get live Cartesia information by adding rag to it."
+  },
+  {
+    "index": 26,
+    "start": 138.52,
+    "end": 145.72,
+    "text": "Using the line SDK, this is really easy to do and with just a few lines of code, I can connect knowledge to my agent."
+  },
+  {
+    "index": 27,
+    "start": 146.84,
+    "end": 150.52,
+    "text": "Developers can add any tools that they like just like this."
+  },
+  {
+    "index": 28,
+    "start": 153.24,
+    "end": 158.52,
+    "text": "A great feature of our SDK is that it makes it very easy to coordinate with background agents."
+  },
+  {
+    "index": 29,
+    "start": 159.08,
+    "end": 166.12,
+    "text": "I can add a background agent that listens to the conversation and collects leads for Cartesia in a structured format."
+  },
+  {
+    "index": 30,
+    "start": 166.84,
+    "end": 170.04,
+    "text": "You could then write these leads to a database and use them later."
+  },
+  {
+    "index": 31,
+    "start": 171.24,
+    "end": 173.24,
+    "text": "Here's a code for that."
+  },
+  {
+    "index": 32,
+    "start": 175.08,
+    "end": 178.36,
+    "text": "It's really easy to deploy by just pushing your code."
+  },
+  {
+    "index": 33,
+    "start": 180.6,
+    "end": 186.84,
+    "text": "And boom! You can see the new deployment here immediately. Let's try calling again."
+  },
+  {
+    "index": 34,
+    "start": 190.12,
+    "end": 195.0,
+    "text": "Hi, I'm a voice agent from Cartesia. Who am I speaking with and how can I help you?"
+  },
+  {
+    "index": 35,
+    "start": 196.28,
+    "end": 199.96,
+    "text": "Hey, I'm Curran. Nice to meet you. What makes Cartesia special?"
+  },
+  {
+    "index": 36,
+    "start": 201.16,
+    "end": 208.12,
+    "text": "We offer state-of-the-art ultra realistic voice AI models which now powers a modern voice agents platform called Line."
+  },
+  {
+    "index": 37,
+    "start": 209.08,
+    "end": 213.64,
+    "text": "We help businesses seamlessly deploy agent code and handle the model orchestration for you."
+  },
+  {
+    "index": 38,
+    "start": 214.68,
+    "end": 220.68,
+    "text": "Line also comes with an observability and evaluation platform designed for developers. Are you interested?"
+  },
+  {
+    "index": 39,
+    "start": 221.72,
+    "end": 224.2,
+    "text": "Yeah, I love to try Line with my team."
+  },
+  {
+    "index": 40,
+    "start": 224.92,
+    "end": 229.0,
+    "text": "That's great to hear. What's a good email where we can send more information?"
+  },
+  {
+    "index": 41,
+    "start": 229.8,
+    "end": 234.68,
+    "text": "I can be reached at karen.cartesia.ai."
+  },
+  {
+    "index": 42,
+    "start": 235.56,
+    "end": 243.16,
+    "text": "I have you down as karen.cartesia.ai. Is there anything else I can help you with?"
+  },
+  {
+    "index": 43,
+    "start": 244.12,
+    "end": 247.24,
+    "text": "That's exactly right. No, thanks so much. Talk to you later. Bye."
+  },
+  {
+    "index": 44,
+    "start": 248.76,
+    "end": 252.52,
+    "text": "That was amazing, right? But this isn't how voice agents are built today."
+  },
+  {
+    "index": 45,
+    "start": 253.24,
+    "end": 257.8,
+    "text": "Most teams we talk to are still navigating complex drag-and-drop GUIs,"
+  },
+  {
+    "index": 46,
+    "start": 257.8,
+    "end": 263.4,
+    "text": "huge FDE teams, and endless QA cycles. In a world where it's easier than ever to code with AI,"
+  },
+  {
+    "index": 47,
+    "start": 263.4,
+    "end": 268.28,
+    "text": "we should use more code, not less. We built Line with this philosophy."
+  },
+  {
+    "index": 48,
+    "start": 268.92,
+    "end": 273.4,
+    "text": "We think with the right tools, developers will build the best voice agents. So people like your"
+  },
+  {
+    "index": 49,
+    "start": 273.4,
+    "end": 278.92,
+    "text": "parents, teammates, and customers can experience the most natural and personal conversations with"
+  },
+  {
+    "index": 50,
+    "start": 278.92,
+    "end": 285.88,
+    "text": "these agents. Our leading voice models, Inc and Sonic, live right under every Line agent to deliver"
+  },
+  {
+    "index": 51,
+    "start": 285.88,
+    "end": 291.96,
+    "text": "lightning fast performance. And with lines built in infrastructure, you can scale confidently"
+  },
+  {
+    "index": 52,
+    "start": 291.96,
+    "end": 297.16,
+    "text": "from your first agent to millions of conversations. This isn't some far-off vision."
+  },
+  {
+    "index": 53,
+    "start": 297.16,
+    "end": 302.92,
+    "text": "We want to help you bring voice agents to every clinic, business, and public service on the planet."
+  },
+  {
+    "index": 54,
+    "start": 302.92,
+    "end": 310.92,
+    "text": "Agents are going mainstream. Deploy your first voice agent at Cartesia.ai today."
+  }
+]

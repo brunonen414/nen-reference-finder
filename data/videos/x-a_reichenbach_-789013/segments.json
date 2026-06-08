@@ -1,0 +1,278 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 4.48,
+    "text": "Data is super cool, but working with data is a pain."
+  },
+  {
+    "index": 1,
+    "start": 4.48,
+    "end": 6.16,
+    "text": "That's why I built Structify."
+  },
+  {
+    "index": 2,
+    "start": 6.16,
+    "end": 7.88,
+    "text": "All right, show us then."
+  },
+  {
+    "index": 3,
+    "start": 7.88,
+    "end": 9.52,
+    "text": "Would have already have some data."
+  },
+  {
+    "index": 4,
+    "start": 9.52,
+    "end": 12.36,
+    "text": "Let's say you've got a bunch of telemetry data sources"
+  },
+  {
+    "index": 5,
+    "start": 12.36,
+    "end": 14.48,
+    "text": "on your product and you want to understand who's using which"
+  },
+  {
+    "index": 6,
+    "start": 14.48,
+    "end": 15.28,
+    "text": "parts when."
+  },
+  {
+    "index": 7,
+    "start": 15.28,
+    "end": 17.24,
+    "text": "You can just ask Structify to stitch it all together"
+  },
+  {
+    "index": 8,
+    "start": 17.24,
+    "end": 19.88,
+    "text": "and marry it with your CRM user data"
+  },
+  {
+    "index": 9,
+    "start": 19.88,
+    "end": 23.52,
+    "text": "and then enrich that data on where the users work from the web"
+  },
+  {
+    "index": 10,
+    "start": 23.52,
+    "end": 25.08,
+    "text": "and grab even more details about it."
+  },
+  {
+    "index": 11,
+    "start": 25.08,
+    "end": 26.36,
+    "text": "And then it can even help you understand"
+  },
+  {
+    "index": 12,
+    "start": 26.36,
+    "end": 28.0,
+    "text": "what conversion by all of this might be."
+  },
+  {
+    "index": 13,
+    "start": 28.0,
+    "end": 29.24,
+    "text": "But what if my data's a mess?"
+  },
+  {
+    "index": 14,
+    "start": 29.24,
+    "end": 29.8,
+    "text": "It can do."
+  },
+  {
+    "index": 15,
+    "start": 29.8,
+    "end": 30.64,
+    "text": "Work with it all the time."
+  },
+  {
+    "index": 16,
+    "start": 30.64,
+    "end": 31.92,
+    "text": "Wednesday, then autumn, mess."
+  },
+  {
+    "index": 17,
+    "start": 31.92,
+    "end": 35.04,
+    "text": "Structify can take in messy inventory spreadsheets,"
+  },
+  {
+    "index": 18,
+    "start": 35.04,
+    "end": 37.36,
+    "text": "connect it with your payment system, your CRM,"
+  },
+  {
+    "index": 19,
+    "start": 37.36,
+    "end": 38.72,
+    "text": "and even a weather API."
+  },
+  {
+    "index": 20,
+    "start": 38.72,
+    "end": 40.52,
+    "text": "And that can help you create a view"
+  },
+  {
+    "index": 21,
+    "start": 40.52,
+    "end": 42.52,
+    "text": "on the seasonality of your consumer products"
+  },
+  {
+    "index": 22,
+    "start": 42.52,
+    "end": 44.88,
+    "text": "and maybe even how to better manage your inventory system."
+  },
+  {
+    "index": 23,
+    "start": 44.88,
+    "end": 47.04,
+    "text": "But what if my data isn't even digital?"
+  },
+  {
+    "index": 24,
+    "start": 47.04,
+    "end": 47.48,
+    "text": "Easy."
+  },
+  {
+    "index": 25,
+    "start": 47.48,
+    "end": 48.56,
+    "text": "We do that all the time."
+  },
+  {
+    "index": 26,
+    "start": 48.56,
+    "end": 50.12,
+    "text": "Structify works with construction firms"
+  },
+  {
+    "index": 27,
+    "start": 50.12,
+    "end": 52.88,
+    "text": "to turn their uploaded plans, reports, contracts,"
+  },
+  {
+    "index": 28,
+    "start": 52.88,
+    "end": 56.08,
+    "text": "and invoices into clean tables to speed up the RFP process"
+  },
+  {
+    "index": 29,
+    "start": 56.08,
+    "end": 57.44,
+    "text": "and increase quality deal flow."
+  },
+  {
+    "index": 30,
+    "start": 57.44,
+    "end": 59.32,
+    "text": "But can it handle many things at once?"
+  },
+  {
+    "index": 31,
+    "start": 59.32,
+    "end": 60.04,
+    "text": "Yes."
+  },
+  {
+    "index": 32,
+    "start": 60.04,
+    "end": 61.28,
+    "text": "That's where Structify shines."
+  },
+  {
+    "index": 33,
+    "start": 61.28,
+    "end": 63.6,
+    "text": "Rebops teams are able to connect to customer lists"
+  },
+  {
+    "index": 34,
+    "start": 63.6,
+    "end": 65.88,
+    "text": "and Google Sheets, grab and structure meeting notes"
+  },
+  {
+    "index": 35,
+    "start": 65.88,
+    "end": 68.48,
+    "text": "and sales reports, grab account details from the web,"
+  },
+  {
+    "index": 36,
+    "start": 68.48,
+    "end": 72.32,
+    "text": "turn PDF invoices and contracts into structured data,"
+  },
+  {
+    "index": 37,
+    "start": 72.32,
+    "end": 75.04,
+    "text": "and give them a 360 view of their pipeline instantly."
+  },
+  {
+    "index": 38,
+    "start": 75.04,
+    "end": 77.04,
+    "text": "They can even go from there and find out information"
+  },
+  {
+    "index": 39,
+    "start": 77.04,
+    "end": 79.8,
+    "text": "about the accounts, like what their roles they're hiring for"
+  },
+  {
+    "index": 40,
+    "start": 79.8,
+    "end": 82.16,
+    "text": "or even what conferences are going to."
+  },
+  {
+    "index": 41,
+    "start": 82.16,
+    "end": 84.08,
+    "text": "Do I still need a data team for this?"
+  },
+  {
+    "index": 42,
+    "start": 84.08,
+    "end": 84.84,
+    "text": "Not really."
+  },
+  {
+    "index": 43,
+    "start": 84.84,
+    "end": 87.92,
+    "text": "Structify is a data team that you wish you had without the headaches."
+  },
+  {
+    "index": 44,
+    "start": 87.92,
+    "end": 89.8,
+    "text": "Sign up for a free trial today and see"
+  },
+  {
+    "index": 45,
+    "start": 89.8,
+    "end": 93.92,
+    "text": "how you can get your data structured, clean, and ready to go."
+  }
+]

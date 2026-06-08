@@ -1,0 +1,434 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 2.0,
+    "text": "This is Jack Cable."
+  },
+  {
+    "index": 1,
+    "start": 2.0,
+    "end": 5.0,
+    "text": "He is one of the world's top bug bounty hunters,"
+  },
+  {
+    "index": 2,
+    "start": 5.0,
+    "end": 7.0,
+    "text": "and he joined the Pentagon out of high school"
+  },
+  {
+    "index": 3,
+    "start": 7.0,
+    "end": 9.0,
+    "text": "after winning the Hack the Air Force competition."
+  },
+  {
+    "index": 4,
+    "start": 9.0,
+    "end": 12.0,
+    "text": "Later, he helped lead CISA's Secure by Design initiative"
+  },
+  {
+    "index": 5,
+    "start": 12.0,
+    "end": 16.0,
+    "text": "where he spurred commitments from hundreds of the world's top software companies"
+  },
+  {
+    "index": 6,
+    "start": 16.0,
+    "end": 18.0,
+    "text": "to improve their product security."
+  },
+  {
+    "index": 7,
+    "start": 19.0,
+    "end": 21.0,
+    "text": "This is Ashwin Rameswamy."
+  },
+  {
+    "index": 8,
+    "start": 21.0,
+    "end": 23.0,
+    "text": "He's been coding since fourth grade,"
+  },
+  {
+    "index": 9,
+    "start": 23.0,
+    "end": 25.0,
+    "text": "and while at Stanford, he organized tree hacks,"
+  },
+  {
+    "index": 10,
+    "start": 25.0,
+    "end": 28.0,
+    "text": "the hackathon with a thousand students from around the world."
+  },
+  {
+    "index": 11,
+    "start": 28.0,
+    "end": 30.0,
+    "text": "Later, he went to law school at Georgetown"
+  },
+  {
+    "index": 12,
+    "start": 30.0,
+    "end": 32.0,
+    "text": "and ran for state senate in Georgia,"
+  },
+  {
+    "index": 13,
+    "start": 32.0,
+    "end": 36.0,
+    "text": "all while publishing AI research papers on open foundation models."
+  },
+  {
+    "index": 14,
+    "start": 36.0,
+    "end": 39.0,
+    "text": "Jack and I met at Stanford five years ago."
+  },
+  {
+    "index": 15,
+    "start": 39.0,
+    "end": 41.0,
+    "text": "We worked together in the federal government,"
+  },
+  {
+    "index": 16,
+    "start": 41.0,
+    "end": 44.0,
+    "text": "securing open source software and building products"
+  },
+  {
+    "index": 17,
+    "start": 44.0,
+    "end": 48.0,
+    "text": "to protect our elections and secure critical infrastructure."
+  },
+  {
+    "index": 18,
+    "start": 49.0,
+    "end": 52.0,
+    "text": "We started Corridor because we saw a massive problem."
+  },
+  {
+    "index": 19,
+    "start": 52.0,
+    "end": 55.0,
+    "text": "Security teams are overwhelmed with the same basic,"
+  },
+  {
+    "index": 20,
+    "start": 55.0,
+    "end": 57.0,
+    "text": "preventable vulnerabilities"
+  },
+  {
+    "index": 21,
+    "start": 57.0,
+    "end": 60.0,
+    "text": "being exploited over and over again."
+  },
+  {
+    "index": 22,
+    "start": 60.0,
+    "end": 63.0,
+    "text": "AI has enabled rapid innovation and software development,"
+  },
+  {
+    "index": 23,
+    "start": 63.0,
+    "end": 66.0,
+    "text": "but security is still living in the past."
+  },
+  {
+    "index": 24,
+    "start": 66.0,
+    "end": 70.0,
+    "text": "We knew there had to be a better way to secure software from day one"
+  },
+  {
+    "index": 25,
+    "start": 70.0,
+    "end": 73.0,
+    "text": "by giving security teams AI native tools"
+  },
+  {
+    "index": 26,
+    "start": 73.0,
+    "end": 75.0,
+    "text": "that move us fast as developers do."
+  },
+  {
+    "index": 27,
+    "start": 76.0,
+    "end": 78.0,
+    "text": "Corridor is your AI security architect,"
+  },
+  {
+    "index": 28,
+    "start": 78.0,
+    "end": 82.0,
+    "text": "helping you build secure by design products from the ground up."
+  },
+  {
+    "index": 29,
+    "start": 82.0,
+    "end": 84.0,
+    "text": "Hi, I'm Alex."
+  },
+  {
+    "index": 30,
+    "start": 84.0,
+    "end": 86.0,
+    "text": "This is Alex Stamos."
+  },
+  {
+    "index": 31,
+    "start": 86.0,
+    "end": 89.0,
+    "text": "He has been hacking and securing systems since the 90s."
+  },
+  {
+    "index": 32,
+    "start": 89.0,
+    "end": 91.0,
+    "text": "Alex has founded and sold two companies,"
+  },
+  {
+    "index": 33,
+    "start": 91.0,
+    "end": 94.0,
+    "text": "has five patents, and advised NATO and the White House."
+  },
+  {
+    "index": 34,
+    "start": 94.0,
+    "end": 96.0,
+    "text": "He helped build the software security space"
+  },
+  {
+    "index": 35,
+    "start": 96.0,
+    "end": 99.0,
+    "text": "through his research and speaking for two decades."
+  },
+  {
+    "index": 36,
+    "start": 99.0,
+    "end": 103.0,
+    "text": "Alex was the sysso of Yahoo, Facebook and Sentinel-1,"
+  },
+  {
+    "index": 37,
+    "start": 103.0,
+    "end": 104.0,
+    "text": "and teaches at Stanford."
+  },
+  {
+    "index": 38,
+    "start": 104.0,
+    "end": 105.0,
+    "text": "He's kind of famous."
+  },
+  {
+    "index": 39,
+    "start": 105.0,
+    "end": 109.0,
+    "text": "Well, famous among a really specific type of nerd."
+  },
+  {
+    "index": 40,
+    "start": 109.0,
+    "end": 111.0,
+    "text": "When I met Jack and us when at Stanford,"
+  },
+  {
+    "index": 41,
+    "start": 111.0,
+    "end": 113.0,
+    "text": "I knew they're generational talents,"
+  },
+  {
+    "index": 42,
+    "start": 113.0,
+    "end": 115.0,
+    "text": "driven to make the difference in the world."
+  },
+  {
+    "index": 43,
+    "start": 115.0,
+    "end": 119.0,
+    "text": "I've been working to make software more secure for over 25 years."
+  },
+  {
+    "index": 44,
+    "start": 119.0,
+    "end": 121.0,
+    "text": "That's as long as you've been alive."
+  },
+  {
+    "index": 45,
+    "start": 121.0,
+    "end": 122.0,
+    "text": "Yes."
+  },
+  {
+    "index": 46,
+    "start": 122.0,
+    "end": 126.0,
+    "text": "Which is why the AI era is both terrifying and exciting."
+  },
+  {
+    "index": 47,
+    "start": 126.0,
+    "end": 130.0,
+    "text": "I've never seen such a pace of change in the technology industry,"
+  },
+  {
+    "index": 48,
+    "start": 130.0,
+    "end": 132.0,
+    "text": "nor such an incredible opportunity"
+  },
+  {
+    "index": 49,
+    "start": 132.0,
+    "end": 136.0,
+    "text": "to finally bend the curve on helping developers build dependable systems."
+  },
+  {
+    "index": 50,
+    "start": 136.0,
+    "end": 138.0,
+    "text": "That's why I'm proud to announce"
+  },
+  {
+    "index": 51,
+    "start": 138.0,
+    "end": 141.0,
+    "text": "that I will be joining the Corridor team full-time."
+  },
+  {
+    "index": 52,
+    "start": 141.0,
+    "end": 144.0,
+    "text": "Corridor is already being used by leading development teams,"
+  },
+  {
+    "index": 53,
+    "start": 144.0,
+    "end": 148.0,
+    "text": "such as Cursor, Mercury and Greynoise."
+  },
+  {
+    "index": 54,
+    "start": 148.0,
+    "end": 149.0,
+    "text": "Let's hear from them."
+  },
+  {
+    "index": 55,
+    "start": 149.0,
+    "end": 153.0,
+    "text": "Corridor saved us a lot of time doing engineering work and doing testing,"
+  },
+  {
+    "index": 56,
+    "start": 153.0,
+    "end": 155.0,
+    "text": "especially with the Cursor background agent"
+  },
+  {
+    "index": 57,
+    "start": 155.0,
+    "end": 158.0,
+    "text": "and some new features we launched in the last couple weeks."
+  },
+  {
+    "index": 58,
+    "start": 158.0,
+    "end": 161.0,
+    "text": "It helped us get the new background agent products"
+  },
+  {
+    "index": 59,
+    "start": 161.0,
+    "end": 164.0,
+    "text": "across the web, mobile and IDE into customers' hands faster."
+  },
+  {
+    "index": 60,
+    "start": 164.0,
+    "end": 167.0,
+    "text": "We're proud to share that we've raised 5.4 million"
+  },
+  {
+    "index": 61,
+    "start": 167.0,
+    "end": 171.0,
+    "text": "from conviction and top angels, including Christina,"
+  },
+  {
+    "index": 62,
+    "start": 171.0,
+    "end": 173.0,
+    "text": "Kakiopo and Russell Kaplan."
+  },
+  {
+    "index": 63,
+    "start": 173.0,
+    "end": 176.0,
+    "text": "At Conviction, we were extremely excited to back Corridor"
+  },
+  {
+    "index": 64,
+    "start": 176.0,
+    "end": 179.0,
+    "text": "as they have a vision and team that can have a real impact"
+  },
+  {
+    "index": 65,
+    "start": 179.0,
+    "end": 182.0,
+    "text": "on how companies safely adopt AI tools"
+  },
+  {
+    "index": 66,
+    "start": 182.0,
+    "end": 185.0,
+    "text": "to accelerate development without sacrificing on security."
+  },
+  {
+    "index": 67,
+    "start": 185.0,
+    "end": 188.0,
+    "text": "AI coding can be made safe and dependable,"
+  },
+  {
+    "index": 68,
+    "start": 188.0,
+    "end": 190.0,
+    "text": "but you need a trusted partner to help."
+  },
+  {
+    "index": 69,
+    "start": 190.0,
+    "end": 195.0,
+    "text": "At Corridor, we're paving the way for a secure by design future."
+  },
+  {
+    "index": 70,
+    "start": 195.0,
+    "end": 198.0,
+    "text": "Ready to be part of the future of product security?"
+  },
+  {
+    "index": 71,
+    "start": 198.0,
+    "end": 202.0,
+    "text": "Sign up now or send us a resume at corridor.dev."
+  }
+]

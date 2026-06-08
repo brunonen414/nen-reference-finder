@@ -1,0 +1,22 @@
+{
+  "video_id": "highlight",
+  "source": "https://x.com/sergeisorokin/status/2036458627846787114",
+  "title": "Highlight — Launch Video",
+  "duration": "1:31",
+  "res": "3840×2160",
+  "speakers": "—",
+  "width": 3840,
+  "height": 2160,
+  "duration_s": 91.2,
+  "n_lines": 27,
+  "sheet": {
+    "video_id": "highlight",
+    "brand": "Highlight",
+    "platform_used": "x",
+    "url": "https://x.com/sergeisorokin/status/2036458627846787114",
+    "x_url": "https://x.com/sergeisorokin/status/2036458627846787114",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7442238111981490177/",
+    "length_stated": "1:30",
+    "type_of_video": "Standard Explainer: static founder delivery + UI/motion support"
+  }
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 3.0,
+    "text": "An API bug gets assigned to a billing specialist."
+  },
+  {
+    "index": 1,
+    "start": 3.0,
+    "end": 6.0,
+    "text": "A database error goes to the front-end end support."
+  },
+  {
+    "index": 2,
+    "start": 6.0,
+    "end": 10.0,
+    "text": "Does that sound familiar? Welcome to the ticket shuffle."
+  },
+  {
+    "index": 3,
+    "start": 10.0,
+    "end": 13.0,
+    "text": "Ron Robben Assignment assumes every agent is a generalist,"
+  },
+  {
+    "index": 4,
+    "start": 13.0,
+    "end": 15.0,
+    "text": "but when specialized tickets hit the wrong person,"
+  },
+  {
+    "index": 5,
+    "start": 15.0,
+    "end": 19.0,
+    "text": "you get unnecessary transfers, slower resolution times,"
+  },
+  {
+    "index": 6,
+    "start": 19.0,
+    "end": 21.0,
+    "text": "and frustrated customers."
+  },
+  {
+    "index": 7,
+    "start": 21.0,
+    "end": 23.0,
+    "text": "Meet skills-based routing in Pylon."
+  },
+  {
+    "index": 8,
+    "start": 23.0,
+    "end": 27.0,
+    "text": "AI classifies every issue and automatically assigns it"
+  },
+  {
+    "index": 9,
+    "start": 27.0,
+    "end": 30.0,
+    "text": "to the team member with the right expertise."
+  },
+  {
+    "index": 10,
+    "start": 30.0,
+    "end": 33.0,
+    "text": "Now an API bug goes straight to the integrations team."
+  },
+  {
+    "index": 11,
+    "start": 33.0,
+    "end": 36.0,
+    "text": "That database error, it gets sent to a back-end support person,"
+  },
+  {
+    "index": 12,
+    "start": 36.0,
+    "end": 38.0,
+    "text": "not a front-end person."
+  },
+  {
+    "index": 13,
+    "start": 38.0,
+    "end": 41.0,
+    "text": "You can add any filters and route by product areas,"
+  },
+  {
+    "index": 14,
+    "start": 41.0,
+    "end": 44.0,
+    "text": "issue severity, or other custom fields."
+  },
+  {
+    "index": 15,
+    "start": 44.0,
+    "end": 47.0,
+    "text": "Set up the routing once, and Pylon.AI will automatically"
+  },
+  {
+    "index": 16,
+    "start": 47.0,
+    "end": 51.0,
+    "text": "tag and assign all new tickets to the right person."
+  },
+  {
+    "index": 17,
+    "start": 51.0,
+    "end": 53.0,
+    "text": "Stop the ticket shuffle and make sure every issue"
+  },
+  {
+    "index": 18,
+    "start": 53.0,
+    "end": 56.0,
+    "text": "goes to the right expert automatically."
+  }
+]

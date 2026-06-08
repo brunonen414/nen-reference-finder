@@ -1,0 +1,128 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 4.0,
+    "text": "In nature, intelligence isn't static."
+  },
+  {
+    "index": 1,
+    "start": 4.0,
+    "end": 10.0,
+    "text": "Every step and every hill climbed is shaped by the world around us."
+  },
+  {
+    "index": 2,
+    "start": 10.0,
+    "end": 14.0,
+    "text": "And by learning from experience, we eventually succeed."
+  },
+  {
+    "index": 3,
+    "start": 14.0,
+    "end": 17.0,
+    "text": "We want to do the same for AI."
+  },
+  {
+    "index": 4,
+    "start": 19.0,
+    "end": 22.0,
+    "text": "Hi, I'm Casey, co-founder of Osmosis."
+  },
+  {
+    "index": 5,
+    "start": 22.0,
+    "end": 26.0,
+    "text": "We're building the first end-to-end reinforcement learning platform"
+  },
+  {
+    "index": 6,
+    "start": 26.0,
+    "end": 29.0,
+    "text": "that helps AI agents learn in real time."
+  },
+  {
+    "index": 7,
+    "start": 29.0,
+    "end": 33.0,
+    "text": "2025 was supposed to be the year of the AI agent."
+  },
+  {
+    "index": 8,
+    "start": 33.0,
+    "end": 37.0,
+    "text": "Instead, companies realized that while powerful,"
+  },
+  {
+    "index": 9,
+    "start": 37.0,
+    "end": 41.0,
+    "text": "AI agents still struggle when it comes to consistency and efficiency."
+  },
+  {
+    "index": 10,
+    "start": 41.0,
+    "end": 45.0,
+    "text": "Osmosis helps companies fine-tune open-source models"
+  },
+  {
+    "index": 11,
+    "start": 45.0,
+    "end": 50.0,
+    "text": "that can outperform foundation models at a fraction of the cost and latency."
+  },
+  {
+    "index": 12,
+    "start": 50.0,
+    "end": 55.0,
+    "text": "Osmosis is purpose-built for agent use cases like tool use and co-generation."
+  },
+  {
+    "index": 13,
+    "start": 55.0,
+    "end": 58.0,
+    "text": "We integrate directly with your tools and offer a streamlined way"
+  },
+  {
+    "index": 14,
+    "start": 58.0,
+    "end": 61.0,
+    "text": "for developers to spin up reinforcement fine-tuning runs."
+  },
+  {
+    "index": 15,
+    "start": 61.0,
+    "end": 65.0,
+    "text": "You can also set rules to enable continuous model updates."
+  },
+  {
+    "index": 16,
+    "start": 65.0,
+    "end": 67.0,
+    "text": "And best yet, we offer direct model serving"
+  },
+  {
+    "index": 17,
+    "start": 67.0,
+    "end": 71.0,
+    "text": "and the ability to export model weights after training."
+  },
+  {
+    "index": 18,
+    "start": 71.0,
+    "end": 74.0,
+    "text": "It's simple. Your data, your weights."
+  },
+  {
+    "index": 19,
+    "start": 75.0,
+    "end": 81.0,
+    "text": "At Osmosis, our vision is to create a future where AI agents are able to self-improve."
+  },
+  {
+    "index": 20,
+    "start": 81.0,
+    "end": 85.0,
+    "text": "So just like in nature, today's experiences will shape tomorrow's outcomes."
+  }
+]

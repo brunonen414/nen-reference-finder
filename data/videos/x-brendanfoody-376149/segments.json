@@ -1,0 +1,134 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 3.92,
+    "text": "The real reason hiring is broken is because it's run by humans."
+  },
+  {
+    "index": 1,
+    "start": 3.92,
+    "end": 8.88,
+    "text": "It's a minefield of bias, unqualified recruiters, arbitrarily shortlist candidates,"
+  },
+  {
+    "index": 2,
+    "start": 8.88,
+    "end": 11.44,
+    "text": "and you get ghosted 90% of the time."
+  },
+  {
+    "index": 3,
+    "start": 12.32,
+    "end": 17.12,
+    "text": "AI can do better. We've used AI to process over 300,000 candidates,"
+  },
+  {
+    "index": 4,
+    "start": 17.12,
+    "end": 22.0,
+    "text": "to conduct over 100,000 interviews, and to create thousands of jobs."
+  },
+  {
+    "index": 5,
+    "start": 22.64,
+    "end": 26.4,
+    "text": "The Mercur AI interviewer speaks with every candidate,"
+  },
+  {
+    "index": 6,
+    "start": 26.48,
+    "end": 32.4,
+    "text": "provides personalized feedback on how you did and systematically reduces human bias."
+  },
+  {
+    "index": 7,
+    "start": 33.04,
+    "end": 34.08,
+    "text": "Let me show you how it works."
+  },
+  {
+    "index": 8,
+    "start": 35.04,
+    "end": 38.8,
+    "text": "First, upload your resume to work.mercourt.com."
+  },
+  {
+    "index": 9,
+    "start": 38.8,
+    "end": 43.84,
+    "text": "We'll dynamically understand your core strengths and tailor a custom interview to you."
+  },
+  {
+    "index": 10,
+    "start": 44.8,
+    "end": 46.32,
+    "text": "Second, join the interview."
+  },
+  {
+    "index": 11,
+    "start": 47.52,
+    "end": 52.72,
+    "text": "Can you explain the search infrastructure you developed to enable companies to efficiently"
+  },
+  {
+    "index": 12,
+    "start": 52.8,
+    "end": 55.6,
+    "text": "find their ideal candidates on the Mercur platform?"
+  },
+  {
+    "index": 13,
+    "start": 56.4,
+    "end": 60.88,
+    "text": "Yeah, on the Mercur platform, any company can go in and describe their ideal candidate in natural"
+  },
+  {
+    "index": 14,
+    "start": 60.88,
+    "end": 65.6,
+    "text": "language and we'll retrieve and display candidates based on who's both relevant and excellent."
+  },
+  {
+    "index": 15,
+    "start": 68.56,
+    "end": 73.28,
+    "text": "How did you evaluate the trade-offs between traditional lexical search methods, such as"
+  },
+  {
+    "index": 16,
+    "start": 73.28,
+    "end": 78.0,
+    "text": "BM25, dense retrieval using embeddings, and hybrid search approaches?"
+  },
+  {
+    "index": 17,
+    "start": 78.08,
+    "end": 83.52,
+    "text": "Yeah, traditional search techniques can be pretty constraining, but are also very reliable."
+  },
+  {
+    "index": 18,
+    "start": 84.48,
+    "end": 87.36,
+    "text": "Once you complete the interview, you'll be added to our talent pool."
+  },
+  {
+    "index": 19,
+    "start": 88.08,
+    "end": 92.88,
+    "text": "Companies can view your profile and send you high-quality job offers that allow you to work"
+  },
+  {
+    "index": 20,
+    "start": 92.88,
+    "end": 99.84,
+    "text": "from anywhere. Our mission is to bring meritocracy back to hiring and to help a billion people find"
+  },
+  {
+    "index": 21,
+    "start": 99.84,
+    "end": 107.84,
+    "text": "their next job."
+  }
+]

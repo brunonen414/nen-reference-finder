@@ -1,0 +1,22 @@
+{
+  "video_id": "fulcrum",
+  "source": "https://www.linkedin.com/feed/update/urn:li:activity:7421952680555728897/",
+  "title": "Fulcrum — Launch Video",
+  "duration": "2:29",
+  "res": "1280×720",
+  "speakers": "—",
+  "width": 1280,
+  "height": 720,
+  "duration_s": 148.7,
+  "n_lines": 37,
+  "sheet": {
+    "video_id": "fulcrum",
+    "brand": "Fulcrum",
+    "platform_used": "linkedin",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7421952680555728897/",
+    "x_url": "",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7421952680555728897/",
+    "length_stated": "2:28",
+    "type_of_video": "Explainer: static founder delivery + planned b-roll/customer interviews + UI/motion"
+  }
+}

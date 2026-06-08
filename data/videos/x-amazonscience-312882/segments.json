@@ -1,0 +1,248 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 6.0,
+    "text": "Soon, there will be more AI agents than people browsing the web, doing tasks on our behalf."
+  },
+  {
+    "index": 1,
+    "start": 6.0,
+    "end": 12.12,
+    "text": "That's why we built NOVA Act, an SDK designed for developers to build and deploy web agents"
+  },
+  {
+    "index": 2,
+    "start": 12.12,
+    "end": 13.32,
+    "text": "that actually work."
+  },
+  {
+    "index": 3,
+    "start": 13.32,
+    "end": 18.0,
+    "text": "Look, it's not going to be too long until these agents can land spacecraft, but we're"
+  },
+  {
+    "index": 4,
+    "start": 18.0,
+    "end": 20.0,
+    "text": "not there yet in reliability."
+  },
+  {
+    "index": 5,
+    "start": 20.0,
+    "end": 24.18,
+    "text": "NOVA Act meets the models where they are, by allowing developers to break down complex"
+  },
+  {
+    "index": 6,
+    "start": 24.18,
+    "end": 29.96,
+    "text": "jobs into clear steps that the model can follow, giving you granular control without the babysitting."
+  },
+  {
+    "index": 7,
+    "start": 29.96,
+    "end": 34.96,
+    "text": "Let's see NOVA in action."
+  },
+  {
+    "index": 8,
+    "start": 34.96,
+    "end": 39.4,
+    "text": "Guiding the model is as easy as making an app call, which translates natural language"
+  },
+  {
+    "index": 9,
+    "start": 39.4,
+    "end": 41.32,
+    "text": "into actions on the screen."
+  },
+  {
+    "index": 10,
+    "start": 41.32,
+    "end": 46.08,
+    "text": "You can chain multiple app calls together to construct increasingly complicated workflows."
+  },
+  {
+    "index": 11,
+    "start": 46.08,
+    "end": 51.64,
+    "text": "This blockwise approach makes workflows more consistent, accurate, and reliable."
+  },
+  {
+    "index": 12,
+    "start": 51.64,
+    "end": 56.0,
+    "text": "In this example, we'll use NOVA Act to find our dream apartment."
+  },
+  {
+    "index": 13,
+    "start": 56.0,
+    "end": 59.28,
+    "text": "We're searching for a two bedroom, one bath in Redwood City."
+  },
+  {
+    "index": 14,
+    "start": 59.28,
+    "end": 63.08,
+    "text": "Here, we've given our first app call to the agent."
+  },
+  {
+    "index": 15,
+    "start": 63.08,
+    "end": 66.68,
+    "text": "It's going to break down how to complete this task, considering the outcome of each step"
+  },
+  {
+    "index": 16,
+    "start": 66.68,
+    "end": 68.8,
+    "text": "as it plans the next one."
+  },
+  {
+    "index": 17,
+    "start": 68.8,
+    "end": 73.08,
+    "text": "Behind the scenes, this is all powered by a specialized version of Amazon NOVA, trained"
+  },
+  {
+    "index": 18,
+    "start": 73.08,
+    "end": 80.08,
+    "text": "for high reliability on UI tasks."
+  },
+  {
+    "index": 19,
+    "start": 80.08,
+    "end": 85.6,
+    "text": "We designed the SDK to integrate seamlessly with all your favorite Python tools and libraries,"
+  },
+  {
+    "index": 20,
+    "start": 85.6,
+    "end": 88.0,
+    "text": "making it easier to do cool stuff."
+  },
+  {
+    "index": 21,
+    "start": 88.0,
+    "end": 92.88,
+    "text": "Alright, we see a bunch of rentals on the screen, so let's grab them using a structured"
+  },
+  {
+    "index": 22,
+    "start": 92.88,
+    "end": 93.88,
+    "text": "extract."
+  },
+  {
+    "index": 23,
+    "start": 93.88,
+    "end": 101.08,
+    "text": "We'll define a Pydantic class and ask the agent to return JSON matching that schema."
+  },
+  {
+    "index": 24,
+    "start": 101.08,
+    "end": 104.4,
+    "text": "For my commute, I want to know the biking distance to the nearest Caltrain station for"
+  },
+  {
+    "index": 25,
+    "start": 104.4,
+    "end": 105.6,
+    "text": "each of these results."
+  },
+  {
+    "index": 26,
+    "start": 105.6,
+    "end": 107.84,
+    "text": "Let's define a helper function."
+  },
+  {
+    "index": 27,
+    "start": 107.84,
+    "end": 111.52,
+    "text": "Add biking distance will take in an apartment, and then use Google Maps to calculate the"
+  },
+  {
+    "index": 28,
+    "start": 111.52,
+    "end": 114.84,
+    "text": "distance."
+  },
+  {
+    "index": 29,
+    "start": 114.84,
+    "end": 117.96,
+    "text": "Now I don't want to wait for each of these searches to complete one by one, so let's"
+  },
+  {
+    "index": 30,
+    "start": 117.96,
+    "end": 119.52,
+    "text": "do this in parallel."
+  },
+  {
+    "index": 31,
+    "start": 119.52,
+    "end": 123.32,
+    "text": "Since this is Python, we can just use a thread pool to spin up multiple browsers, one for"
+  },
+  {
+    "index": 32,
+    "start": 123.32,
+    "end": 124.92,
+    "text": "each address."
+  },
+  {
+    "index": 33,
+    "start": 124.92,
+    "end": 130.36,
+    "text": "Finally, I'll use pandas to turn all these results into a table and sort my biking time"
+  },
+  {
+    "index": 34,
+    "start": 130.36,
+    "end": 133.56,
+    "text": "to the Caltrain station."
+  },
+  {
+    "index": 35,
+    "start": 133.56,
+    "end": 137.52,
+    "text": "We've checked the script into the samples folder of our GitHub repo, so feel free to"
+  },
+  {
+    "index": 36,
+    "start": 137.52,
+    "end": 140.28,
+    "text": "give it a try."
+  },
+  {
+    "index": 37,
+    "start": 140.28,
+    "end": 142.04,
+    "text": "And this is only one example."
+  },
+  {
+    "index": 38,
+    "start": 142.04,
+    "end": 144.36,
+    "text": "The SDK is yours to explore."
+  },
+  {
+    "index": 39,
+    "start": 144.36,
+    "end": 147.44,
+    "text": "You can also dive in and see what's possible with NOVA Act."
+  },
+  {
+    "index": 40,
+    "start": 147.44,
+    "end": 148.92,
+    "text": "We're really excited to see what you'll build."
+  }
+]

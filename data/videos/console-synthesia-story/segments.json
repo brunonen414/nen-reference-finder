@@ -1,0 +1,266 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.88,
+    "text": "When we first kind of got a demo of console, our Slack internal channel was kind of blowing"
+  },
+  {
+    "index": 1,
+    "start": 5.88,
+    "end": 9.76,
+    "text": "up with excitement and getting all like the potential of this is amazing."
+  },
+  {
+    "index": 2,
+    "start": 9.76,
+    "end": 11.96,
+    "text": "I'm Sam Williams, head of IT here at Synthesia."
+  },
+  {
+    "index": 3,
+    "start": 11.96,
+    "end": 15.8,
+    "text": "I'm responsible for the tech stack that employees use."
+  },
+  {
+    "index": 4,
+    "start": 15.8,
+    "end": 19.76,
+    "text": "Obviously console has some amazing features, but if I had to pick one, it really would"
+  },
+  {
+    "index": 5,
+    "start": 19.76,
+    "end": 23.4,
+    "text": "be the assistant within console."
+  },
+  {
+    "index": 6,
+    "start": 23.4,
+    "end": 29.16,
+    "text": "Being able to prompt it within a request is great, but it also understands the request"
+  },
+  {
+    "index": 7,
+    "start": 29.16,
+    "end": 33.8,
+    "text": "and suggests and tells you what it thinks it should do."
+  },
+  {
+    "index": 8,
+    "start": 33.8,
+    "end": 37.08,
+    "text": "The accuracy of that is actually very impressive."
+  },
+  {
+    "index": 9,
+    "start": 37.08,
+    "end": 41.0,
+    "text": "It is literally like they're an IT employee here at Synthesia."
+  },
+  {
+    "index": 10,
+    "start": 41.0,
+    "end": 48.0,
+    "text": "We've gone from replying within the request to just talking to the assistant and letting"
+  },
+  {
+    "index": 11,
+    "start": 48.0,
+    "end": 49.76,
+    "text": "the assistant do the work."
+  },
+  {
+    "index": 12,
+    "start": 49.76,
+    "end": 54.68,
+    "text": "I would now probably count in a funny way the console assistant as an employee in my"
+  },
+  {
+    "index": 13,
+    "start": 54.68,
+    "end": 55.68,
+    "text": "team."
+  },
+  {
+    "index": 14,
+    "start": 55.68,
+    "end": 63.24,
+    "text": "The bit that really got us going was the ability for us to write the automation, or as console"
+  },
+  {
+    "index": 15,
+    "start": 63.24,
+    "end": 68.32,
+    "text": "calls it, playbooks in pure natural language was a game changer for us."
+  },
+  {
+    "index": 16,
+    "start": 68.32,
+    "end": 74.96,
+    "text": "For general support, the average resolve time, I think off the top of my head, the JSM was"
+  },
+  {
+    "index": 17,
+    "start": 74.96,
+    "end": 79.64,
+    "text": "easy four or five hours just for first time responses."
+  },
+  {
+    "index": 18,
+    "start": 79.64,
+    "end": 81.88,
+    "text": "Console replies in a matter of minutes, not even that."
+  },
+  {
+    "index": 19,
+    "start": 81.88,
+    "end": 83.32,
+    "text": "I think it's under a minute right now."
+  },
+  {
+    "index": 20,
+    "start": 83.36,
+    "end": 87.12,
+    "text": "The automation is saving us easily 20x."
+  },
+  {
+    "index": 21,
+    "start": 87.12,
+    "end": 91.84,
+    "text": "We were going from about 25% automated in JSM."
+  },
+  {
+    "index": 22,
+    "start": 91.84,
+    "end": 98.4,
+    "text": "We're now sitting about 70 to 75% automation and seeing that kind of figure rise every"
+  },
+  {
+    "index": 23,
+    "start": 98.4,
+    "end": 100.08,
+    "text": "week or even every day."
+  },
+  {
+    "index": 24,
+    "start": 100.08,
+    "end": 105.88,
+    "text": "My core responsibility is that the tech stack that we use at Synthesia doesn't just work"
+  },
+  {
+    "index": 25,
+    "start": 105.88,
+    "end": 106.88,
+    "text": "for IT."
+  },
+  {
+    "index": 26,
+    "start": 106.88,
+    "end": 110.92,
+    "text": "It has to work for multiple teams, but also for the employees."
+  },
+  {
+    "index": 27,
+    "start": 111.04,
+    "end": 116.88,
+    "text": "Kind of biggest concern that console put to rest was the fact that it worked for not"
+  },
+  {
+    "index": 28,
+    "start": 116.88,
+    "end": 120.12,
+    "text": "just IT, but it worked for multiple teams."
+  },
+  {
+    "index": 29,
+    "start": 120.12,
+    "end": 125.24,
+    "text": "Their focus wasn't just solving IT's problem, it was solving every operational team's problem."
+  },
+  {
+    "index": 30,
+    "start": 125.24,
+    "end": 133.0,
+    "text": "To be able to see it handle not only IT requests, but the people team requests, DevOps requests,"
+  },
+  {
+    "index": 31,
+    "start": 133.0,
+    "end": 136.56,
+    "text": "integrations with our HR system, which is Hi Bob."
+  },
+  {
+    "index": 32,
+    "start": 136.6,
+    "end": 141.76,
+    "text": "That integrations with Salesforce, knowing that that was already there in place, was"
+  },
+  {
+    "index": 33,
+    "start": 141.76,
+    "end": 145.36,
+    "text": "imperative for us to get other teams by and for console."
+  },
+  {
+    "index": 34,
+    "start": 145.36,
+    "end": 149.56,
+    "text": "That was the moment I was like, I made the right decision here because I just managed"
+  },
+  {
+    "index": 35,
+    "start": 149.56,
+    "end": 152.4,
+    "text": "to support 600 odd employees on my own."
+  },
+  {
+    "index": 36,
+    "start": 152.4,
+    "end": 154.32,
+    "text": "We've become very reliant on it."
+  },
+  {
+    "index": 37,
+    "start": 154.32,
+    "end": 159.36,
+    "text": "If console disappears for us, I think it would be detrimental to my team and also for the"
+  },
+  {
+    "index": 38,
+    "start": 159.36,
+    "end": 160.36,
+    "text": "business."
+  },
+  {
+    "index": 39,
+    "start": 160.36,
+    "end": 164.44,
+    "text": "I remember putting in a request about a feature and then I woke up the next day and the feature"
+  },
+  {
+    "index": 40,
+    "start": 164.44,
+    "end": 168.96,
+    "text": "was live and I was like, okay, this is impressive, but maybe it's just a one off and it just"
+  },
+  {
+    "index": 41,
+    "start": 168.96,
+    "end": 171.28,
+    "text": "happened day after day, week after week."
+  },
+  {
+    "index": 42,
+    "start": 171.28,
+    "end": 174.72,
+    "text": "It's set a very high bar for other vendors that we work with."
+  },
+  {
+    "index": 43,
+    "start": 174.72,
+    "end": 176.8,
+    "text": "Console team has set that standard for us."
+  }
+]

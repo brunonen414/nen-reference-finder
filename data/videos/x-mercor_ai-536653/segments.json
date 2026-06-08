@@ -1,0 +1,188 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 3.44,
+    "text": "At Mercor, we deeply value academics and researchers."
+  },
+  {
+    "index": 1,
+    "start": 3.44,
+    "end": 9.08,
+    "text": "The Mercor platform allows academics to share their skills and knowledge with the next generation of models,"
+  },
+  {
+    "index": 2,
+    "start": 9.08,
+    "end": 12.68,
+    "text": "helping train, test, and improve them."
+  },
+  {
+    "index": 3,
+    "start": 12.68,
+    "end": 17.88,
+    "text": "We're excited to announce the first winner of our $50,000 fellowship, Neil,"
+  },
+  {
+    "index": 4,
+    "start": 17.88,
+    "end": 21.4,
+    "text": "who will be pursuing work in LLM reasoning and safety."
+  },
+  {
+    "index": 5,
+    "start": 21.4,
+    "end": 25.08,
+    "text": "I'm Neil Bend. I'm a third-year computer science PhD student at Stanford."
+  },
+  {
+    "index": 6,
+    "start": 25.08,
+    "end": 28.72,
+    "text": "I work on language models, especially making them trustworthy"
+  },
+  {
+    "index": 7,
+    "start": 28.72,
+    "end": 31.52,
+    "text": "and improving their reasoning capabilities."
+  },
+  {
+    "index": 8,
+    "start": 31.52,
+    "end": 35.36,
+    "text": "As AI models enter our lives through applications like chatbots,"
+  },
+  {
+    "index": 9,
+    "start": 35.36,
+    "end": 37.68,
+    "text": "or a code completion, or even medical diagnosis,"
+  },
+  {
+    "index": 10,
+    "start": 37.68,
+    "end": 43.0,
+    "text": "it's incredibly important that we can trust their outputs so we can make decisions based on them."
+  },
+  {
+    "index": 11,
+    "start": 43.0,
+    "end": 45.44,
+    "text": "The key barrier to that trust is hallucination,"
+  },
+  {
+    "index": 12,
+    "start": 45.44,
+    "end": 49.4,
+    "text": "which is when a model confidently says something that's completely wrong."
+  },
+  {
+    "index": 13,
+    "start": 49.4,
+    "end": 54.72,
+    "text": "To make language models more trustworthy, we worked on a method that enables them to say when they're unsure about something."
+  },
+  {
+    "index": 14,
+    "start": 54.72,
+    "end": 57.6,
+    "text": "So, for example, a medical diagnosis model could say,"
+  },
+  {
+    "index": 15,
+    "start": 57.6,
+    "end": 61.36,
+    "text": "the patient likely has condition A, but they might have condition B."
+  },
+  {
+    "index": 16,
+    "start": 61.36,
+    "end": 64.2,
+    "text": "For these statements of uncertainty to be useful to users,"
+  },
+  {
+    "index": 17,
+    "start": 64.2,
+    "end": 66.88,
+    "text": "they need to be calibrated in a statistical sense."
+  },
+  {
+    "index": 18,
+    "start": 66.88,
+    "end": 69.04,
+    "text": "And by that, we mean a statement like,"
+  },
+  {
+    "index": 19,
+    "start": 69.04,
+    "end": 72.56,
+    "text": "I am certain should correlate with the model actually being correct."
+  },
+  {
+    "index": 20,
+    "start": 72.56,
+    "end": 76.48,
+    "text": "Calibration is a classic field in statistical machine learning,"
+  },
+  {
+    "index": 21,
+    "start": 76.48,
+    "end": 79.12,
+    "text": "but it's mostly been applied to smaller models."
+  },
+  {
+    "index": 22,
+    "start": 79.12,
+    "end": 83.84,
+    "text": "And our focus was on applying statistical thinking to define and extend calibration"
+  },
+  {
+    "index": 23,
+    "start": 83.84,
+    "end": 90.0,
+    "text": "to large modern language models that might generate hundreds or thousands of words per user query."
+  },
+  {
+    "index": 24,
+    "start": 90.0,
+    "end": 94.36,
+    "text": "My current work is on reasoning and combines statistical thinking with modern approaches"
+  },
+  {
+    "index": 25,
+    "start": 94.36,
+    "end": 98.28,
+    "text": "in language model training like pre-training and synthetic data generation."
+  },
+  {
+    "index": 26,
+    "start": 98.28,
+    "end": 102.96,
+    "text": "Ultimately, our goal is to move towards reasoning systems that have an impact in the wild,"
+  },
+  {
+    "index": 27,
+    "start": 102.96,
+    "end": 106.84,
+    "text": "for example, in accelerating scientific discovery."
+  },
+  {
+    "index": 28,
+    "start": 106.84,
+    "end": 109.08,
+    "text": "I'm so grateful for the Mercor Graduate Fellowship."
+  },
+  {
+    "index": 29,
+    "start": 109.08,
+    "end": 114.36,
+    "text": "It's going to give me a lot of flexibility to pursue research and mentorship"
+  },
+  {
+    "index": 30,
+    "start": 114.36,
+    "end": 119.76,
+    "text": "and will also empower me and my collaborators to take on more ambitious and forward-looking research projects."
+  }
+]

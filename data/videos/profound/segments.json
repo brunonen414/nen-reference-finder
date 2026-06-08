@@ -1,0 +1,260 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 6.0,
+    "text": "For founders, there is $96 million at a $1 billion valuation to build a marketing platform for the age of AI."
+  },
+  {
+    "index": 1,
+    "start": 6.0,
+    "end": 11.0,
+    "text": "Our round was led by Lightspeed Venture Partners alongside Sequoia Capital, Kleiner Perkins and Avantik."
+  },
+  {
+    "index": 2,
+    "start": 11.0,
+    "end": 14.0,
+    "text": "Since we launched 18 months ago, we've had two core beliefs."
+  },
+  {
+    "index": 3,
+    "start": 14.0,
+    "end": 21.0,
+    "text": "First, every marketer on the planet will care deeply about how AI talks about their brand, products or services."
+  },
+  {
+    "index": 4,
+    "start": 21.0,
+    "end": 27.0,
+    "text": "Today, thousands of businesses, including 10% of the Fortune 500 and some of the biggest agencies on the planet,"
+  },
+  {
+    "index": 5,
+    "start": 27.0,
+    "end": 32.0,
+    "text": "rely on our platform to understand and control how their brand shows up in AI answers."
+  },
+  {
+    "index": 6,
+    "start": 32.0,
+    "end": 37.0,
+    "text": "And we've gone on to become the number one leader in answer engine optimization on the G2 grid,"
+  },
+  {
+    "index": 7,
+    "start": 37.0,
+    "end": 41.0,
+    "text": "which really showcases our obsession with building technology that our customers love."
+  },
+  {
+    "index": 8,
+    "start": 41.0,
+    "end": 46.0,
+    "text": "Our second belief is that every marketer will use AI agents to do great work faster."
+  },
+  {
+    "index": 9,
+    "start": 46.0,
+    "end": 49.0,
+    "text": "That's why today we're excited to announce profound agents."
+  },
+  {
+    "index": 10,
+    "start": 49.0,
+    "end": 53.0,
+    "text": "The world's top companies have already embedded profound agents throughout their marketing teams,"
+  },
+  {
+    "index": 11,
+    "start": 53.0,
+    "end": 57.0,
+    "text": "from SEO to content to PR and even demand gen."
+  },
+  {
+    "index": 12,
+    "start": 57.0,
+    "end": 59.0,
+    "text": "And the results so far have been remarkable."
+  },
+  {
+    "index": 13,
+    "start": 59.0,
+    "end": 63.0,
+    "text": "We believe that this level of depth will birth a new kind of marketer."
+  },
+  {
+    "index": 14,
+    "start": 63.0,
+    "end": 68.0,
+    "text": "For instance, let's say a sentiment agent alerts us about a surge in negative chatter about our Salesforce integration."
+  },
+  {
+    "index": 15,
+    "start": 68.0,
+    "end": 73.0,
+    "text": "So, engineering shifts affix, I orchestrate three highly autonomous profound agents"
+  },
+  {
+    "index": 16,
+    "start": 73.0,
+    "end": 77.0,
+    "text": "to directly influence AI's understanding of our updated integration."
+  },
+  {
+    "index": 17,
+    "start": 77.0,
+    "end": 83.0,
+    "text": "The first agent creates positive user-generated content by finding users benefiting from the new integration improvements"
+  },
+  {
+    "index": 18,
+    "start": 83.0,
+    "end": 87.0,
+    "text": "in drafting emails asking for authentic G2 reviews."
+  },
+  {
+    "index": 19,
+    "start": 87.0,
+    "end": 91.0,
+    "text": "Another identifies the top-sided articles causing sentiment to drop, finds the authors,"
+  },
+  {
+    "index": 20,
+    "start": 91.0,
+    "end": 97.0,
+    "text": "and then drafts personalized outreach with suggested positive corrections for the new integration."
+  },
+  {
+    "index": 21,
+    "start": 97.0,
+    "end": 103.0,
+    "text": "And the final agent optimizes our own content by updating CMS articles to reflect the integration improvements"
+  },
+  {
+    "index": 22,
+    "start": 103.0,
+    "end": 107.0,
+    "text": "and then pings the content team for review once staged."
+  },
+  {
+    "index": 23,
+    "start": 107.0,
+    "end": 108.0,
+    "text": "The best part?"
+  },
+  {
+    "index": 24,
+    "start": 108.0,
+    "end": 114.0,
+    "text": "Profound agents work within your existing tech stack because we build partnerships with companies that you use daily."
+  },
+  {
+    "index": 25,
+    "start": 114.0,
+    "end": 119.0,
+    "text": "Just like Gamma, which let agents take AEO data from profound to create detailed reports and presentations"
+  },
+  {
+    "index": 26,
+    "start": 119.0,
+    "end": 122.0,
+    "text": "to share with your team, saving you hours of time."
+  },
+  {
+    "index": 27,
+    "start": 122.0,
+    "end": 128.0,
+    "text": "And with Sanity, reducing manual work by having AI agents draft in-stage content directly in your CMS."
+  },
+  {
+    "index": 28,
+    "start": 128.0,
+    "end": 130.0,
+    "text": "So, all you have to do is review and publish."
+  },
+  {
+    "index": 29,
+    "start": 130.0,
+    "end": 135.0,
+    "text": "In Versel V0, for demand-gen teams who are bottlenecked by developer resources,"
+  },
+  {
+    "index": 30,
+    "start": 135.0,
+    "end": 141.0,
+    "text": "you can now ship highly relevant landing pages based on profound topics, prompts, and other data in just a matter of minutes."
+  },
+  {
+    "index": 31,
+    "start": 141.0,
+    "end": 149.0,
+    "text": "Hundreds of teams at companies such as MongoDB, Figma, and US Bank are now using profound agents on a daily basis to do more."
+  },
+  {
+    "index": 32,
+    "start": 149.0,
+    "end": 153.0,
+    "text": "If you would like to try out one of the most popular profound agents with no strings attached,"
+  },
+  {
+    "index": 33,
+    "start": 153.0,
+    "end": 158.0,
+    "text": "simply comment the word agents below and I'll personally DM you access details."
+  },
+  {
+    "index": 34,
+    "start": 158.0,
+    "end": 164.0,
+    "text": "By working across your stack, we believe that profound agents are able to 10x the productivity of the modern marketer."
+  },
+  {
+    "index": 35,
+    "start": 164.0,
+    "end": 169.0,
+    "text": "Engineers have cursor, lawyers have Harvey, and marketers have profound."
+  },
+  {
+    "index": 36,
+    "start": 169.0,
+    "end": 173.0,
+    "text": "Today, we're also excited to announce Profound University,"
+  },
+  {
+    "index": 37,
+    "start": 173.0,
+    "end": 183.0,
+    "text": "a series of certifications, courses, and cohort-based learning that will turn you into an expert in building, deploying, and managing agents."
+  },
+  {
+    "index": 38,
+    "start": 183.0,
+    "end": 187.0,
+    "text": "Through education, events, and a sophisticated partnership program,"
+  },
+  {
+    "index": 39,
+    "start": 187.0,
+    "end": 191.0,
+    "text": "we're building a global community of marketers that want to redefine the way they work."
+  },
+  {
+    "index": 40,
+    "start": 191.0,
+    "end": 194.0,
+    "text": "Today's series C announcement really is just the beginning."
+  },
+  {
+    "index": 41,
+    "start": 194.0,
+    "end": 198.0,
+    "text": "We want to say thank you to our customers and partners for allowing us to be here today."
+  },
+  {
+    "index": 42,
+    "start": 198.0,
+    "end": 201.0,
+    "text": "So, with all that said, let's get to work."
+  }
+]

@@ -1,0 +1,422 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 2.0,
+    "text": "That was good. That was the best take."
+  },
+  {
+    "index": 1,
+    "start": 7.28,
+    "end": 10.08,
+    "text": "It's 9am. You spent all week perfecting the backend,"
+  },
+  {
+    "index": 2,
+    "start": 10.08,
+    "end": 12.08,
+    "text": "and now it's time to show what it can do."
+  },
+  {
+    "index": 3,
+    "start": 12.08,
+    "end": 15.36,
+    "text": "But turning it into an actual web app is never that easy."
+  },
+  {
+    "index": 4,
+    "start": 15.36,
+    "end": 18.64,
+    "text": "You can either wrestle with low-code tools that crumble at scale,"
+  },
+  {
+    "index": 5,
+    "start": 18.64,
+    "end": 20.32,
+    "text": "or learn the whole front-end stack."
+  },
+  {
+    "index": 6,
+    "start": 20.32,
+    "end": 23.04,
+    "text": "React, JavaScript, routing, bundlers,"
+  },
+  {
+    "index": 7,
+    "start": 23.04,
+    "end": 25.72,
+    "text": "when that's not your domain or expertise."
+  },
+  {
+    "index": 8,
+    "start": 25.72,
+    "end": 28.64,
+    "text": "AI helps, but that code rarely survives production."
+  },
+  {
+    "index": 9,
+    "start": 28.64,
+    "end": 31.76,
+    "text": "It just leaves you a tech deck that quickly piles up."
+  },
+  {
+    "index": 10,
+    "start": 31.76,
+    "end": 34.28,
+    "text": "All you want to do is ship fast, clean,"
+  },
+  {
+    "index": 11,
+    "start": 34.28,
+    "end": 36.28,
+    "text": "and in the language you know best, Python."
+  },
+  {
+    "index": 12,
+    "start": 37.32,
+    "end": 39.4,
+    "text": "That's exactly why we started Reflex,"
+  },
+  {
+    "index": 13,
+    "start": 39.4,
+    "end": 42.96,
+    "text": "an open-source framework to build web apps in pure Python."
+  },
+  {
+    "index": 14,
+    "start": 42.96,
+    "end": 46.48,
+    "text": "Since our launch, people have built over 1 million apps in Reflex,"
+  },
+  {
+    "index": 15,
+    "start": 46.48,
+    "end": 51.24,
+    "text": "and 30% of the Fortune 500 use Reflex for their internal tooling."
+  },
+  {
+    "index": 16,
+    "start": 51.24,
+    "end": 53.96,
+    "text": "Today, we're launching Reflex Build,"
+  },
+  {
+    "index": 17,
+    "start": 53.96,
+    "end": 57.6,
+    "text": "the first AI app builder that helps Python developers go from an idea"
+  },
+  {
+    "index": 18,
+    "start": 57.6,
+    "end": 59.52,
+    "text": "to an enterprise-grade web app,"
+  },
+  {
+    "index": 19,
+    "start": 59.52,
+    "end": 62.64,
+    "text": "all without switching tools or learning front-end frameworks."
+  },
+  {
+    "index": 20,
+    "start": 63.52,
+    "end": 65.16,
+    "text": "We're the only vibe coding tool"
+  },
+  {
+    "index": 21,
+    "start": 65.16,
+    "end": 68.08,
+    "text": "that owns the underlying framework that it builds in."
+  },
+  {
+    "index": 22,
+    "start": 69.48,
+    "end": 72.32,
+    "text": "Connect with your company data sources,"
+  },
+  {
+    "index": 23,
+    "start": 72.32,
+    "end": 76.88,
+    "text": "enter a prompt, and Reflex builds the entire application."
+  },
+  {
+    "index": 24,
+    "start": 76.88,
+    "end": 78.56,
+    "text": "You get the speed of vibe coding"
+  },
+  {
+    "index": 25,
+    "start": 78.56,
+    "end": 81.6,
+    "text": "while still being able to understand all the underlying code"
+  },
+  {
+    "index": 26,
+    "start": 81.6,
+    "end": 83.76,
+    "text": "that the agent produces."
+  },
+  {
+    "index": 27,
+    "start": 83.76,
+    "end": 86.68,
+    "text": "It's the only AI app builder that builds full-stack apps"
+  },
+  {
+    "index": 28,
+    "start": 86.68,
+    "end": 92.44,
+    "text": "in pure Python and hooks up with any Python package, API, or data source."
+  },
+  {
+    "index": 29,
+    "start": 92.44,
+    "end": 96.8,
+    "text": "Let's build an enterprise-grade internal app for a Fortune 500 company."
+  },
+  {
+    "index": 30,
+    "start": 96.8,
+    "end": 98.84,
+    "text": "We'll connect to our Databricks data,"
+  },
+  {
+    "index": 31,
+    "start": 98.84,
+    "end": 101.4,
+    "text": "set up Slack alerts for critical values,"
+  },
+  {
+    "index": 32,
+    "start": 101.4,
+    "end": 104.36,
+    "text": "and secure the app with Octo authentication."
+  },
+  {
+    "index": 33,
+    "start": 104.36,
+    "end": 106.68,
+    "text": "We start with our data inside Databricks."
+  },
+  {
+    "index": 34,
+    "start": 106.68,
+    "end": 108.8,
+    "text": "Here, we're working with two joint tables,"
+  },
+  {
+    "index": 35,
+    "start": 108.8,
+    "end": 112.24,
+    "text": "sales transactions and sales franchise information."
+  },
+  {
+    "index": 36,
+    "start": 112.24,
+    "end": 116.16,
+    "text": "We enable the Databricks integration and configure our API keys."
+  },
+  {
+    "index": 37,
+    "start": 116.16,
+    "end": 118.64,
+    "text": "The agent validates the integration"
+  },
+  {
+    "index": 38,
+    "start": 118.64,
+    "end": 121.56,
+    "text": "and ensures that it can query the data."
+  },
+  {
+    "index": 39,
+    "start": 121.56,
+    "end": 123.64,
+    "text": "Then it begins building the app."
+  },
+  {
+    "index": 40,
+    "start": 123.64,
+    "end": 126.4,
+    "text": "The next step is to create an insight from this data."
+  },
+  {
+    "index": 41,
+    "start": 126.4,
+    "end": 129.32,
+    "text": "We'll generate a graph showing total sales by country"
+  },
+  {
+    "index": 42,
+    "start": 129.32,
+    "end": 131.96,
+    "text": "based on the franchise location."
+  },
+  {
+    "index": 43,
+    "start": 131.96,
+    "end": 136.04,
+    "text": "Behind the scenes, the AI writes and executes queries"
+  },
+  {
+    "index": 44,
+    "start": 136.04,
+    "end": 138.12,
+    "text": "to join the two different tables."
+  },
+  {
+    "index": 45,
+    "start": 138.12,
+    "end": 140.48,
+    "text": "Test to confirm everything works as expected"
+  },
+  {
+    "index": 46,
+    "start": 140.48,
+    "end": 142.8,
+    "text": "and then adds the interactive charts to the app."
+  },
+  {
+    "index": 47,
+    "start": 143.76,
+    "end": 147.64,
+    "text": "From here, we'll add Slack to send transaction alerts."
+  },
+  {
+    "index": 48,
+    "start": 147.64,
+    "end": 150.44,
+    "text": "The builder currently does not have a native Slack integration,"
+  },
+  {
+    "index": 49,
+    "start": 150.44,
+    "end": 151.6,
+    "text": "but that's okay."
+  },
+  {
+    "index": 50,
+    "start": 151.6,
+    "end": 153.44,
+    "text": "Our agent searches the web"
+  },
+  {
+    "index": 51,
+    "start": 153.44,
+    "end": 156.16,
+    "text": "and installs the correct Python libraries."
+  },
+  {
+    "index": 52,
+    "start": 156.16,
+    "end": 160.64,
+    "text": "It tests the integration and alerts us that API keys need to be added."
+  },
+  {
+    "index": 53,
+    "start": 160.64,
+    "end": 164.64,
+    "text": "Finally, no enterprise app is complete without authentication,"
+  },
+  {
+    "index": 54,
+    "start": 164.64,
+    "end": 167.68,
+    "text": "so we'll add Octo authentication to secure the app,"
+  },
+  {
+    "index": 55,
+    "start": 167.68,
+    "end": 171.6,
+    "text": "ensuring the application is protected and enterprise-ready."
+  },
+  {
+    "index": 56,
+    "start": 171.72,
+    "end": 174.64,
+    "text": "To finish off, we'll let the AI test the app itself,"
+  },
+  {
+    "index": 57,
+    "start": 174.64,
+    "end": 178.32,
+    "text": "acting like a real user, clicking through the app to find bugs,"
+  },
+  {
+    "index": 58,
+    "start": 178.32,
+    "end": 181.6,
+    "text": "highlight areas for improvement, and even suggest new features."
+  },
+  {
+    "index": 59,
+    "start": 187.2,
+    "end": 191.08,
+    "text": "When you finish edits and it's ready, you hit deploy."
+  },
+  {
+    "index": 60,
+    "start": 191.08,
+    "end": 194.0,
+    "text": "Once your app is built, we don't lock you in."
+  },
+  {
+    "index": 61,
+    "start": 194.0,
+    "end": 199.0,
+    "text": "You can deploy to Reflex Cloud or any cloud provider of your choice."
+  },
+  {
+    "index": 62,
+    "start": 199.12,
+    "end": 201.96,
+    "text": "Here, we're going to select Reflex Cloud."
+  },
+  {
+    "index": 63,
+    "start": 201.96,
+    "end": 204.76,
+    "text": "You can then scale the app with multiple regions"
+  },
+  {
+    "index": 64,
+    "start": 204.76,
+    "end": 207.44,
+    "text": "and set access control, custom domains,"
+  },
+  {
+    "index": 65,
+    "start": 207.44,
+    "end": 211.64,
+    "text": "and who on the team can view and edit the configuration of the app."
+  },
+  {
+    "index": 66,
+    "start": 211.64,
+    "end": 213.6,
+    "text": "This is how Python apps should be built."
+  },
+  {
+    "index": 67,
+    "start": 213.6,
+    "end": 218.28,
+    "text": "Fast, clean, while being customizable and perform enough for any use case."
+  },
+  {
+    "index": 68,
+    "start": 218.28,
+    "end": 220.04,
+    "text": "Stop the vibe code mess."
+  },
+  {
+    "index": 69,
+    "start": 220.04,
+    "end": 223.08,
+    "text": "Use Reflex for your enterprise-grade applications."
+  }
+]

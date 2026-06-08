@@ -1,0 +1,248 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 2.0,
+    "text": "That's role. And I'm looking at you, Rich."
+  },
+  {
+    "index": 1,
+    "start": 2.0,
+    "end": 5.0,
+    "text": "When I worked at Robin Hood, I bumped into my dentist"
+  },
+  {
+    "index": 2,
+    "start": 5.0,
+    "end": 7.0,
+    "text": "and he knew that I was looking for something."
+  },
+  {
+    "index": 3,
+    "start": 7.0,
+    "end": 10.0,
+    "text": "So he asked me, do you want to see how I run my finances?"
+  },
+  {
+    "index": 4,
+    "start": 10.0,
+    "end": 12.0,
+    "text": "And I said, absolutely."
+  },
+  {
+    "index": 5,
+    "start": 12.0,
+    "end": 16.0,
+    "text": "He walked me to his back office and it looked like the 70s all over again."
+  },
+  {
+    "index": 6,
+    "start": 19.0,
+    "end": 23.0,
+    "text": "I left Robin Hood and then took a 9-5 job in Dr. Kwan's office."
+  },
+  {
+    "index": 7,
+    "start": 23.0,
+    "end": 26.0,
+    "text": "The more time we spent with Dr. Kwan, the more we were convinced"
+  },
+  {
+    "index": 8,
+    "start": 26.0,
+    "end": 29.0,
+    "text": "that if we can help them put their business on autopilot"
+  },
+  {
+    "index": 9,
+    "start": 29.0,
+    "end": 33.0,
+    "text": "that would be like a massive opportunity to pursue, so we couldn't resist."
+  },
+  {
+    "index": 10,
+    "start": 33.0,
+    "end": 37.0,
+    "text": "I remember like I kind of couldn't fathom that people were doing this every day."
+  },
+  {
+    "index": 11,
+    "start": 37.0,
+    "end": 42.0,
+    "text": "It just felt like an insurmountable mountain, but I was like stuck on a treadmill."
+  },
+  {
+    "index": 12,
+    "start": 42.0,
+    "end": 44.0,
+    "text": "I just could never catch up."
+  },
+  {
+    "index": 13,
+    "start": 44.0,
+    "end": 47.0,
+    "text": "In the beginning it was me solo doing everything."
+  },
+  {
+    "index": 14,
+    "start": 47.0,
+    "end": 55.0,
+    "text": "Appointments, collecting money, a lot of hours dedicated to non-clinical aspects of practice."
+  },
+  {
+    "index": 15,
+    "start": 55.0,
+    "end": 59.0,
+    "text": "The most doctors that we met, they really just wanted to kind of serve their community"
+  },
+  {
+    "index": 16,
+    "start": 59.0,
+    "end": 61.0,
+    "text": "and be a great doctor."
+  },
+  {
+    "index": 17,
+    "start": 61.0,
+    "end": 64.0,
+    "text": "As a result of opening their own office, they basically had to spend all their day"
+  },
+  {
+    "index": 18,
+    "start": 64.0,
+    "end": 67.0,
+    "text": "putting up job postings, doing all this paperwork."
+  },
+  {
+    "index": 19,
+    "start": 67.0,
+    "end": 70.0,
+    "text": "I think we got really excited about what does it look like"
+  },
+  {
+    "index": 20,
+    "start": 70.0,
+    "end": 74.0,
+    "text": "if these practices just kind of run on their own and the doctors can go back to being doctors."
+  },
+  {
+    "index": 21,
+    "start": 74.0,
+    "end": 78.0,
+    "text": "We thought by hanging out with these doctors and working in their practices,"
+  },
+  {
+    "index": 22,
+    "start": 78.0,
+    "end": 80.0,
+    "text": "we had a good idea on how to do it."
+  },
+  {
+    "index": 23,
+    "start": 81.0,
+    "end": 84.0,
+    "text": "It took us almost a year not writing any code."
+  },
+  {
+    "index": 24,
+    "start": 84.0,
+    "end": 86.0,
+    "text": "We talked to primary care physicians."
+  },
+  {
+    "index": 25,
+    "start": 86.0,
+    "end": 89.0,
+    "text": "We worked for a chastronologist in Scranton, Pennsylvania."
+  },
+  {
+    "index": 26,
+    "start": 89.0,
+    "end": 93.0,
+    "text": "We punched in a million dollars in insurance payments, type, type, type, type, type,"
+  },
+  {
+    "index": 27,
+    "start": 93.0,
+    "end": 96.0,
+    "text": "until we really understood, oh, this is how you do it."
+  },
+  {
+    "index": 28,
+    "start": 96.0,
+    "end": 98.0,
+    "text": "And then we started building software."
+  },
+  {
+    "index": 29,
+    "start": 98.0,
+    "end": 101.0,
+    "text": "We went on this roadshow together, Frederic and I, because we thought,"
+  },
+  {
+    "index": 30,
+    "start": 101.0,
+    "end": 104.0,
+    "text": "okay, we've built a really great first product, we need to install it"
+  },
+  {
+    "index": 31,
+    "start": 104.0,
+    "end": 107.0,
+    "text": "and like work with all these different doctors across the country."
+  },
+  {
+    "index": 32,
+    "start": 107.0,
+    "end": 111.0,
+    "text": "We realized that we needed to build something that would just run on its own."
+  },
+  {
+    "index": 33,
+    "start": 111.0,
+    "end": 115.0,
+    "text": "This thing needs to work reliably, whether or not somebody is checking on it."
+  },
+  {
+    "index": 34,
+    "start": 116.0,
+    "end": 119.0,
+    "text": "Every month we're saving over 100 hours."
+  },
+  {
+    "index": 35,
+    "start": 119.0,
+    "end": 123.0,
+    "text": "And that's just really freed us up to focus on the patient experience."
+  },
+  {
+    "index": 36,
+    "start": 123.0,
+    "end": 127.0,
+    "text": "And seeing what Lassie can do is incredible"
+  },
+  {
+    "index": 37,
+    "start": 127.0,
+    "end": 132.0,
+    "text": "and is something that I can't imagine any practice won't benefit tremendously."
+  },
+  {
+    "index": 38,
+    "start": 132.0,
+    "end": 135.0,
+    "text": "Our goal is the small business that runs itself."
+  },
+  {
+    "index": 39,
+    "start": 135.0,
+    "end": 139.0,
+    "text": "If we succeed helping all the dental practices and then all the health practices,"
+  },
+  {
+    "index": 40,
+    "start": 139.0,
+    "end": 143.0,
+    "text": "we will go on and help all the small businesses in the world run their business."
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 7.74,
+    "text": "We raised $30 million from Sequoia, ATVC and ASTAR to build AI agents to learn how your"
+  },
+  {
+    "index": 1,
+    "start": 7.74,
+    "end": 11.24,
+    "text": "processes actually run and then run your operations."
+  },
+  {
+    "index": 2,
+    "start": 11.24,
+    "end": 13.4,
+    "text": "Here's what makes Enterprise AI hard."
+  },
+  {
+    "index": 3,
+    "start": 13.4,
+    "end": 17.68,
+    "text": "Your company's processes are specific, but the models are generic."
+  },
+  {
+    "index": 4,
+    "start": 17.68,
+    "end": 22.38,
+    "text": "The way to bridge this gap is providing context in the form of a clear set of instructions"
+  },
+  {
+    "index": 5,
+    "start": 22.38,
+    "end": 24.46,
+    "text": "for the models to execute."
+  },
+  {
+    "index": 6,
+    "start": 24.46,
+    "end": 28.88,
+    "text": "But do you have written instructions complete enough so I could run one of your company's"
+  },
+  {
+    "index": 7,
+    "start": 28.88,
+    "end": 29.88,
+    "text": "processes?"
+  },
+  {
+    "index": 8,
+    "start": 29.88,
+    "end": 33.24,
+    "text": "If you don't, you're missing what AI needs to be effective."
+  },
+  {
+    "index": 9,
+    "start": 33.24,
+    "end": 37.0,
+    "text": "Even though you don't have them written, the data on how your processes are running today"
+  },
+  {
+    "index": 10,
+    "start": 37.0,
+    "end": 38.92,
+    "text": "is in your systems of record."
+  },
+  {
+    "index": 11,
+    "start": 38.92,
+    "end": 44.36,
+    "text": "EDR reads this data, such as tickets, logs, emails, and reverse-engineers your processes,"
+  },
+  {
+    "index": 12,
+    "start": 44.36,
+    "end": 46.04,
+    "text": "policies and skills."
+  },
+  {
+    "index": 13,
+    "start": 46.04,
+    "end": 51.0,
+    "text": "We then deploy agents equipped with your library of executable knowledge so they start automating"
+  },
+  {
+    "index": 14,
+    "start": 51.0,
+    "end": 54.0,
+    "text": "work, adhering to your specific processes."
+  },
+  {
+    "index": 15,
+    "start": 54.0,
+    "end": 57.2,
+    "text": "With EDR, as your company evolves, so does your knowledge."
+  },
+  {
+    "index": 16,
+    "start": 57.2,
+    "end": 62.72,
+    "text": "EDR continuously learns, spotting inconsistencies, process changes and gaps, bringing them to"
+  },
+  {
+    "index": 17,
+    "start": 62.72,
+    "end": 66.2,
+    "text": "your teams of experts to approve or dismiss."
+  },
+  {
+    "index": 18,
+    "start": 66.2,
+    "end": 70.76,
+    "text": "Operators in a company go from just doing the work to also teaching your company's AI"
+  },
+  {
+    "index": 19,
+    "start": 70.76,
+    "end": 71.76,
+    "text": "agents."
+  },
+  {
+    "index": 20,
+    "start": 71.76,
+    "end": 77.4,
+    "text": "Industry leaders like HubSpot, ASOS, Cushman and Wakefield and Avanti use EDR to run their"
+  },
+  {
+    "index": 21,
+    "start": 77.4,
+    "end": 81.6,
+    "text": "processes like IT service management, technical support, and more."
+  },
+  {
+    "index": 22,
+    "start": 81.6,
+    "end": 85.84,
+    "text": "Today, we're coming out of stealth and we're opening pilots broadly."
+  },
+  {
+    "index": 23,
+    "start": 85.84,
+    "end": 90.0,
+    "text": "The only thing we need to get started is a cut of your data and in one week we'll show"
+  },
+  {
+    "index": 24,
+    "start": 90.0,
+    "end": 91.52,
+    "text": "you your processes."
+  },
+  {
+    "index": 25,
+    "start": 91.52,
+    "end": 94.24,
+    "text": "Clear, executable, and ready for agents."
+  }
+]

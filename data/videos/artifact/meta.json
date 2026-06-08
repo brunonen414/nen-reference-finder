@@ -1,0 +1,22 @@
+{
+  "video_id": "artifact",
+  "source": "https://www.linkedin.com/feed/update/urn:li:activity:7363994752570040322/",
+  "title": "Artifact — Launch Video",
+  "duration": "2:44",
+  "res": "1280×720",
+  "speakers": "—",
+  "width": 1280,
+  "height": 720,
+  "duration_s": 163.6,
+  "n_lines": 22,
+  "sheet": {
+    "video_id": "artifact",
+    "brand": "Artifact",
+    "platform_used": "linkedin",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7363994752570040322/",
+    "x_url": "",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7363994752570040322/",
+    "length_stated": "2:43",
+    "type_of_video": "Skit Hybrid: punchy skit hook -> founder explanation"
+  }
+}

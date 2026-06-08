@@ -1,0 +1,122 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 5.0,
+    "text": "Imagine scaling your operations by 500,000 people in one month."
+  },
+  {
+    "index": 1,
+    "start": 5.0,
+    "end": 8.0,
+    "text": "That's what we had to pull off at Instacart during COVID."
+  },
+  {
+    "index": 2,
+    "start": 8.0,
+    "end": 12.0,
+    "text": "Our operations teams were overwhelmed with this challenge."
+  },
+  {
+    "index": 3,
+    "start": 12.0,
+    "end": 16.0,
+    "text": "And given their limited resources and tools, we knew they must be a better way."
+  },
+  {
+    "index": 4,
+    "start": 16.0,
+    "end": 21.0,
+    "text": "So we left Instacart and raised $8 million to build Champ AI"
+  },
+  {
+    "index": 5,
+    "start": 21.0,
+    "end": 25.0,
+    "text": "so operations teams would never have to scale manually again."
+  },
+  {
+    "index": 6,
+    "start": 25.0,
+    "end": 28.0,
+    "text": "Here's the problem with operations at scale."
+  },
+  {
+    "index": 7,
+    "start": 28.0,
+    "end": 33.0,
+    "text": "Every step in growth introduces new requirements and new operational complexity."
+  },
+  {
+    "index": 8,
+    "start": 33.0,
+    "end": 38.0,
+    "text": "Anything with clean APIs and structured data gets automated fast."
+  },
+  {
+    "index": 9,
+    "start": 38.0,
+    "end": 42.0,
+    "text": "But the work that lives between the tools, reading messy documents,"
+  },
+  {
+    "index": 10,
+    "start": 42.0,
+    "end": 46.0,
+    "text": "navigating government models for tax and compliance, calling insurance companies,"
+  },
+  {
+    "index": 11,
+    "start": 46.0,
+    "end": 50.0,
+    "text": "that work has stayed manual. Until now."
+  },
+  {
+    "index": 12,
+    "start": 50.0,
+    "end": 55.0,
+    "text": "Champ is an AI agent's platform that turns your manual processes into software."
+  },
+  {
+    "index": 13,
+    "start": 55.0,
+    "end": 60.0,
+    "text": "Here's how it works. You upload an SOP, Champ automates the rest."
+  },
+  {
+    "index": 14,
+    "start": 60.0,
+    "end": 66.0,
+    "text": "Browser agents navigate portals, document agents read and extract, voice agents make calls."
+  },
+  {
+    "index": 15,
+    "start": 66.0,
+    "end": 70.0,
+    "text": "All orchestrated together, not stitched from three different vendors."
+  },
+  {
+    "index": 16,
+    "start": 70.0,
+    "end": 75.0,
+    "text": "When an agent needs your input, it notifies your team, so you stay in control."
+  },
+  {
+    "index": 17,
+    "start": 75.0,
+    "end": 80.0,
+    "text": "Today, we're working with many mission-critical industries, such as healthcare and logistics,"
+  },
+  {
+    "index": 18,
+    "start": 80.0,
+    "end": 83.0,
+    "text": "automating their most complex operations."
+  },
+  {
+    "index": 19,
+    "start": 83.0,
+    "end": 87.0,
+    "text": "Visit champ.ai and get your first workflow automated for free."
+  }
+]

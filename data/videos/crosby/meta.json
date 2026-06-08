@@ -1,0 +1,22 @@
+{
+  "video_id": "crosby",
+  "source": "https://www.linkedin.com/feed/update/urn:li:activity:7381737537993822208/",
+  "title": "Crosby — Launch Video",
+  "duration": "1:39",
+  "res": "1280×720",
+  "speakers": "—",
+  "width": 1280,
+  "height": 720,
+  "duration_s": 99.1,
+  "n_lines": 29,
+  "sheet": {
+    "video_id": "crosby",
+    "brand": "Crosby",
+    "platform_used": "linkedin",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7381737537993822208/",
+    "x_url": "",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7381737537993822208/",
+    "length_stated": "1:39",
+    "type_of_video": "Explainer: static founder delivery + planned b-roll/customer interviews + UI/motion"
+  }
+}

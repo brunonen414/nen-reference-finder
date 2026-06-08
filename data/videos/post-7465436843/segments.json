@@ -1,0 +1,218 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 3.12,
+    "text": "Byron is building AI agents for tax."
+  },
+  {
+    "index": 1,
+    "start": 3.12,
+    "end": 6.04,
+    "text": "There are too many documents, not enough people."
+  },
+  {
+    "index": 2,
+    "start": 6.04,
+    "end": 8.8,
+    "text": "Every season, this just keeps getting worse."
+  },
+  {
+    "index": 3,
+    "start": 8.8,
+    "end": 12.96,
+    "text": "So we raised six and a half million dollars to fix it."
+  },
+  {
+    "index": 4,
+    "start": 12.96,
+    "end": 14.52,
+    "text": "The tools just haven't kept up."
+  },
+  {
+    "index": 5,
+    "start": 14.52,
+    "end": 16.44,
+    "text": "Accountants still key in data by hand,"
+  },
+  {
+    "index": 6,
+    "start": 16.44,
+    "end": 19.44,
+    "text": "form by form, field by field for every return."
+  },
+  {
+    "index": 7,
+    "start": 19.44,
+    "end": 22.04,
+    "text": "And all of this is automated with Byron,"
+  },
+  {
+    "index": 8,
+    "start": 22.04,
+    "end": 23.88,
+    "text": "our business tax platform."
+  },
+  {
+    "index": 9,
+    "start": 23.88,
+    "end": 27.32,
+    "text": "Partnerships, S-Corps, C-Corps, all done."
+  },
+  {
+    "index": 10,
+    "start": 27.32,
+    "end": 29.56,
+    "text": "Byron pulls in prior year financials"
+  },
+  {
+    "index": 11,
+    "start": 29.64,
+    "end": 32.6,
+    "text": "and automatically generates new Excel workbooks"
+  },
+  {
+    "index": 12,
+    "start": 32.6,
+    "end": 34.0,
+    "text": "with live formulas."
+  },
+  {
+    "index": 13,
+    "start": 34.0,
+    "end": 37.0,
+    "text": "Schedule and adjustments computed automatically."
+  },
+  {
+    "index": 14,
+    "start": 37.0,
+    "end": 39.36,
+    "text": "State modifications, hand on."
+  },
+  {
+    "index": 15,
+    "start": 39.36,
+    "end": 42.12,
+    "text": "Same as last year, in minutes."
+  },
+  {
+    "index": 16,
+    "start": 42.12,
+    "end": 44.12,
+    "text": "It also handles your most complex documents,"
+  },
+  {
+    "index": 17,
+    "start": 44.12,
+    "end": 46.88,
+    "text": "including K1 packages with footnotes,"
+  },
+  {
+    "index": 18,
+    "start": 46.88,
+    "end": 49.16,
+    "text": "state variants and K3s,"
+  },
+  {
+    "index": 19,
+    "start": 49.16,
+    "end": 52.08,
+    "text": "and feeds this directly into your workflows."
+  },
+  {
+    "index": 20,
+    "start": 52.08,
+    "end": 53.88,
+    "text": "Byron processes every document"
+  },
+  {
+    "index": 21,
+    "start": 53.88,
+    "end": 56.2,
+    "text": "and tells your team exactly where to look."
+  },
+  {
+    "index": 22,
+    "start": 56.2,
+    "end": 58.04,
+    "text": "Every field gets a confidence score."
+  },
+  {
+    "index": 23,
+    "start": 58.04,
+    "end": 59.68,
+    "text": "High confidence, it's ready."
+  },
+  {
+    "index": 24,
+    "start": 59.68,
+    "end": 61.28,
+    "text": "Something off, it's flagged."
+  },
+  {
+    "index": 25,
+    "start": 61.28,
+    "end": 64.24,
+    "text": "Something missing, Byron reaches out to your client."
+  },
+  {
+    "index": 26,
+    "start": 64.24,
+    "end": 66.92,
+    "text": "Your team only reviews the exceptions."
+  },
+  {
+    "index": 27,
+    "start": 66.92,
+    "end": 69.76,
+    "text": "Our team came out of Amazon's AGI org"
+  },
+  {
+    "index": 28,
+    "start": 69.76,
+    "end": 71.64,
+    "text": "and we've already processed hundreds"
+  },
+  {
+    "index": 29,
+    "start": 71.64,
+    "end": 73.16,
+    "text": "of thousands of documents."
+  },
+  {
+    "index": 30,
+    "start": 73.16,
+    "end": 76.04,
+    "text": "We partner with platforms like Trust and Canopy"
+  },
+  {
+    "index": 31,
+    "start": 76.04,
+    "end": 79.8,
+    "text": "so Byron can work with the tools your firm already uses."
+  },
+  {
+    "index": 32,
+    "start": 79.8,
+    "end": 81.8,
+    "text": "And we built Byron with one rule."
+  },
+  {
+    "index": 33,
+    "start": 81.8,
+    "end": 84.84,
+    "text": "The accountant is always in control."
+  },
+  {
+    "index": 34,
+    "start": 84.84,
+    "end": 87.6,
+    "text": "This is Byron, AI agents for tax."
+  },
+  {
+    "index": 35,
+    "start": 87.6,
+    "end": 90.68,
+    "text": "See how it works for your firm at usebyron.com."
+  }
+]
