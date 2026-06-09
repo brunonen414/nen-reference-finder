@@ -23,6 +23,7 @@ for mp in glob.glob(os.path.join(DBV, "*", "meta.json")):
     m = json.load(open(mp, encoding="utf-8")); s = m.get("sheet", {})
     URL_MAP[m.get("video_id")] = s.get("url") or s.get("x_url") or s.get("linkedin_url") or ""
 URL_MAP["novella"] = "https://x.com/maxekane/status/2054909691210178968"
+EXCLUDE = {"paraform"}  # videos NOT produced by Nen — never show as references/hooks
 
 GOAL_ARCH = {"awareness": ["Cinematic Narrative","Kinetic / Motion-Graphics","Skit-Hybrid"],
              "leads": ["UI-Walkthrough Demo","Testimonial / Customer-Proof"],
@@ -66,7 +67,7 @@ def score(v, b):
     return s, [w for w in why if w]
 
 def pick_directions(b, n=4):
-    scored = sorted(((score(v, b), v) for v in VIDS), key=lambda x: -x[0][0])
+    scored = sorted(((score(v, b), v) for v in VIDS if v["id"] not in EXCLUDE), key=lambda x: -x[0][0])
     picked, used = [], {}
     for (s, why), v in scored:
         if used.get(v["broad"], 0) >= 1 and len(picked) < n: continue
@@ -128,7 +129,7 @@ def classify_hook(t):
 def build_hooks():
     cats = {k: [] for k, _, _ in HOOK_CATS}
     for v in VIDS:
-        if v["broad"] not in TALK_ARCH: continue
+        if v["id"] in EXCLUDE or v["broad"] not in TALK_ARCH: continue
         segs = segs_of(v["id"])
         if not segs: continue
         s0 = segs[0]; txt = (s0.get("text") or "").strip()
