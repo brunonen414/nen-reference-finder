@@ -170,6 +170,27 @@ def api_recommend():
                    "vid": v["id"], "hero_sec": v.get("hero_sec", 1)} for v, s, why in dirs]
     return jsonify({"detected": detected, "directions": directions})
 
+@app.route("/api/search_lines")
+def api_search_lines():
+    """For the Google Docs add-on: find Nen video frames whose spoken line matches a query."""
+    q = (request.args.get("q") or "").lower().strip()
+    qa = set(re.findall(r"[a-z0-9]+", q)) - {"the","a","an","to","of","and","for","with","our","we","is","in","on","that","this"}
+    out = []
+    for v in VIDS:
+        if v["id"] in EXCLUDE: continue
+        try: sec = json.load(open(os.path.join(video_dir(v["id"]), "sec.json"), encoding="utf-8"))
+        except Exception: sec = {}
+        for sg in segs_of(v["id"]):
+            words = set(re.findall(r"[a-z0-9]+", (sg.get("text") or "").lower()))
+            ov = len(qa & words)
+            si = sec.get(str(sg["index"]))
+            if ov and si is not None:
+                out.append({"vid": v["id"], "brand": v["brand"], "sec": si,
+                            "line": (sg["text"] or "")[:150], "score": ov,
+                            "url": f"/frame?vid={v['id']}&sec={si}"})
+    out.sort(key=lambda x: -x["score"])
+    return jsonify({"results": out[:30]})
+
 @app.route("/api/hooks")
 def api_hooks():
     out = []
