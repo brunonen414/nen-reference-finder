@@ -3,13 +3,17 @@
 Self-contained: reads ./data (JSON) and ./frames (pre-exported JPEGs). No AI deps.
 Local:  python app.py   |   Prod: gunicorn app:app   (set APP_PASSWORD env var)
 """
-import glob, json, os, re
+import glob, io, json, os, re
 from functools import wraps
 from flask import Flask, request, jsonify, send_file, send_from_directory, Response
+try:
+    from PIL import Image
+except Exception:
+    Image = None
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data"); DBV = os.path.join(DATA, "videos"); NOV = os.path.join(DATA, "novella")
-FRAMES = os.path.join(HERE, "frames")
+FRAMES = os.path.join(HERE, "frames"); IMGS = os.path.join(HERE, "imgs")
 PASSWORD = os.environ.get("APP_PASSWORD", "nen")   # set this in the host dashboard
 
 P = json.load(open(os.path.join(DATA, "profiles.json"), encoding="utf-8"))
@@ -141,6 +145,46 @@ def build_hooks():
     return cats
 HOOKS = build_hooks()
 
+# ---- NEN IMAGE SEARCH index (frames understood via script + CLIP tags + OCR) ----
+IMG_STOP = {"the","a","an","to","of","and","for","with","our","we","is","in","on","that","this","it",
+            "i","you","they","he","she","at","be","are","was","as","or","but","so","if","my","your",
+            "me","us","do","does","can","will","just","not","no","yes","from","by","up","out","about",
+            "what","who","when","how","there","here","im","its","re","ve","s","t"}
+def _toks(s):
+    return [w for w in re.findall(r"[a-z0-9$%.]+", (s or "").lower())
+            if w not in IMG_STOP and len(w) > 1]
+try:
+    IMG_INDEX = json.load(open(os.path.join(DATA, "image_index.json"), encoding="utf-8"))
+except Exception:
+    IMG_INDEX = []
+for e in IMG_INDEX:
+    tg = " ".join(e.get("tags", []))
+    e["_line"] = set(_toks(e.get("line", "")) + _toks(e.get("ctx", "")))
+    e["_ocr"]  = set(_toks(e.get("ocr", "")))
+    e["_tags"] = set(_toks(tg))
+    e["_meta"] = set(_toks(e.get("brand", "")) + _toks(e.get("arch", "")))
+    e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
+
+def image_search(q, k=15):
+    qt = _toks(q); qs = set(qt); ql = (q or "").lower().strip()
+    if not qs: return []
+    scored = []
+    for e in IMG_INDEX:
+        sc = 3.0*len(qs & e["_line"]) + 3.2*len(qs & e["_ocr"]) + 2.2*len(qs & e["_tags"]) + 1.0*len(qs & e["_meta"])
+        if sc == 0: continue
+        if len(ql) >= 5 and ql in e["_blob"]: sc += 6        # exact phrase bonus
+        scored.append((sc, e))
+    scored.sort(key=lambda x: -x[0])
+    out, per = [], {}
+    for sc, e in scored:
+        if per.get(e["vid"], 0) >= 3: continue              # diversity across videos
+        per[e["vid"]] = per.get(e["vid"], 0) + 1
+        out.append({"id": e["id"], "vid": e["vid"], "brand": e["brand"], "arch": e.get("arch",""),
+                    "sec": e["sec"], "t": fmt(e["sec"]), "line": e.get("line",""),
+                    "tags": e.get("tags", [])[:3], "score": round(sc,1)})
+        if len(out) >= k: break
+    return out
+
 app = Flask(__name__)
 
 # (no auth — unlisted: anyone with the URL can access. Don't share the link publicly.)
@@ -160,6 +204,30 @@ def frame():
     if not p or not os.path.abspath(p).startswith(os.path.abspath(FRAMES)) or not os.path.exists(p):
         return ("not found", 404)
     return send_file(p, mimetype="image/jpeg")
+
+@app.route("/img")
+def img():
+    """Serve an HD master frame by id (vid__sec). Optional ?w= downscales for thumbnails."""
+    fid = request.args.get("id", "")
+    if not re.fullmatch(r"[A-Za-z0-9_.\-]+__-?\d+", fid or ""): return ("bad id", 400)
+    p = os.path.join(IMGS, fid + ".jpg")
+    if not os.path.abspath(p).startswith(os.path.abspath(IMGS)) or not os.path.exists(p):
+        return ("not found", 404)
+    w = request.args.get("w", "")
+    if w.isdigit() and Image is not None:
+        try:
+            im = Image.open(p).convert("RGB"); W = min(int(w), im.width)
+            if W < im.width: im = im.resize((W, int(im.height*W/im.width)), Image.LANCZOS)
+            buf = io.BytesIO(); im.save(buf, "JPEG", quality=82); buf.seek(0)
+            return send_file(buf, mimetype="image/jpeg")
+        except Exception: pass
+    return send_file(p, mimetype="image/jpeg")
+
+@app.route("/api/image_search")
+def api_image_search():
+    q = request.args.get("q", ""); k = request.args.get("k", "15")
+    k = int(k) if k.isdigit() else 15
+    return jsonify({"query": q, "count": len(IMG_INDEX), "results": image_search(q, min(k, 40))})
 
 @app.route("/api/recommend", methods=["POST"])
 def api_recommend():
