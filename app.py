@@ -229,6 +229,17 @@ def api_image_search():
     k = int(k) if k.isdigit() else 15
     return jsonify({"query": q, "count": len(IMG_INDEX), "results": image_search(q, min(k, 40))})
 
+@app.route("/api/video_frames")
+def api_video_frames():
+    """All indexed frames from one video (for 'see other frames in this video')."""
+    vid = request.args.get("vid", "")
+    rs = sorted((e for e in IMG_INDEX if e["vid"] == vid), key=lambda e: e["sec"])
+    brand = rs[0]["brand"] if rs else (BYID.get(vid, {}).get("brand", vid))
+    return jsonify({"vid": vid, "brand": brand, "count": len(rs),
+                    "results": [{"id": e["id"], "vid": e["vid"], "brand": e["brand"],
+                                 "arch": e.get("arch",""), "sec": e["sec"], "t": fmt(e["sec"]),
+                                 "line": e.get("line",""), "tags": e.get("tags", [])[:3]} for e in rs]})
+
 @app.route("/api/recommend", methods=["POST"])
 def api_recommend():
     text = (request.get_json(force=True) or {}).get("text", "")

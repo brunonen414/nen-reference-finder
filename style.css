@@ -81,7 +81,9 @@ h1{font-size:30px;font-weight:700;margin:18px 0 2px}
 .lbx .bn{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
 .lbx .ln{font-size:17px;font-weight:600;margin:6px 0;line-height:1.45}
 .lbx .tg{font-size:12px;color:#8a8a8a}
-.lbx a{display:inline-block;margin-top:13px;font-size:14px;font-weight:600;color:var(--ink);
- text-decoration:none;border:1px solid var(--bd);border-radius:9px;padding:9px 14px}
-.lbx a:hover{border-color:#bbb}
+.acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.lbtn{font:inherit;font-size:13.5px;font-weight:600;color:var(--ink);background:#fff;cursor:pointer;
+ text-decoration:none;border:1px solid var(--bd);border-radius:9px;padding:9px 13px;line-height:1}
+.lbtn:hover{border-color:#bbb;background:#fafafa}
+.lbmsg{font-size:13px;color:#3b9c5a;font-weight:600;margin-left:2px}
 @media(max-width:560px){.igrid{grid-template-columns:1fr 1fr}}

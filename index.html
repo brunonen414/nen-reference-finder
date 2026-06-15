@@ -50,7 +50,13 @@
       <div class="bn" id="lbbn"></div>
       <div class="ln" id="lbln"></div>
       <div class="tg" id="lbtg"></div>
-      <a id="lbscript" href="">open full script →</a>
+      <div class="acts">
+        <button class="lbtn" onclick="copyImg()">copy image</button>
+        <a class="lbtn" id="lbdl" href="" download>download</a>
+        <button class="lbtn" onclick="allFrames()">all frames in this video →</button>
+        <a class="lbtn" id="lbscript" href="">open full script →</a>
+        <span class="lbmsg" id="lbmsg"></span>
+      </div>
     </div>
   </div>
 </div>
@@ -67,30 +73,60 @@ function tab(v){
 }
 
 /* ---- image search ---- */
-let IRES=[];
-async function isearch(){
-  const q=$('iq').value.trim();
-  if(!q){$('igrid').innerHTML='';$('idet').textContent='type what you’re looking for.';return;}
-  $('idet').textContent='searching…'; $('igrid').innerHTML='';
-  const r=await fetch('/api/image_search?q='+encodeURIComponent(q)+'&k=15');
-  const d=await r.json(); IRES=d.results||[];
-  if(!IRES.length){$('idet').textContent=`no matches in ${d.count} frames — try simpler words or a script line.`;return;}
-  $('idet').textContent=`${IRES.length} of ${d.count} frames`;
+let IRES=[], CUR=null;
+const masterURL=x=>'/img?id='+encodeURIComponent(x.id)+'&w=1100';
+function renderGrid(list){
+  IRES=list||[];
   $('igrid').innerHTML=IRES.map((x,i)=>`<div class="icard" onclick="openLb(${i})">
     <img loading="lazy" src="/img?id=${encodeURIComponent(x.id)}&w=440">
     <div class="m"><div class="mb">${esc(x.brand)} · ${x.t}</div>
     <div class="ml">${esc(x.line||x.tags.join(', '))}</div></div></div>`).join('');
 }
+async function isearch(){
+  const q=$('iq').value.trim();
+  if(!q){$('igrid').innerHTML='';$('idet').textContent='type what you’re looking for.';return;}
+  $('idet').textContent='searching…'; $('igrid').innerHTML='';
+  const r=await fetch('/api/image_search?q='+encodeURIComponent(q)+'&k=15');
+  const d=await r.json();
+  if(!(d.results||[]).length){renderGrid([]);$('idet').textContent=`no matches in ${d.count} frames — try simpler words or a script line.`;return;}
+  $('idet').textContent=`${d.results.length} of ${d.count} frames`;
+  renderGrid(d.results);
+}
 function openLb(i){
-  const x=IRES[i]; if(!x)return;
-  $('lbimg').src='/img?id='+encodeURIComponent(x.id)+'&w=1100';
-  $('lbbn').textContent=`${x.brand} · ${x.arch||''} · ${x.t}`;
+  const x=IRES[i]; if(!x)return; CUR=x;
+  $('lbimg').src=masterURL(x);
+  $('lbbn').textContent=[x.brand,x.arch,x.t].filter(Boolean).join(' · ');
   $('lbln').textContent=x.line||'';
   $('lbtg').textContent=(x.tags||[]).join('  ·  ');
+  const dl=$('lbdl'); dl.href=masterURL(x); dl.setAttribute('download',x.id+'.jpg');
   $('lbscript').href='/script?vid='+encodeURIComponent(x.vid);
+  $('lbmsg').textContent='';
   $('lb').classList.add('on');
 }
 function closeLb(e){$('lb').classList.remove('on');}
+function flash(m){$('lbmsg').textContent=m; setTimeout(()=>{if($('lbmsg').textContent===m)$('lbmsg').textContent='';},1800);}
+async function copyImg(){
+  if(!CUR)return; flash('copying…');
+  try{
+    const blob=await (await fetch(masterURL(CUR))).blob();
+    const bmp=await createImageBitmap(blob);
+    const c=document.createElement('canvas'); c.width=bmp.width; c.height=bmp.height;
+    c.getContext('2d').drawImage(bmp,0,0);
+    const png=await new Promise(res=>c.toBlob(res,'image/png'));
+    await navigator.clipboard.write([new ClipboardItem({'image/png':png})]);
+    flash('✓ image copied');
+  }catch(e){
+    try{await navigator.clipboard.writeText(location.origin+masterURL(CUR)); flash('✓ image link copied');}
+    catch(_){flash('copy failed — use download');}
+  }
+}
+async function allFrames(){
+  if(!CUR)return; const vid=CUR.vid; closeLb();
+  $('idet').textContent='loading frames…'; $('igrid').innerHTML='';
+  const d=await (await fetch('/api/video_frames?vid='+encodeURIComponent(vid))).json();
+  $('idet').innerHTML=`all ${d.count} frames from <b>${esc(d.brand)}</b> · <a href="#" onclick="$('iq').focus();return false;" style="color:#6f6f6f">new search ↑</a>`;
+  renderGrid(d.results); window.scrollTo(0,0);
+}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 $('iq').addEventListener('keydown',e=>{if(e.key==='Enter')isearch();});
 
