@@ -165,14 +165,43 @@ for e in IMG_INDEX:
     e["_meta"] = set(_toks(e.get("brand", "")) + _toks(e.get("arch", "")))
     e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
 
+# ---- semantic layer: ONNX CLIP text encoder (open-vocabulary). Graceful fallback. ----
+SEMANTIC = False
+try:
+    import numpy as _np
+    import onnxruntime as _ort
+    from clip_tokenizer import SimpleTokenizer as _STok
+    _tok = _STok(os.path.join(DATA, "bpe_simple_vocab_16e6.txt.gz"))
+    _sess = _ort.InferenceSession(os.path.join(DATA, "clip_text_int8.onnx"),
+                                  providers=["CPUExecutionProvider"])
+    IMG_EMB = _np.load(os.path.join(DATA, "img_emb.npy")).astype("float32")
+    _IMG_IDS = json.load(open(os.path.join(DATA, "img_ids.json"), encoding="utf-8"))
+    ID2ROW = {fid: i for i, fid in enumerate(_IMG_IDS)}
+    SEMANTIC = IMG_EMB.shape[0] == len(_IMG_IDS) > 0
+except Exception as _ex:
+    print("semantic search disabled:", _ex)
+
+def _query_vec(q):
+    v = _sess.run(None, {"tokens": _tok([q])})[0][0]
+    n = _np.linalg.norm(v)
+    return v / n if n else v
+
 def image_search(q, k=15):
     qt = _toks(q); qs = set(qt); ql = (q or "").lower().strip()
-    if not qs: return []
+    sims = None
+    if SEMANTIC and ql:
+        try: sims = IMG_EMB @ _query_vec(q)
+        except Exception: sims = None
+    if not qs and sims is None: return []
     scored = []
     for e in IMG_INDEX:
         sc = 3.0*len(qs & e["_line"]) + 3.2*len(qs & e["_ocr"]) + 2.2*len(qs & e["_tags"]) + 1.0*len(qs & e["_meta"])
-        if sc == 0: continue
         if len(ql) >= 5 and ql in e["_blob"]: sc += 6        # exact phrase bonus
+        if sims is not None:
+            r = ID2ROW.get(e["id"])
+            if r is not None: sc += 60.0 * float(sims[r])    # blend visual similarity
+        elif sc == 0:
+            continue
         scored.append((sc, e))
     scored.sort(key=lambda x: -x[0])
     out, per = [], {}

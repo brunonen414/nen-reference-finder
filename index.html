@@ -7,7 +7,6 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="banner" id="banner">⚙️ upgrading search — smarter <b>visual</b> + <b>on-screen-text</b> results go live in <span id="cd">~15:00</span></div>
   <div class="kicker">nen · internal</div>
   <div class="title">creative toolkit</div>
 
@@ -66,18 +65,6 @@
 const $=id=>document.getElementById(id);
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const img=(v,s)=>`/frame?vid=${encodeURIComponent(v)}&sec=${s}&w=440`;
-
-(function(){
-  const target=new Date('2026-06-15T17:26:00-04:00').getTime();
-  const cd=$('cd'), banner=$('banner');
-  (function tick(){
-    const ms=target-Date.now();
-    if(ms<=0){banner.innerHTML='⚙️ wrapping up the search upgrade — refresh in a moment';return;}
-    const m=Math.floor(ms/60000), s=Math.floor((ms%60000)/1000);
-    cd.textContent='~'+m+':'+String(s).padStart(2,'0');
-    setTimeout(tick,1000);
-  })();
-})();
 
 function tab(v){
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));

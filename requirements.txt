@@ -1,3 +1,6 @@
 flask
 gunicorn
 Pillow
+numpy
+onnxruntime
+regex
