@@ -2,21 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>nen image search</title>
+<title>nen · creative toolkit</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="wrap">
   <div class="kicker">nen · internal</div>
-  <div class="title">image search</div>
-  <div class="ver">search every nen frame — paste a script line, or describe what you want to see on screen</div>
+  <div class="title">creative toolkit</div>
 
-  <div class="srow">
-    <input id="iq" placeholder="founder on a laptop · $25M raised · city skyline · dashboard with charts · logo wall...">
-    <button class="build sbtn" onclick="isearch()">search →</button>
+  <div class="tabs">
+    <button class="tab active" data-v="img" onclick="tab('img')">image search</button>
+    <button class="tab" data-v="vids" onclick="tab('vids')">all videos</button>
   </div>
-  <div class="det" id="idet"></div>
-  <div id="igrid" class="igrid"></div>
+
+  <!-- ===== IMAGE SEARCH ===== -->
+  <div id="view-img" class="view">
+    <div class="ver">search every nen frame — paste a script line, or describe what you want to see on screen</div>
+    <div class="srow">
+      <input id="iq" placeholder="founder on a laptop · $25M raised · city skyline · dashboard with charts · logo wall...">
+      <button class="build sbtn" onclick="isearch()">search →</button>
+    </div>
+    <div class="det" id="idet"></div>
+    <div id="igrid" class="igrid"></div>
+  </div>
+
+  <!-- ===== ALL VIDEOS ===== -->
+  <div id="view-vids" class="view" style="display:none">
+    <div class="ver">every nen video — click any to open its full script</div>
+    <div class="det" id="vdet"></div>
+    <div id="vgrid" class="hgrid"></div>
+  </div>
 </div>
 
 <!-- lightbox -->
@@ -42,6 +57,26 @@
 const $=id=>document.getElementById(id);
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
+let VLOADED=false;
+function tab(v){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));
+  $('view-img').style.display = v==='img'?'block':'none';
+  $('view-vids').style.display = v==='vids'?'block':'none';
+  if(v==='vids' && !VLOADED){ VLOADED=true; loadVideos(); }
+}
+
+/* ---- all videos list ---- */
+async function loadVideos(){
+  $('vdet').textContent='loading…';
+  const d=await (await fetch('/api/videos')).json();
+  $('vdet').textContent=`${d.count} videos`;
+  $('vgrid').innerHTML=d.videos.map(v=>`<a class="hcard" href="/script?vid=${encodeURIComponent(v.vid)}">
+    <img loading="lazy" src="/frame?vid=${encodeURIComponent(v.vid)}&sec=${v.hero_sec}&w=440">
+    <div class="b"><div class="bn">${esc(v.brand)}</div>
+    <div class="q">${esc(v.broad)}${v.fine?' — '+esc(v.fine):''}</div></div></a>`).join('');
+}
+
+/* ---- image search ---- */
 let IRES=[], CUR=null;
 const masterURL=x=>'/img?id='+encodeURIComponent(x.id)+'&w=1100';
 function renderGrid(list){

@@ -258,6 +258,14 @@ def api_image_search():
     k = int(k) if k.isdigit() else 50
     return jsonify({"query": q, "count": len(IMG_INDEX), "results": image_search(q, min(k, 60))})
 
+@app.route("/api/videos")
+def api_videos():
+    """Full list of Nen videos for the browsable library (each links to its script)."""
+    vs = [{"vid": v["id"], "brand": v["brand"], "broad": v["broad"], "fine": v.get("fine", ""),
+           "hero_sec": v.get("hero_sec", 1)} for v in VIDS if v["id"] not in EXCLUDE]
+    vs.sort(key=lambda x: x["brand"].lower())
+    return jsonify({"count": len(vs), "videos": vs})
+
 @app.route("/api/video_frames")
 def api_video_frames():
     """All indexed frames from one video (for 'see other frames in this video')."""
