@@ -55,7 +55,7 @@ async function isearch(){
   const q=$('iq').value.trim();
   if(!q){$('igrid').innerHTML='';$('idet').textContent='type what you’re looking for.';return;}
   $('idet').textContent='searching…'; $('igrid').innerHTML='';
-  const r=await fetch('/api/image_search?q='+encodeURIComponent(q)+'&k=15');
+  const r=await fetch('/api/image_search?q='+encodeURIComponent(q)+'&k=50');
   const d=await r.json();
   if(!(d.results||[]).length){renderGrid([]);$('idet').textContent=`no matches in ${d.count} frames — try simpler words or a script line.`;return;}
   $('idet').textContent=`${d.results.length} of ${d.count} frames`;

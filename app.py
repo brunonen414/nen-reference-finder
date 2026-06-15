@@ -255,8 +255,8 @@ def img():
 @app.route("/api/image_search")
 def api_image_search():
     q = request.args.get("q", ""); k = request.args.get("k", "15")
-    k = int(k) if k.isdigit() else 15
-    return jsonify({"query": q, "count": len(IMG_INDEX), "results": image_search(q, min(k, 40))})
+    k = int(k) if k.isdigit() else 50
+    return jsonify({"query": q, "count": len(IMG_INDEX), "results": image_search(q, min(k, 60))})
 
 @app.route("/api/video_frames")
 def api_video_frames():
