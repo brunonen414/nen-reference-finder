@@ -2,44 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>nen creative · toolkit</title>
+<title>nen image search</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="wrap">
   <div class="kicker">nen · internal</div>
-  <div class="title">creative toolkit</div>
+  <div class="title">image search</div>
+  <div class="ver">search every nen frame — paste a script line, or describe what you want to see on screen</div>
 
-  <div class="tabs">
-    <button class="tab active" data-v="img" onclick="tab('img')">nen image search</button>
-    <button class="tab" data-v="ref" onclick="tab('ref')">reference finder</button>
+  <div class="srow">
+    <input id="iq" placeholder="founder on a laptop · $25M raised · city skyline · dashboard with charts · logo wall...">
+    <button class="build sbtn" onclick="isearch()">search →</button>
   </div>
-
-  <!-- ===== NEN IMAGE SEARCH ===== -->
-  <div id="view-img" class="view">
-    <div class="ver">search every nen frame — paste a script line, or describe what you want to see on screen</div>
-    <div class="srow">
-      <input id="iq" placeholder="founder on a laptop · $25M raised · city skyline · dashboard with charts · logo wall...">
-      <button class="build sbtn" onclick="isearch()">search →</button>
-    </div>
-    <div class="det" id="idet"></div>
-    <div id="igrid" class="igrid"></div>
-  </div>
-
-  <!-- ===== REFERENCE FINDER ===== -->
-  <div id="view-ref" class="view" style="display:none">
-    <div class="ver">paste what you learned about the company → four reference videos to pitch</div>
-    <label>project brief</label>
-    <textarea id="brief" style="min-height:220px" placeholder="the filled brief, call notes, what they want, the vibe, any videos or brands they liked, funding / launch details — just paste it all here..."></textarea>
-    <button class="build" onclick="run()">find references →</button>
-    <div class="det" id="det"></div>
-    <div id="results"></div>
-
-    <hr class="seprule">
-    <div class="htitle">hook library</div>
-    <div class="hsub">how we open our talking-head videos — categorized, with the opening line and its frame. click any to see the full script.</div>
-    <div id="hooklib"></div>
-  </div>
+  <div class="det" id="idet"></div>
+  <div id="igrid" class="igrid"></div>
 </div>
 
 <!-- lightbox -->
@@ -64,15 +41,7 @@
 <script>
 const $=id=>document.getElementById(id);
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-const img=(v,s)=>`/frame?vid=${encodeURIComponent(v)}&sec=${s}&w=440`;
 
-function tab(v){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));
-  $('view-img').style.display = v==='img'?'block':'none';
-  $('view-ref').style.display = v==='ref'?'block':'none';
-}
-
-/* ---- image search ---- */
 let IRES=[], CUR=null;
 const masterURL=x=>'/img?id='+encodeURIComponent(x.id)+'&w=1100';
 function renderGrid(list){
@@ -129,38 +98,5 @@ async function allFrames(){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 $('iq').addEventListener('keydown',e=>{if(e.key==='Enter')isearch();});
-
-/* ---- reference finder ---- */
-async function run(){
-  const text=$('brief').value.trim();
-  if(!text){$('results').innerHTML='<p class="refhead">paste some info first.</p>';return;}
-  $('results').innerHTML='<p class="refhead">finding references…</p>'; $('det').innerHTML='';
-  const r=await fetch('/api/recommend',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
-  const d=await r.json(); const dt=d.detected||{};
-  $('det').innerHTML=`detected — vibe: ${(dt.vibe||[]).join(', ')||'—'} · announce: ${dt.announce||'—'} · refs: ${(dt.refs||[]).join(', ')||'—'}`;
-  let h=`<div class="refhead">four references</div>`;
-  d.directions.forEach((x,i)=>{
-    h+=`<a class="ref" href="/script?vid=${encodeURIComponent(x.vid)}"><div class="row">
-      <img src="${img(x.vid,x.hero_sec)}">
-      <div><div class="name">${i+1}. ${x.brand}</div>
-      <div class="arch">${x.broad} — ${x.fine}</div>
-      <div class="why">${x.why.length?'why this fits: '+x.why.join('; '):'closest stylistic match'}</div>
-      <div class="open">open script →</div></div></div></a>`;});
-  $('results').innerHTML=h;
-}
-$('brief').addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter')run();});
-async function loadHooks(){
-  const r=await fetch('/api/hooks'); const d=await r.json(); let h='';
-  d.categories.forEach(c=>{
-    h+=`<div class="hcat"><div class="ct">${esc(c.title)} <span class="cn">· ${c.count}</span></div>
-      <div class="cw">${esc(c.why)}</div><div class="hgrid">`;
-    c.hooks.forEach(x=>{h+=`<a class="hcard" href="/script?vid=${encodeURIComponent(x.vid)}">
-      <img loading="lazy" src="${img(x.vid,x.sec)}"><div class="b"><div class="bn">${esc(x.brand)}</div>
-      <div class="q">"${esc(x.text)}"</div></div></a>`;});
-    h+=`</div></div>`;
-  });
-  $('hooklib').innerHTML=h;
-}
-loadHooks();
 </script>
 </body></html>
