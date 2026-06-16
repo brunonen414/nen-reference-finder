@@ -181,36 +181,61 @@ try:
 except Exception as _ex:
     print("semantic search disabled:", _ex)
 
+# prompt ensemble sharpens CLIP retrieval (averaged templated queries)
+_TEMPLATES = ["{}", "a photo of {}", "a screenshot of {}", "a video frame of {}"]
 def _query_vec(q):
-    v = _sess.run(None, {"tokens": _tok([q])})[0][0]
-    n = _np.linalg.norm(v)
+    # ONNX model is batch-1 only, so encode each template separately and average
+    vs = [_sess.run(None, {"tokens": _tok([t.format(q)])})[0][0] for t in _TEMPLATES]
+    v = _np.mean(vs, axis=0); n = _np.linalg.norm(v)
     return v / n if n else v
 
-def image_search(q, k=15):
-    qt = _toks(q); qs = set(qt); ql = (q or "").lower().strip()
-    sims = None
-    if SEMANTIC and ql:
-        try: sims = IMG_EMB @ _query_vec(q)
-        except Exception: sims = None
-    if not qs and sims is None: return []
-    scored = []
+PER_VIDEO = 4          # max frames from one video
+DUP_COS = 0.93         # drop a result this visually similar to one already picked
+RRF_K = 60.0
+LEX_W = 0.45           # lexical weight relative to semantic in rank fusion
+
+def _lex_scores(qs, ql):
+    out = []
     for e in IMG_INDEX:
-        sc = 3.0*len(qs & e["_line"]) + 3.2*len(qs & e["_ocr"]) + 2.2*len(qs & e["_tags"]) + 1.0*len(qs & e["_meta"])
-        if len(ql) >= 5 and ql in e["_blob"]: sc += 6        # exact phrase bonus
-        if sims is not None:
-            r = ID2ROW.get(e["id"])
-            if r is not None: sc += 60.0 * float(sims[r])    # blend visual similarity
-        elif sc == 0:
-            continue
-        scored.append((sc, e))
-    scored.sort(key=lambda x: -x[0])
-    out, per = [], {}
-    for sc, e in scored:
-        if per.get(e["vid"], 0) >= 3: continue              # diversity across videos
+        s = 3.0*len(qs & e["_line"]) + 3.2*len(qs & e["_ocr"]) + 2.2*len(qs & e["_tags"]) + 1.0*len(qs & e["_meta"])
+        if len(ql) >= 5 and ql in e["_blob"]: s += 6
+        out.append(s)
+    return out
+
+def image_search(q, k=50):
+    qs = set(_toks(q)); ql = (q or "").lower().strip()
+    lex = _lex_scores(qs, ql)
+    use_sem = SEMANTIC and bool(ql)
+    if use_sem:
+        try:
+            qv = _query_vec(q)
+            sims = _np.array([float(IMG_EMB[ID2ROW[e["id"]]] @ qv) if e["id"] in ID2ROW else -1.0
+                              for e in IMG_INDEX], dtype="float32")
+        except Exception:
+            use_sem = False
+    if use_sem:
+        # rank fusion: neither signal can hijack via raw-score scale; semantic is the backbone
+        lexa = _np.asarray(lex, dtype="float32")
+        rs = _np.empty(len(sims), int); rs[_np.argsort(-sims)] = _np.arange(len(sims))
+        rl = _np.empty(len(lexa), int); rl[_np.argsort(-lexa)] = _np.arange(len(lexa))
+        fused = 1.0/(RRF_K + rs) + LEX_W * _np.where(lexa > 0, 1.0/(RRF_K + rl), 0.0)
+        cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:400]]
+    else:
+        if not qs: return []
+        cand = sorted(((lex[i], i) for i in range(len(IMG_INDEX)) if lex[i] > 0), key=lambda x: -x[0])
+        if not cand: return []
+    out, per, picked = [], {}, []
+    for sc, i in cand:
+        e = IMG_INDEX[i]
+        if per.get(e["vid"], 0) >= PER_VIDEO: continue
+        r = ID2ROW.get(e["id"]) if use_sem else None
+        if r is not None and picked and max(float(IMG_EMB[r] @ IMG_EMB[p]) for p in picked) > DUP_COS:
+            continue                                   # near-duplicate of an already-picked frame
         per[e["vid"]] = per.get(e["vid"], 0) + 1
+        if r is not None: picked.append(r)
         out.append({"id": e["id"], "vid": e["vid"], "brand": e["brand"], "arch": e.get("arch",""),
                     "sec": e["sec"], "t": fmt(e["sec"]), "line": e.get("line",""),
-                    "tags": e.get("tags", [])[:3], "score": round(sc,1)})
+                    "tags": e.get("tags", [])[:3], "score": round(sc*1000, 2) if use_sem else round(sc, 1)})
         if len(out) >= k: break
     return out
 

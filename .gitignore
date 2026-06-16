@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 .DS_Store
+_eval/
+_search_eval.py
