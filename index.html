@@ -83,7 +83,7 @@ function renderGrid(list){
   IRES=list||[];
   $('igrid').innerHTML=IRES.map((x,i)=>`<div class="icard" onclick="openLb(${i})">
     <img loading="lazy" src="/img?id=${encodeURIComponent(x.id)}&w=440">
-    <div class="m"><div class="mb">${esc(x.brand)} · ${x.t}</div>
+    <div class="m"><div class="mb">${x.external?'<span class="refbadge">REF</span> ':''}${esc(x.brand)} · ${x.t}</div>
     <div class="ml">${esc(x.line||x.tags.join(', '))}</div></div></div>`).join('');
 }
 async function isearch(){
@@ -103,7 +103,10 @@ function openLb(i){
   $('lbln').textContent=x.line||'';
   $('lbtg').textContent=(x.tags||[]).join('  ·  ');
   const dl=$('lbdl'); dl.href=masterURL(x); dl.setAttribute('download',x.id+'.jpg');
-  $('lbscript').href='/script?vid='+encodeURIComponent(x.vid);
+  const sc=$('lbscript');
+  if(x.external && x.source){ sc.textContent='↗ original source'; sc.href=x.source; sc.target='_blank'; sc.style.display=''; }
+  else if(x.external){ sc.style.display='none'; }
+  else { sc.textContent='open full script →'; sc.href='/script?vid='+encodeURIComponent(x.vid); sc.removeAttribute('target'); sc.style.display=''; }
   $('lbmsg').textContent='';
   $('lb').classList.add('on');
 }

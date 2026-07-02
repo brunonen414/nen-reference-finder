@@ -273,7 +273,8 @@ def image_search(q, k=50):
         if r is not None: picked.append(r)
         out.append({"id": e["id"], "vid": e["vid"], "brand": e["brand"], "arch": e.get("arch",""),
                     "sec": e["sec"], "t": fmt(e["sec"]), "line": e.get("line",""),
-                    "tags": e.get("tags", [])[:3], "score": round(sc*1000, 2) if use_sem else round(sc, 1)})
+                    "tags": e.get("tags", [])[:3], "score": round(sc*1000, 2) if use_sem else round(sc, 1),
+                    "external": bool(e.get("external")), "source": e.get("source", "")})
         if len(out) >= k: break
     return out
 
