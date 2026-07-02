@@ -181,18 +181,49 @@ try:
 except Exception as _ex:
     print("semantic search disabled:", _ex)
 
+# ---- content-type steering: fixes jargon queries (e.g. "talking head" -> people, not UI) ----
+TYPE_SCORES = None; TYPES = []; TYPE_TEXT = None
+try:
+    TYPE_SCORES = _np.load(os.path.join(DATA, "type_scores.npy")).astype("float32")
+    TYPES = json.load(open(os.path.join(DATA, "types.json"), encoding="utf-8"))
+    TYPE_TEXT = _np.load(os.path.join(DATA, "type_text_vecs.npy")).astype("float32")
+except Exception as _ex2:
+    print("type steering disabled:", _ex2)
+TYPE_IX = {n: i for i, n in enumerate(TYPES)}
+_INTENT = [
+    ("talking_head", ["talking head","talking-head","talkinghead","talk head","piece to camera","to camera",
+                      "interview","founder","spokesperson","testimonial","speaking to camera","headshot","head shot","person talking"]),
+    ("ui",           ["ui","u.i","interface","dashboard","app screen","product screen","screen recording","screenshot",
+                      "software","web app","settings page","data table","demo"]),
+    ("motion_text",  ["kinetic","typography","text on screen","title card","caption","lower third","lower-third",
+                      "quote card","big number","number card","text graphic"]),
+    ("broll",        ["b-roll","broll","b roll","footage","cinematic scene","establishing","scenery","landscape"]),
+    ("logos",        ["logo wall","logos","investor logos","brand logos","logo bar"]),
+    ("people_group", ["group of people","video call","zoom grid","multiple people","team on camera"]),
+]
+def _detect_type(ql):
+    if TYPE_SCORES is None: return None
+    for typ, kws in _INTENT:
+        for kw in kws:
+            if kw in ql: return typ
+    return None
+
 # prompt ensemble sharpens CLIP retrieval (averaged templated queries)
 _TEMPLATES = ["{}", "a photo of {}", "a screenshot of {}", "a video frame of {}"]
-def _query_vec(q):
+def _query_vec(q, target=None):
     # ONNX model is batch-1 only, so encode each template separately and average
     vs = [_sess.run(None, {"tokens": _tok([t.format(q)])})[0][0] for t in _TEMPLATES]
-    v = _np.mean(vs, axis=0); n = _np.linalg.norm(v)
+    v = _np.mean(vs, axis=0)
+    if target is not None and TYPE_TEXT is not None and target in TYPE_IX:
+        v = v / (_np.linalg.norm(v) or 1.0) + 0.6 * TYPE_TEXT[TYPE_IX[target]]   # steer toward content type
+    n = _np.linalg.norm(v)
     return v / n if n else v
 
 PER_VIDEO = 4          # max frames from one video
 DUP_COS = 0.93         # drop a result this visually similar to one already picked
 RRF_K = 60.0
 LEX_W = 0.45           # lexical weight relative to semantic in rank fusion
+TYPE_W = 1.6           # content-type weight when the query names a type (dominant)
 
 def _lex_scores(qs, ql):
     out = []
@@ -204,11 +235,12 @@ def _lex_scores(qs, ql):
 
 def image_search(q, k=50):
     qs = set(_toks(q)); ql = (q or "").lower().strip()
+    target = _detect_type(ql)
     lex = _lex_scores(qs, ql)
     use_sem = SEMANTIC and bool(ql)
     if use_sem:
         try:
-            qv = _query_vec(q)
+            qv = _query_vec(q, target)
             sims = _np.array([float(IMG_EMB[ID2ROW[e["id"]]] @ qv) if e["id"] in ID2ROW else -1.0
                               for e in IMG_INDEX], dtype="float32")
         except Exception:
@@ -219,6 +251,12 @@ def image_search(q, k=50):
         rs = _np.empty(len(sims), int); rs[_np.argsort(-sims)] = _np.arange(len(sims))
         rl = _np.empty(len(lexa), int); rl[_np.argsort(-lexa)] = _np.arange(len(lexa))
         fused = 1.0/(RRF_K + rs) + LEX_W * _np.where(lexa > 0, 1.0/(RRF_K + rl), 0.0)
+        if target is not None and TYPE_SCORES is not None:   # steer + boost by content type
+            ti = TYPE_IX[target]
+            tsc = _np.array([TYPE_SCORES[ID2ROW[e["id"]], ti] if e["id"] in ID2ROW else -9.0
+                             for e in IMG_INDEX], dtype="float32")
+            rt = _np.empty(len(tsc), int); rt[_np.argsort(-tsc)] = _np.arange(len(tsc))
+            fused = fused + TYPE_W * (1.0 / (RRF_K + rt))
         cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:400]]
     else:
         if not qs: return []
