@@ -423,20 +423,49 @@ def script():
         yt = json.load(open(os.path.join(vd, "meta.json"), encoding="utf-8")).get("yt", {}) or {}
         logline = (yt.get("title") or "").replace("\n", " ").strip()[:160]
     except Exception: pass
-    rows = []
+    # Every indexed frame for this video (full 0..end visual coverage, deduped).
+    frames = sorted((e for e in IMG_INDEX if e["vid"] == vid and not e.get("external")),
+                    key=lambda e: e["sec"])
+    def _covered(t):  # is this second inside any spoken segment?
+        for sg in segs:
+            if sg["start"] <= t <= sg.get("end", sg["start"] + 4):
+                return True
+        return False
+    def _clean_ocr(s):
+        s = re.sub(r"\s+", " ", (s or "")).strip()
+        return s[:70] if len(re.sub(r"[^A-Za-z0-9]", "", s)) >= 2 and len(s) >= 3 else ""
+
+    # Merge two beat streams on a shared timeline:
+    #   (a) one beat per spoken segment  — preserves the full voiceover
+    #   (b) one beat per indexed frame that falls OUTSIDE any segment — walks the
+    #       purely-visual stretches (kinetic/UI/montage) that have no narration.
+    beats = []  # (time, priority, html)   priority: voiceover=0 before visual=1
     for sg in segs:
         si = sec.get(str(sg["index"]))
         imgh = (f'<div class="r"><img src="/frame?vid={vid}&sec={si}"><div class="cap">{fmt(si)}</div></div>') if si is not None else ""
-        rows.append(f'<div class="beat"><div class="l"><div class="t">{fmt(sg["start"])}</div><p>{esc(sg["text"])}</p></div>{imgh}</div>')
+        beats.append((sg["start"], 0,
+            f'<div class="beat"><div class="l"><div class="t">{fmt(sg["start"])}</div>'
+            f'<p>{esc(sg["text"])}</p></div>{imgh}</div>'))
+    for e in frames:
+        if _covered(e["sec"]): continue
+        ocr = _clean_ocr(e.get("ocr", "")); desc = ", ".join(e.get("tags", [])[:3])
+        body = f'<p>On screen: “{esc(ocr)}”</p>' if ocr else (f'<p class="vp">{esc(desc)}</p>' if desc else "")
+        if ocr and desc: body += f'<div class="vt">{esc(desc)}</div>'
+        img = f'<div class="r"><img src="/img?id={esc(e["id"])}&w=560"><div class="cap">{fmt(e["sec"])}</div></div>'
+        beats.append((e["sec"], 1,
+            f'<div class="beat vis"><div class="l"><div class="t">{fmt(e["sec"])} · visual</div>{body}</div>{img}</div>'))
+    beats.sort(key=lambda b: (b[0], b[1]))
+    rows = [b[2] for b in beats]
     orig = URL_MAP.get(vid, "")
     origlink = f' &nbsp;·&nbsp; <a href="{orig}" target="_blank">original post ↗</a>' if orig else ""
+    head = f"walkthrough · {len(rows)} beats · {len(segs)} spoken" if rows else "no coverage"
     html = f"""<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(v['brand'])} — script</title>
 <link rel="stylesheet" href="/style.css"></head><body><div class="wrap">
 <a class="back" href="/">← back</a>
 <div class="kicker" style="text-align:left;margin-top:20px">reference script · {esc(v['broad']).lower()}</div>
 <h1>{esc(v['brand'])}</h1><p class="sub">{esc(logline)}</p>
-<div class="kicker" style="text-align:left">script · {len(segs)} lines{origlink}</div>
+<div class="kicker" style="text-align:left">{head}{origlink}</div>
 <hr class="rule">{''.join(rows) if rows else '<p class="sub">No transcript available.</p>'}
 </div></body></html>"""
     return Response(html, mimetype="text/html")
