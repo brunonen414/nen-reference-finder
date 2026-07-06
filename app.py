@@ -143,7 +143,11 @@ def build_hooks():
         cats.setdefault(cat, []).append({"brand": v["brand"], "vid": v["id"], "text": txt[:200],
                                          "sec": int((s0["start"] + s0["end"]) / 2)})
     return cats
-HOOKS = build_hooks()
+_HOOKS = None
+def get_hooks():
+    global _HOOKS
+    if _HOOKS is None: _HOOKS = build_hooks()
+    return _HOOKS
 
 # ---- NEN IMAGE SEARCH index (frames understood via script + CLIP tags + OCR) ----
 IMG_STOP = {"the","a","an","to","of","and","for","with","our","we","is","in","on","that","this","it",
@@ -157,39 +161,50 @@ try:
     IMG_INDEX = json.load(open(os.path.join(DATA, "image_index.json"), encoding="utf-8"))
 except Exception:
     IMG_INDEX = []
-for e in IMG_INDEX:
-    tg = " ".join(e.get("tags", []))
-    e["_line"] = set(_toks(e.get("line", "")) + _toks(e.get("ctx", "")))
-    e["_ocr"]  = set(_toks(e.get("ocr", "")))
-    e["_tags"] = set(_toks(tg))
-    e["_meta"] = set(_toks(e.get("brand", "")) + _toks(e.get("arch", "")))
-    e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
 
-# ---- semantic layer: ONNX CLIP text encoder (open-vocabulary). Graceful fallback. ----
+# Heavy startup work is DEFERRED so the container boots fast (free tier cold-start).
+# The homepage + /api/videos + /api/references need none of it; only image_search does.
+import numpy as _np  # cheap import
+
+_LEX_READY = False
+def _ensure_lex():
+    """Tokenize index entries into lookup sets — only needed for lexical search."""
+    global _LEX_READY
+    if _LEX_READY: return
+    for e in IMG_INDEX:
+        tg = " ".join(e.get("tags", []))
+        e["_line"] = set(_toks(e.get("line", "")) + _toks(e.get("ctx", "")))
+        e["_ocr"]  = set(_toks(e.get("ocr", "")))
+        e["_tags"] = set(_toks(tg))
+        e["_meta"] = set(_toks(e.get("brand", "")) + _toks(e.get("arch", "")))
+        e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
+    _LEX_READY = True
+
+# ---- semantic layer (ONNX CLIP encoder) + content-type steering: loaded on first search ----
 SEMANTIC = False
-try:
-    import numpy as _np
-    import onnxruntime as _ort
-    from clip_tokenizer import SimpleTokenizer as _STok
-    _tok = _STok(os.path.join(DATA, "bpe_simple_vocab_16e6.txt.gz"))
-    _sess = _ort.InferenceSession(os.path.join(DATA, "clip_text_int8.onnx"),
-                                  providers=["CPUExecutionProvider"])
-    IMG_EMB = _np.load(os.path.join(DATA, "img_emb.npy")).astype("float32")
-    _IMG_IDS = json.load(open(os.path.join(DATA, "img_ids.json"), encoding="utf-8"))
-    ID2ROW = {fid: i for i, fid in enumerate(_IMG_IDS)}
-    SEMANTIC = IMG_EMB.shape[0] == len(_IMG_IDS) > 0
-except Exception as _ex:
-    print("semantic search disabled:", _ex)
-
-# ---- content-type steering: fixes jargon queries (e.g. "talking head" -> people, not UI) ----
-TYPE_SCORES = None; TYPES = []; TYPE_TEXT = None
-try:
-    TYPE_SCORES = _np.load(os.path.join(DATA, "type_scores.npy")).astype("float32")
-    TYPES = json.load(open(os.path.join(DATA, "types.json"), encoding="utf-8"))
-    TYPE_TEXT = _np.load(os.path.join(DATA, "type_text_vecs.npy")).astype("float32")
-except Exception as _ex2:
-    print("type steering disabled:", _ex2)
-TYPE_IX = {n: i for i, n in enumerate(TYPES)}
+IMG_EMB = None; ID2ROW = {}; _tok = None; _sess = None
+TYPE_SCORES = None; TYPES = []; TYPE_TEXT = None; TYPE_IX = {}
+_SEM_READY = False
+def _ensure_semantic():
+    global SEMANTIC, IMG_EMB, ID2ROW, _tok, _sess, TYPE_SCORES, TYPES, TYPE_TEXT, TYPE_IX, _SEM_READY
+    if _SEM_READY: return
+    _SEM_READY = True
+    try:
+        import onnxruntime as _ort
+        from clip_tokenizer import SimpleTokenizer as _STok
+        _tok = _STok(os.path.join(DATA, "bpe_simple_vocab_16e6.txt.gz"))
+        _sess = _ort.InferenceSession(os.path.join(DATA, "clip_text_int8.onnx"),
+                                      providers=["CPUExecutionProvider"])
+        IMG_EMB = _np.load(os.path.join(DATA, "img_emb.npy")).astype("float32")
+        _IMG_IDS = json.load(open(os.path.join(DATA, "img_ids.json"), encoding="utf-8"))
+        ID2ROW = {fid: i for i, fid in enumerate(_IMG_IDS)}
+        SEMANTIC = IMG_EMB.shape[0] == len(_IMG_IDS) > 0
+        TYPE_SCORES = _np.load(os.path.join(DATA, "type_scores.npy")).astype("float32")
+        TYPES = json.load(open(os.path.join(DATA, "types.json"), encoding="utf-8"))
+        TYPE_TEXT = _np.load(os.path.join(DATA, "type_text_vecs.npy")).astype("float32")
+        TYPE_IX = {n: i for i, n in enumerate(TYPES)}
+    except Exception as _ex:
+        print("semantic search disabled:", _ex); SEMANTIC = False
 _INTENT = [
     ("talking_head", ["talking head","talking-head","talkinghead","talk head","piece to camera","to camera",
                       "interview","founder","spokesperson","testimonial","speaking to camera","headshot","head shot","person talking"]),
@@ -234,6 +249,7 @@ def _lex_scores(qs, ql):
     return out
 
 def image_search(q, k=50):
+    _ensure_lex(); _ensure_semantic()
     qs = set(_toks(q)); ql = (q or "").lower().strip()
     target = _detect_type(ql)
     lex = _lex_scores(qs, ql)
@@ -387,9 +403,9 @@ def api_search_lines():
 
 @app.route("/api/hooks")
 def api_hooks():
-    out = []
+    out = []; hooks = get_hooks()
     for k, title, why in HOOK_CATS:
-        hk = sorted(HOOKS.get(k, []), key=lambda h: h["brand"])
+        hk = sorted(hooks.get(k, []), key=lambda h: h["brand"])
         if hk: out.append({"key": k, "title": title, "why": why, "count": len(hk), "hooks": hk})
     return jsonify({"categories": out})
 
