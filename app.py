@@ -426,36 +426,41 @@ def script():
     # Every indexed frame for this video (full 0..end visual coverage, deduped).
     frames = sorted((e for e in IMG_INDEX if e["vid"] == vid and not e.get("external")),
                     key=lambda e: e["sec"])
-    def _covered(t):  # is this second inside any spoken segment?
-        for sg in segs:
-            if sg["start"] <= t <= sg.get("end", sg["start"] + 4):
-                return True
-        return False
     def _clean_ocr(s):
         s = re.sub(r"\s+", " ", (s or "")).strip()
         return s[:70] if len(re.sub(r"[^A-Za-z0-9]", "", s)) >= 2 and len(s) >= 3 else ""
-
-    # Merge two beat streams on a shared timeline:
-    #   (a) one beat per spoken segment  — preserves the full voiceover
-    #   (b) one beat per indexed frame that falls OUTSIDE any segment — walks the
-    #       purely-visual stretches (kinetic/UI/montage) that have no narration.
     def _nearest(t):  # kept frame closest in time to a spoken line (always has an /img)
         return min(frames, key=lambda e: abs(e["sec"] - t)) if frames else None
-    beats = []  # (time, priority, html)   priority: voiceover=0 before visual=1
+    def _seg_at(t):
+        for sg in segs:
+            if sg["start"] <= t <= sg.get("end", sg["start"] + 4): return sg
+        return None
+
+    # ONE BEAT PER FRAME — every shot shows, at full granularity. The spoken line
+    # sits beside the frame it lands on (shown once, then blank as the shot holds);
+    # frames with no dialogue simply show the frame + whatever is on screen.
+    beats = []; shown = set()  # (time, priority, html)
+    for e in frames:
+        sg = _seg_at(e["sec"]); line = ""
+        if sg is not None and sg["index"] not in shown:
+            line = sg["text"]; shown.add(sg["index"])
+        ocr = _clean_ocr(e.get("ocr", "")); desc = ", ".join(e.get("tags", [])[:3])
+        left = f'<div class="t">{fmt(e["sec"])}</div>'
+        if line: left += f'<p>{esc(line)}</p>'
+        ann = []
+        if ocr: ann.append(f'on screen: “{esc(ocr)}”')
+        if desc: ann.append(esc(desc))
+        if ann: left += f'<div class="vt">{" · ".join(ann)}</div>'
+        img = f'<div class="r"><img src="/img?id={esc(e["id"])}&w=560"><div class="cap">{fmt(e["sec"])}</div></div>'
+        beats.append((e["sec"], 0, f'<div class="beat"><div class="l">{left}</div>{img}</div>'))
+    # a spoken line whose segment held no frame (long-video gaps) — insert so none is lost
     for sg in segs:
+        if sg["index"] in shown: continue
         nf = _nearest(sg["start"])
         imgh = (f'<div class="r"><img src="/img?id={esc(nf["id"])}&w=560"><div class="cap">{fmt(nf["sec"])}</div></div>') if nf else ""
-        beats.append((sg["start"], 0,
+        beats.append((sg["start"], -1,
             f'<div class="beat"><div class="l"><div class="t">{fmt(sg["start"])}</div>'
             f'<p>{esc(sg["text"])}</p></div>{imgh}</div>'))
-    for e in frames:
-        if _covered(e["sec"]): continue
-        ocr = _clean_ocr(e.get("ocr", "")); desc = ", ".join(e.get("tags", [])[:3])
-        body = f'<p>On screen: “{esc(ocr)}”</p>' if ocr else (f'<p class="vp">{esc(desc)}</p>' if desc else "")
-        if ocr and desc: body += f'<div class="vt">{esc(desc)}</div>'
-        img = f'<div class="r"><img src="/img?id={esc(e["id"])}&w=560"><div class="cap">{fmt(e["sec"])}</div></div>'
-        beats.append((e["sec"], 1,
-            f'<div class="beat vis"><div class="l"><div class="t">{fmt(e["sec"])} · visual</div>{body}</div>{img}</div>'))
     beats.sort(key=lambda b: (b[0], b[1]))
     rows = [b[2] for b in beats]
     orig = URL_MAP.get(vid, "")
