@@ -12,7 +12,8 @@
 
   <div class="tabs">
     <button class="tab active" data-v="img" onclick="tab('img')">image search</button>
-    <button class="tab" data-v="vids" onclick="tab('vids')">all videos</button>
+    <button class="tab" data-v="vids" onclick="tab('vids')">nen videos</button>
+    <button class="tab" data-v="refs" onclick="tab('refs')">references</button>
   </div>
 
   <!-- ===== IMAGE SEARCH ===== -->
@@ -26,11 +27,20 @@
     <div id="igrid" class="igrid"></div>
   </div>
 
-  <!-- ===== ALL VIDEOS ===== -->
+  <!-- ===== NEN VIDEOS ===== -->
   <div id="view-vids" class="view" style="display:none">
     <div class="ver">every nen video — click any to open its full script</div>
+    <input id="vq" class="listsearch" placeholder="filter by name…" oninput="filterList('vgrid',this.value)">
     <div class="det" id="vdet"></div>
     <div id="vgrid" class="hgrid"></div>
+  </div>
+
+  <!-- ===== REFERENCES (non-Nen) ===== -->
+  <div id="view-refs" class="view" style="display:none">
+    <div class="ver">reference videos people shared — not made by nen. click ↗ to open the original</div>
+    <input id="rq" class="listsearch" placeholder="filter by name…" oninput="filterList('rgrid',this.value)">
+    <div class="det" id="rdet"></div>
+    <div id="rgrid" class="hgrid"></div>
   </div>
 </div>
 
@@ -57,23 +67,42 @@
 const $=id=>document.getElementById(id);
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-let VLOADED=false;
+let VLOADED=false, RLOADED=false;
 function tab(v){
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.v===v));
   $('view-img').style.display = v==='img'?'block':'none';
   $('view-vids').style.display = v==='vids'?'block':'none';
+  $('view-refs').style.display = v==='refs'?'block':'none';
   if(v==='vids' && !VLOADED){ VLOADED=true; loadVideos(); }
+  if(v==='refs' && !RLOADED){ RLOADED=true; loadRefs(); }
+}
+function filterList(gridId, q){
+  q=(q||'').toLowerCase().trim();
+  document.querySelectorAll('#'+gridId+' .hcard').forEach(c=>{
+    c.style.display=(!q || (c.dataset.name||'').includes(q))?'':'none';
+  });
 }
 
-/* ---- all videos list ---- */
+/* ---- nen videos list ---- */
 async function loadVideos(){
   $('vdet').textContent='loading…';
   const d=await (await fetch('/api/videos')).json();
   $('vdet').textContent=`${d.count} videos`;
-  $('vgrid').innerHTML=d.videos.map(v=>`<a class="hcard" href="/script?vid=${encodeURIComponent(v.vid)}">
+  $('vgrid').innerHTML=d.videos.map(v=>`<a class="hcard" data-name="${esc((v.brand+' '+v.broad+' '+(v.fine||'')).toLowerCase())}" href="/script?vid=${encodeURIComponent(v.vid)}">
     <img loading="lazy" src="/frame?vid=${encodeURIComponent(v.vid)}&sec=${v.hero_sec}&w=440">
     <div class="b"><div class="bn">${esc(v.brand)}</div>
     <div class="q">${esc(v.broad)}${v.fine?' — '+esc(v.fine):''}</div></div></a>`).join('');
+}
+
+/* ---- references (non-nen) list ---- */
+async function loadRefs(){
+  $('rdet').textContent='loading…';
+  const d=await (await fetch('/api/references')).json();
+  $('rdet').textContent=`${d.count} reference videos`;
+  $('rgrid').innerHTML=d.references.map(r=>`<a class="hcard" data-name="${esc(r.brand.toLowerCase())}" href="${esc(r.source)||'#'}" target="_blank" rel="noopener">
+    <img loading="lazy" src="/img?id=${encodeURIComponent(r.hero)}&w=440">
+    <div class="b"><div class="bn"><span class="refbadge">REF</span> ${esc(r.brand)}</div>
+    <div class="q">${r.count} frames · ↗ original source</div></div></a>`).join('');
 }
 
 /* ---- image search ---- */

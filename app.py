@@ -330,6 +330,20 @@ def api_videos():
     vs.sort(key=lambda x: x["brand"].lower())
     return jsonify({"count": len(vs), "videos": vs})
 
+@app.route("/api/references")
+def api_references():
+    """External (non-Nen) reference videos, grouped — each with a hero frame + source link."""
+    refs = {}
+    for e in IMG_INDEX:
+        if not e.get("external"): continue
+        v = e["vid"]
+        if v not in refs:
+            refs[v] = {"vid": v, "brand": e.get("brand", v), "source": e.get("source", ""),
+                       "hero": e["id"], "count": 0}
+        refs[v]["count"] += 1
+    out = sorted(refs.values(), key=lambda x: x["brand"].lower())
+    return jsonify({"count": len(out), "references": out})
+
 @app.route("/api/video_frames")
 def api_video_frames():
     """All indexed frames from one video (for 'see other frames in this video')."""
