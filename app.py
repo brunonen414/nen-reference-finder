@@ -439,10 +439,12 @@ def script():
     #   (a) one beat per spoken segment  — preserves the full voiceover
     #   (b) one beat per indexed frame that falls OUTSIDE any segment — walks the
     #       purely-visual stretches (kinetic/UI/montage) that have no narration.
+    def _nearest(t):  # kept frame closest in time to a spoken line (always has an /img)
+        return min(frames, key=lambda e: abs(e["sec"] - t)) if frames else None
     beats = []  # (time, priority, html)   priority: voiceover=0 before visual=1
     for sg in segs:
-        si = sec.get(str(sg["index"]))
-        imgh = (f'<div class="r"><img src="/frame?vid={vid}&sec={si}"><div class="cap">{fmt(si)}</div></div>') if si is not None else ""
+        nf = _nearest(sg["start"])
+        imgh = (f'<div class="r"><img src="/img?id={esc(nf["id"])}&w=560"><div class="cap">{fmt(nf["sec"])}</div></div>') if nf else ""
         beats.append((sg["start"], 0,
             f'<div class="beat"><div class="l"><div class="t">{fmt(sg["start"])}</div>'
             f'<p>{esc(sg["text"])}</p></div>{imgh}</div>'))
