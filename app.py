@@ -265,6 +265,7 @@ def image_search(q, k=50):
     _ensure_lex(); _ensure_semantic()
     qs = set(_toks(q)); ql = (q or "").lower().strip()
     target = _detect_type(ql)
+    qb = (qs & BRAND_VOCAB) if len(qs) <= 3 else set()   # query names a specific brand/company
     lex = _lex_scores(qs, ql)
     use_sem = SEMANTIC and bool(ql)
     if use_sem:
@@ -286,8 +287,7 @@ def image_search(q, k=50):
                              for e in IMG_INDEX], dtype="float32")
             rt = _np.empty(len(tsc), int); rt[_np.argsort(-tsc)] = _np.arange(len(tsc))
             fused = fused + TYPE_W * (1.0 / (RRF_K + rt))
-        qb = qs & BRAND_VOCAB          # short query naming a specific brand -> surface that video
-        if qb and len(qs) <= 3:
+        if qb:                         # short query naming a specific brand -> surface that video
             fused = fused + BRAND_W * _np.array([1.0 if (e["_brand"] & qb) else 0.0
                                                  for e in IMG_INDEX], dtype="float32")
         cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:400]]
@@ -298,7 +298,8 @@ def image_search(q, k=50):
     out, per, picked = [], {}, []
     for sc, i in cand:
         e = IMG_INDEX[i]
-        if per.get(e["vid"], 0) >= PER_VIDEO: continue
+        cap = 10 if (qb and (e["_brand"] & qb)) else PER_VIDEO   # brand query -> show more of that video
+        if per.get(e["vid"], 0) >= cap: continue
         r = ID2ROW.get(e["id"]) if use_sem else None
         if r is not None and picked and max(float(IMG_EMB[r] @ IMG_EMB[p]) for p in picked) > DUP_COS:
             continue                                   # near-duplicate of an already-picked frame
