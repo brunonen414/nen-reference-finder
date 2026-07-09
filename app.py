@@ -167,17 +167,28 @@ except Exception:
 import numpy as _np  # cheap import
 
 _LEX_READY = False
+BRAND_VOCAB = set()   # distinctive brand tokens (len>=5, not a common word) for brand-name search
+# descriptive words that appear in (mostly reference) brand labels but are NOT company names —
+# excluded so a content query like "talking head" isn't hijacked by a brand literally named that.
+_BRAND_BOOST_STOP = BRAND_STOP | {
+    "aspect", "novella", "series", "brand", "story", "video", "launch", "talking", "head",
+    "reference", "commercial", "documentary", "music", "films", "social", "experimental",
+    "concept", "kinetic", "motion", "cinematic", "testimonial", "explainer", "walkthrough",
+    "founder", "narrative", "assistant", "support", "agents", "agent", "autopilot", "customer",
+    "mission", "process", "talent", "boards", "flows", "alpha", "immigration", "launch"}
 def _ensure_lex():
     """Tokenize index entries into lookup sets — only needed for lexical search."""
-    global _LEX_READY
+    global _LEX_READY, BRAND_VOCAB
     if _LEX_READY: return
     for e in IMG_INDEX:
         tg = " ".join(e.get("tags", []))
         e["_line"] = set(_toks(e.get("line", "")) + _toks(e.get("ctx", "")))
         e["_ocr"]  = set(_toks(e.get("ocr", "")))
         e["_tags"] = set(_toks(tg))
-        e["_meta"] = set(_toks(e.get("brand", "")) + _toks(e.get("arch", "")))
+        e["_arch"] = set(_toks(e.get("arch", "")))
+        e["_brand"] = set(_toks(e.get("brand", "")))
         e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
+        BRAND_VOCAB |= {t for t in e["_brand"] if len(t) >= 5 and t not in _BRAND_BOOST_STOP}
     _LEX_READY = True
 
 # ---- semantic layer (ONNX CLIP encoder) + content-type steering: loaded on first search ----
@@ -239,11 +250,13 @@ DUP_COS = 0.93         # drop a result this visually similar to one already pick
 RRF_K = 60.0
 LEX_W = 0.45           # lexical weight relative to semantic in rank fusion
 TYPE_W = 1.6           # content-type weight when the query names a type (dominant)
+BRAND_W = 0.06         # direct boost when a short query names a specific brand/company
 
 def _lex_scores(qs, ql):
     out = []
     for e in IMG_INDEX:
-        s = 3.0*len(qs & e["_line"]) + 3.2*len(qs & e["_ocr"]) + 2.2*len(qs & e["_tags"]) + 1.0*len(qs & e["_meta"])
+        s = (3.0*len(qs & e["_line"]) + 3.2*len(qs & e["_ocr"]) + 2.2*len(qs & e["_tags"])
+             + 3.5*len(qs & e["_brand"]) + 1.0*len(qs & e["_arch"]))
         if len(ql) >= 5 and ql in e["_blob"]: s += 6
         out.append(s)
     return out
@@ -273,6 +286,10 @@ def image_search(q, k=50):
                              for e in IMG_INDEX], dtype="float32")
             rt = _np.empty(len(tsc), int); rt[_np.argsort(-tsc)] = _np.arange(len(tsc))
             fused = fused + TYPE_W * (1.0 / (RRF_K + rt))
+        qb = qs & BRAND_VOCAB          # short query naming a specific brand -> surface that video
+        if qb and len(qs) <= 3:
+            fused = fused + BRAND_W * _np.array([1.0 if (e["_brand"] & qb) else 0.0
+                                                 for e in IMG_INDEX], dtype="float32")
         cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:400]]
     else:
         if not qs: return []
