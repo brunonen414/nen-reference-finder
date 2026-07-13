@@ -4,7 +4,7 @@ Self-contained: reads ./data (JSON) and ./frames (pre-exported JPEGs). No AI dep
 Local:  python app.py   |   Prod: gunicorn app:app   (set APP_PASSWORD env var)
 """
 import glob, io, json, os, re
-from functools import wraps
+from functools import wraps, lru_cache
 from flask import Flask, request, jsonify, send_file, send_from_directory, Response
 try:
     from PIL import Image
@@ -168,6 +168,7 @@ import numpy as _np  # cheap import
 
 _LEX_READY = False
 BRAND_VOCAB = set()   # distinctive brand tokens (len>=5, not a common word) for brand-name search
+BRAND_ROWS = {}       # brand token -> np.array of frame rows (vectorized brand boost)
 # descriptive words that appear in (mostly reference) brand labels but are NOT company names —
 # excluded so a content query like "talking head" isn't hijacked by a brand literally named that.
 _BRAND_BOOST_STOP = BRAND_STOP | {
@@ -178,9 +179,10 @@ _BRAND_BOOST_STOP = BRAND_STOP | {
     "mission", "process", "talent", "boards", "flows", "alpha", "immigration", "launch"}
 def _ensure_lex():
     """Tokenize index entries into lookup sets — only needed for lexical search."""
-    global _LEX_READY, BRAND_VOCAB
+    global _LEX_READY, BRAND_VOCAB, BRAND_ROWS
     if _LEX_READY: return
-    for e in IMG_INDEX:
+    rows = {}
+    for i, e in enumerate(IMG_INDEX):
         tg = " ".join(e.get("tags", []))
         e["_line"] = set(_toks(e.get("line", "")) + _toks(e.get("ctx", "")))
         e["_ocr"]  = set(_toks(e.get("ocr", "")))
@@ -188,7 +190,10 @@ def _ensure_lex():
         e["_arch"] = set(_toks(e.get("arch", "")))
         e["_brand"] = set(_toks(e.get("brand", "")))
         e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
-        BRAND_VOCAB |= {t for t in e["_brand"] if len(t) >= 5 and t not in _BRAND_BOOST_STOP}
+        for t in e["_brand"]:
+            if len(t) >= 5 and t not in _BRAND_BOOST_STOP:
+                BRAND_VOCAB.add(t); rows.setdefault(t, []).append(i)
+    BRAND_ROWS = {t: _np.array(r, dtype="int64") for t, r in rows.items()}
     _LEX_READY = True
 
 # ---- semantic layer (ONNX CLIP encoder) + content-type steering: loaded on first search ----
@@ -234,12 +239,14 @@ def _detect_type(ql):
             if kw in ql: return typ
     return None
 
-# prompt ensemble sharpens CLIP retrieval (averaged templated queries)
-_TEMPLATES = ["{}", "a photo of {}", "a screenshot of {}", "a video frame of {}"]
+# Query encoding is the dominant per-search cost on the free tier's throttled
+# CPU (~1.5-2s per CLIP text encode). One template (not a 4-way ensemble) plus an
+# LRU cache keeps searches responsive; type-steering + lexical + brand carry quality.
+_TEMPLATES = ["a photo of {}"]
+@lru_cache(maxsize=2048)
 def _query_vec(q, target=None):
-    # ONNX model is batch-1 only, so encode each template separately and average
     vs = [_sess.run(None, {"tokens": _tok([t.format(q)])})[0][0] for t in _TEMPLATES]
-    v = _np.mean(vs, axis=0)
+    v = _np.mean(vs, axis=0) if len(vs) > 1 else vs[0]
     if target is not None and TYPE_TEXT is not None and target in TYPE_IX:
         v = v / (_np.linalg.norm(v) or 1.0) + 0.6 * TYPE_TEXT[TYPE_IX[target]]   # steer toward content type
     n = _np.linalg.norm(v)
@@ -271,8 +278,7 @@ def image_search(q, k=50):
     if use_sem:
         try:
             qv = _query_vec(q, target)
-            sims = _np.array([float(IMG_EMB[ID2ROW[e["id"]]] @ qv) if e["id"] in ID2ROW else -1.0
-                              for e in IMG_INDEX], dtype="float32")
+            sims = (IMG_EMB @ qv).astype("float32")   # row-aligned with IMG_INDEX (one BLAS matvec)
         except Exception:
             use_sem = False
     if use_sem:
@@ -282,14 +288,15 @@ def image_search(q, k=50):
         rl = _np.empty(len(lexa), int); rl[_np.argsort(-lexa)] = _np.arange(len(lexa))
         fused = 1.0/(RRF_K + rs) + LEX_W * _np.where(lexa > 0, 1.0/(RRF_K + rl), 0.0)
         if target is not None and TYPE_SCORES is not None:   # steer + boost by content type
-            ti = TYPE_IX[target]
-            tsc = _np.array([TYPE_SCORES[ID2ROW[e["id"]], ti] if e["id"] in ID2ROW else -9.0
-                             for e in IMG_INDEX], dtype="float32")
+            tsc = TYPE_SCORES[:, TYPE_IX[target]]            # row-aligned column
             rt = _np.empty(len(tsc), int); rt[_np.argsort(-tsc)] = _np.arange(len(tsc))
             fused = fused + TYPE_W * (1.0 / (RRF_K + rt))
         if qb:                         # short query naming a specific brand -> surface that video
-            fused = fused + BRAND_W * _np.array([1.0 if (e["_brand"] & qb) else 0.0
-                                                 for e in IMG_INDEX], dtype="float32")
+            bmask = _np.zeros(len(IMG_INDEX), dtype="float32")
+            for t in qb:
+                rws = BRAND_ROWS.get(t)
+                if rws is not None: bmask[rws] = 1.0
+            fused = fused + BRAND_W * bmask
         cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:400]]
     else:
         if not qs: return []
