@@ -1,0 +1,22 @@
+name: keep-warm
+
+# Render's free tier puts the service to sleep after ~15 min idle, and waking
+# it takes 30-60s (the "initial loading time"). This pings the app every ~10 min
+# so the container — and the loaded search model — stay warm. Runs on GitHub's
+# infra (free for public repos), independent of any local machine.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes (GitHub best-effort; may drift a few min)
+  workflow_dispatch: {}       # allow manual "Run workflow" too
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping search endpoint (keeps container + CLIP model warm)
+        run: |
+          curl -s -m 90 "https://nen-reference-finder.onrender.com/api/image_search?q=warm&k=1" \
+               -o /dev/null -w "search: HTTP %{http_code} in %{time_total}s\n" || true
+          curl -s -m 90 "https://nen-reference-finder.onrender.com/" \
+               -o /dev/null -w "home:   HTTP %{http_code} in %{time_total}s\n" || true
