@@ -27,7 +27,7 @@ for mp in glob.glob(os.path.join(DBV, "*", "meta.json")):
     m = json.load(open(mp, encoding="utf-8")); s = m.get("sheet", {})
     URL_MAP[m.get("video_id")] = s.get("url") or s.get("x_url") or s.get("linkedin_url") or ""
 URL_MAP["novella"] = "https://x.com/maxekane/status/2054909691210178968"
-EXCLUDE = {"paraform"}  # videos NOT produced by Nen — never show as references/hooks
+EXCLUDE = {"paraform"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show as references/hooks (inspo enriches image search only)
 
 GOAL_ARCH = {"awareness": ["Cinematic Narrative","Kinetic / Motion-Graphics","Skit-Hybrid"],
              "leads": ["UI-Walkthrough Demo","Testimonial / Customer-Proof"],
