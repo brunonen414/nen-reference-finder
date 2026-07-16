@@ -1,32 +1,47 @@
 name: keep-warm
 
-# Render's free tier sleeps after ~15 min idle, and waking it takes 30-60s (the slow
-# "initial loading"). We keep it warm with GitHub Actions (free/unlimited for this public
-# repo). GitHub's scheduled runs are best-effort and often delayed or skipped, so a single
-# ping every 10 min leaves gaps that let the app sleep. Instead: schedule every 10 min AND
-# have EACH run ping repeatedly over ~16 min. Overlapping runs then give near-continuous
-# coverage, so even when GitHub drops or delays a trigger, the idle gap stays under 15 min.
+# Render's free tier sleeps after ~15 min idle (30-60s cold start = the slowness).
 #
-# NOTE: this reduces cold starts but is still best-effort (it depends on GitHub firing the
-# schedule). For a hard guarantee that it is ALWAYS instant, upgrade the Render service to
-# the Starter plan (always-on, no sleep) in the Render dashboard, or set plan: starter in
-# render.yaml. That is the only way to eliminate cold starts entirely.
+# WHY THE OLD VERSION FAILED: it scheduled a short ping every 10 min, but GitHub's
+# scheduled runs are heavily throttled/dropped, in practice this repo's schedule only
+# fired every ~1.5-3.5 HOURS, so the app slept for hours between pings.
+#
+# FIX: each run is a LONG-RUNNING pinger (~5h45m, just under GitHub's 6h job cap) that
+# hits the app every 5 min. So a single run keeps it warm for almost 6 hours, and even
+# GitHub's sparse triggers overlap into continuous coverage. `concurrency` keeps just one
+# chain going; the `push` trigger bootstraps a run the moment this file is pushed.
+#
+# This is free (public repo = unlimited Actions minutes) but still depends on GitHub
+# firing the schedule at least once every ~5h. For a HARD guarantee of always-instant,
+# upgrade the Render service to the Starter plan (always-on, no sleep): set
+# `plan: starter` in render.yaml and enable it in the Render dashboard. That is the only
+# way to eliminate cold starts with 100% certainty.
+
+concurrency:
+  group: keepwarm
+  cancel-in-progress: false
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # every 10 minutes (GitHub best-effort; may drift/skip)
-  workflow_dispatch: {}       # allow manual "Run workflow" too
+    - cron: "0 * * * *"    # hourly attempt (GitHub is best-effort; each run self-covers ~5h45m)
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/keepwarm.yml' ]   # pushing this file starts a run right away
 
 jobs:
   ping:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 350
     steps:
-      - name: Keep the app + search model warm (repeat over ~16 min)
+      - name: Keep the app warm (long-running; ping every 5 min for ~5h40m)
         run: |
           URL="https://nen-reference-finder.onrender.com"
-          for i in 1 2 3 4 5; do
-            curl -s -m 90 "$URL/api/image_search?q=warm&k=1" -o /dev/null -w "search $i: HTTP %{http_code} in %{time_total}s\n" || true
-            curl -s -m 90 "$URL/" -o /dev/null -w "home   $i: HTTP %{http_code} in %{time_total}s\n" || true
-            if [ "$i" -lt 5 ]; then sleep 240; fi
+          END=$(( $(date +%s) + 20400 ))   # ~5h40m from now, then the next queued run takes over
+          i=0
+          while [ "$(date +%s)" -lt "$END" ]; do
+            i=$((i+1))
+            curl -s -m 90 "$URL/api/image_search?q=warm&k=1" -o /dev/null -w "search $i: %{http_code} %{time_total}s\n" || true
+            curl -s -m 90 "$URL/" -o /dev/null -w "home   $i: %{http_code} %{time_total}s\n" || true
+            sleep 300
           done
