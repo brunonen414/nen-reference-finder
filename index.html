@@ -99,10 +99,10 @@ async function loadRefs(){
   $('rdet').textContent='loading…';
   const d=await (await fetch('/api/references')).json();
   $('rdet').textContent=`${d.count} reference videos`;
-  $('rgrid').innerHTML=d.references.map(r=>`<a class="hcard" data-name="${esc(r.brand.toLowerCase())}" href="${esc(r.source)||'#'}" target="_blank" rel="noopener">
+  $('rgrid').innerHTML=d.references.map(r=>`<div class="hcard" data-name="${esc(r.brand.toLowerCase())}" style="cursor:pointer" onclick="showFrames('${r.vid}')">
     <img loading="lazy" src="/img?id=${encodeURIComponent(r.hero)}&w=440">
     <div class="b"><div class="bn"><span class="refbadge">REF</span> ${esc(r.brand)}</div>
-    <div class="q">${r.count} frames · ↗ original source</div></div></a>`).join('');
+    <div class="q">${r.count} frames · <a href="${esc(r.source)||'#'}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ source</a></div></div></div>`).join('');
 }
 
 /* ---- image search ---- */
@@ -156,12 +156,15 @@ async function copyImg(){
     catch(_){flash('copy failed — use download');}
   }
 }
-async function allFrames(){
-  if(!CUR)return; const vid=CUR.vid; closeLb();
+async function showFrames(vid){
+  tab('img');
   $('idet').textContent='loading frames…'; $('igrid').innerHTML='';
   const d=await (await fetch('/api/video_frames?vid='+encodeURIComponent(vid))).json();
   $('idet').innerHTML=`all ${d.count} frames from <b>${esc(d.brand)}</b> · <a href="#" onclick="$('iq').focus();return false;" style="color:#6f6f6f">new search ↑</a>`;
   renderGrid(d.results); window.scrollTo(0,0);
+}
+async function allFrames(){
+  if(!CUR)return; const vid=CUR.vid; closeLb(); showFrames(vid);
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 $('iq').addEventListener('keydown',e=>{if(e.key==='Enter')isearch();});

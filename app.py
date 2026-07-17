@@ -394,7 +394,8 @@ def api_video_frames():
     return jsonify({"vid": vid, "brand": brand, "count": len(rs),
                     "results": [{"id": e["id"], "vid": e["vid"], "brand": e["brand"],
                                  "arch": e.get("arch",""), "sec": e["sec"], "t": fmt(e["sec"]),
-                                 "line": e.get("line",""), "tags": e.get("tags", [])[:3]} for e in rs]})
+                                 "line": e.get("line",""), "tags": e.get("tags", [])[:3],
+                                 "external": bool(e.get("external")), "source": e.get("source","")} for e in rs]})
 
 @app.route("/api/recommend", methods=["POST"])
 def api_recommend():
@@ -464,7 +465,7 @@ def script():
     # ONE BEAT PER FRAME — every shot shows, at full granularity. The spoken line
     # sits beside the frame it lands on (shown once, then blank as the shot holds);
     # frames with no dialogue simply show the frame + whatever is on screen.
-    beats = []; shown = set()  # (time, priority, html)
+    beats = []; shown = set()  # (time, priority, frame_id, frame_sec, left_html)
     for e in frames:
         sg = _seg_at(e["sec"]); line = ""
         if sg is not None and sg["index"] not in shown:
@@ -476,18 +477,25 @@ def script():
         if ocr: ann.append(f'on screen: “{esc(ocr)}”')
         if desc: ann.append(esc(desc))
         if ann: left += f'<div class="vt">{" · ".join(ann)}</div>'
-        img = f'<div class="r"><img src="/img?id={esc(e["id"])}&w=560"><div class="cap">{fmt(e["sec"])}</div></div>'
-        beats.append((e["sec"], 0, f'<div class="beat"><div class="l">{left}</div>{img}</div>'))
+        beats.append((e["sec"], 0, e["id"], e["sec"], left))
     # a spoken line whose segment held no frame (long-video gaps) — insert so none is lost
     for sg in segs:
         if sg["index"] in shown: continue
         nf = _nearest(sg["start"])
-        imgh = (f'<div class="r"><img src="/img?id={esc(nf["id"])}&w=560"><div class="cap">{fmt(nf["sec"])}</div></div>') if nf else ""
-        beats.append((sg["start"], -1,
-            f'<div class="beat"><div class="l"><div class="t">{fmt(sg["start"])}</div>'
-            f'<p>{esc(sg["text"])}</p></div>{imgh}</div>'))
+        left = f'<div class="t">{fmt(sg["start"])}</div><p>{esc(sg["text"])}</p>'
+        beats.append((sg["start"], -1, (nf["id"] if nf else None), (nf["sec"] if nf else 0), left))
     beats.sort(key=lambda b: (b[0], b[1]))
-    rows = [b[2] for b in beats]
+    # Render one row per beat, but NEVER re-render a frame that is already on screen: consecutive
+    # beats that map to the same frame show it once, then the shot "holds" (this fixes the
+    # end-of-video glitch where many trailing spoken lines all resolve to the last kept frame).
+    rows = []; _last_fid = None
+    for _t, _pr, fid, fsec, left in beats:
+        if fid and fid != _last_fid:
+            imgh = f'<div class="r"><img src="/img?id={esc(fid)}&w=560"><div class="cap">{fmt(fsec)}</div></div>'
+            _last_fid = fid
+        else:
+            imgh = '<div class="r" style="opacity:.4;font-size:12px;color:#8a8a8a;padding:8px 0">↑ same shot holds</div>'
+        rows.append(f'<div class="beat"><div class="l">{left}</div>{imgh}</div>')
     orig = URL_MAP.get(vid, "")
     origlink = f' &nbsp;·&nbsp; <a href="{orig}" target="_blank">original post ↗</a>' if orig else ""
     head = f"walkthrough · {len(rows)} beats · {len(segs)} spoken" if rows else "no coverage"
