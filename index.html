@@ -45,6 +45,8 @@
   </div>
 </div>
 
+<button id="totop" class="totop" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ back to top</button>
+
 <!-- lightbox -->
 <div id="lb" class="lb" onclick="closeLb(event)">
   <div class="lbx" onclick="event.stopPropagation()">
@@ -67,6 +69,16 @@
 <script>
 const $=id=>document.getElementById(id);
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+// drag a frame straight into a Google Doc / Slides / etc — carry the HD (w=1100) image
+function dragImg(e,id){
+  const hd=location.origin+'/img?id='+encodeURIComponent(id)+'&w=1100';
+  try{
+    e.dataTransfer.setData('text/uri-list',hd);
+    e.dataTransfer.setData('text/html','<img src="'+hd+'">');
+    e.dataTransfer.setData('text/plain',hd);
+    e.dataTransfer.effectAllowed='copy';
+  }catch(_){ }
+}
 
 let VLOADED=false, RLOADED=false;
 function tab(v){
@@ -106,7 +118,7 @@ async function loadRefs(){
     const src=(r.source||'');
     const link=src.startsWith('http')?` · <a href="${esc(src)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ source</a>`:'';
     return `<div class="hcard" data-name="${esc(r.brand.toLowerCase())}" style="cursor:pointer" onclick="showFrames('${r.vid}')">
-    <img loading="lazy" src="/img?id=${encodeURIComponent(r.hero)}&w=440">
+    <img loading="lazy" draggable="true" ondragstart="dragImg(event,'${r.hero}')" src="/img?id=${encodeURIComponent(r.hero)}&w=440">
     <div class="b"><div class="bn">${bdg}${esc(r.brand)}</div>
     <div class="q">${r.count} frames${link}</div></div></div>`;}).join('');
 }
@@ -121,7 +133,7 @@ function badge(kind){
 function cardHTML(x,i){
   const k=x.kind||(x.external?'ref':'');
   return `<div class="icard" onclick="openLb(${i})">
-    <img loading="lazy" src="/img?id=${encodeURIComponent(x.id)}&w=440">
+    <img loading="lazy" draggable="true" ondragstart="dragImg(event,'${x.id}')" src="/img?id=${encodeURIComponent(x.id)}&w=440">
     <div class="m"><div class="mb">${badge(k)}${esc(x.brand)} · ${x.t}</div>
     <div class="ml">${esc(x.line||(x.tags||[]).join(', '))}</div></div></div>`;
 }
@@ -148,6 +160,7 @@ async function isearch(more){
 function openLb(i){
   const x=IRES[i]; if(!x)return; CUR=x;
   $('lbimg').src=masterURL(x);
+  $('lbimg').setAttribute('draggable','true'); $('lbimg').ondragstart=e=>dragImg(e,x.id);
   $('lbbn').textContent=[x.brand,x.arch,x.t].filter(Boolean).join(' · ');
   $('lbln').textContent=x.line||'';
   $('lbtg').textContent=(x.tags||[]).join('  ·  ');
@@ -187,6 +200,7 @@ async function allFrames(){
   if(!CUR)return; const vid=CUR.vid; closeLb(); showFrames(vid);
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+window.addEventListener('scroll',()=>{const b=$('totop'); if(b) b.classList.toggle('on', window.scrollY>360);});
 $('iq').addEventListener('keydown',e=>{if(e.key==='Enter')isearch();});
 </script>
 </body></html>
