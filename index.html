@@ -25,6 +25,7 @@
     </div>
     <div class="det" id="idet"></div>
     <div id="igrid" class="igrid"></div>
+    <div id="imore" class="imore"></div>
   </div>
 
   <!-- ===== NEN VIDEOS ===== -->
@@ -99,31 +100,50 @@ async function loadRefs(){
   $('rdet').textContent='loading…';
   const d=await (await fetch('/api/references')).json();
   $('rdet').textContent=`${d.count} reference videos`;
-  $('rgrid').innerHTML=d.references.map(r=>`<div class="hcard" data-name="${esc(r.brand.toLowerCase())}" style="cursor:pointer" onclick="showFrames('${r.vid}')">
+  $('rgrid').innerHTML=d.references.map(r=>{
+    const isInspo=r.kind==='inspo';
+    const bdg='<span class="refbadge'+(isInspo?' inspo':'')+'">'+(isInspo?'INSPO':'REF')+'</span> ';
+    const src=(r.source||'');
+    const link=src.startsWith('http')?` · <a href="${esc(src)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ source</a>`:'';
+    return `<div class="hcard" data-name="${esc(r.brand.toLowerCase())}" style="cursor:pointer" onclick="showFrames('${r.vid}')">
     <img loading="lazy" src="/img?id=${encodeURIComponent(r.hero)}&w=440">
-    <div class="b"><div class="bn"><span class="refbadge">REF</span> ${esc(r.brand)}</div>
-    <div class="q">${r.count} frames · <a href="${esc(r.source)||'#'}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ source</a></div></div></div>`).join('');
+    <div class="b"><div class="bn">${bdg}${esc(r.brand)}</div>
+    <div class="q">${r.count} frames${link}</div></div></div>`;}).join('');
 }
 
 /* ---- image search ---- */
-let IRES=[], CUR=null;
+let IRES=[], CUR=null, IQ='', IOFF=0;
 const masterURL=x=>'/img?id='+encodeURIComponent(x.id)+'&w=1100';
-function renderGrid(list){
-  IRES=list||[];
-  $('igrid').innerHTML=IRES.map((x,i)=>`<div class="icard" onclick="openLb(${i})">
-    <img loading="lazy" src="/img?id=${encodeURIComponent(x.id)}&w=440">
-    <div class="m"><div class="mb">${x.external?'<span class="refbadge">REF</span> ':''}${esc(x.brand)} · ${x.t}</div>
-    <div class="ml">${esc(x.line||x.tags.join(', '))}</div></div></div>`).join('');
+function badge(kind){
+  if(!kind) return '';
+  return '<span class="refbadge'+(kind==='inspo'?' inspo':'')+'">'+(kind==='inspo'?'INSPO':'REF')+'</span> ';
 }
-async function isearch(){
+function cardHTML(x,i){
+  const k=x.kind||(x.external?'ref':'');
+  return `<div class="icard" onclick="openLb(${i})">
+    <img loading="lazy" src="/img?id=${encodeURIComponent(x.id)}&w=440">
+    <div class="m"><div class="mb">${badge(k)}${esc(x.brand)} · ${x.t}</div>
+    <div class="ml">${esc(x.line||(x.tags||[]).join(', '))}</div></div></div>`;
+}
+function renderGrid(list, append){
+  if(append){ const s=IRES.length; IRES=IRES.concat(list);
+    $('igrid').insertAdjacentHTML('beforeend', list.map((x,j)=>cardHTML(x,s+j)).join('')); }
+  else { IRES=list||[]; $('igrid').innerHTML=IRES.map((x,i)=>cardHTML(x,i)).join(''); }
+}
+async function isearch(more){
   const q=$('iq').value.trim();
-  if(!q){$('igrid').innerHTML='';$('idet').textContent='type what you’re looking for.';return;}
-  $('idet').textContent='searching…'; $('igrid').innerHTML='';
-  const r=await fetch('/api/image_search?q='+encodeURIComponent(q)+'&k=50');
+  if(!q){$('igrid').innerHTML='';$('imore').innerHTML='';$('idet').textContent='type what you’re looking for.';return;}
+  if(!more){ IQ=q; IOFF=0; IRES=[]; $('igrid').innerHTML=''; $('imore').innerHTML=''; $('idet').textContent='searching…'; }
+  else { $('imore').innerHTML='<div class="moredone">loading…</div>'; }
+  const r=await fetch('/api/image_search?q='+encodeURIComponent(IQ)+'&k=50&offset='+IOFF);
   const d=await r.json();
-  if(!(d.results||[]).length){renderGrid([]);$('idet').textContent=`no matches in ${d.count} frames — try simpler words or a script line.`;return;}
-  $('idet').textContent=`${d.results.length} of ${d.count} frames`;
-  renderGrid(d.results);
+  const res=d.results||[];
+  if(!more && !res.length){ renderGrid([]); $('idet').textContent=`no matches in ${d.count} frames — try simpler words or a script line.`; $('imore').innerHTML=''; return; }
+  renderGrid(res, !!more); IOFF+=res.length;
+  $('idet').textContent=`${IRES.length} of ${d.count} frames`;
+  $('imore').innerHTML = d.has_more
+    ? '<button class="morebtn" onclick="isearch(1)">generate 50 more ↓</button>'
+    : (IRES.length ? '<div class="moredone">— end of results —</div>' : '');
 }
 function openLb(i){
   const x=IRES[i]; if(!x)return; CUR=x;
@@ -133,8 +153,8 @@ function openLb(i){
   $('lbtg').textContent=(x.tags||[]).join('  ·  ');
   const dl=$('lbdl'); dl.href=masterURL(x); dl.setAttribute('download',x.id+'.jpg');
   const sc=$('lbscript');
-  if(x.external && x.source){ sc.textContent='↗ original source'; sc.href=x.source; sc.target='_blank'; sc.style.display=''; }
-  else if(x.external){ sc.style.display='none'; }
+  if((x.external||x.kind) && x.source){ sc.textContent='↗ original source'; sc.href=x.source; sc.target='_blank'; sc.style.display=''; }
+  else if(x.external||x.kind){ sc.style.display='none'; }
   else { sc.textContent='open full script →'; sc.href='/script?vid='+encodeURIComponent(x.vid); sc.removeAttribute('target'); sc.style.display=''; }
   $('lbmsg').textContent='';
   $('lb').classList.add('on');
@@ -158,7 +178,7 @@ async function copyImg(){
 }
 async function showFrames(vid){
   tab('img');
-  $('idet').textContent='loading frames…'; $('igrid').innerHTML='';
+  $('idet').textContent='loading frames…'; $('igrid').innerHTML=''; $('imore').innerHTML='';
   const d=await (await fetch('/api/video_frames?vid='+encodeURIComponent(vid))).json();
   $('idet').innerHTML=`all ${d.count} frames from <b>${esc(d.brand)}</b> · <a href="#" onclick="$('iq').focus();return false;" style="color:#6f6f6f">new search ↑</a>`;
   renderGrid(d.results); window.scrollTo(0,0);

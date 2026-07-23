@@ -83,6 +83,12 @@ h1{font-size:30px;font-weight:700;margin:18px 0 2px}
 .listsearch:focus{border-color:#cfcfcf}
 .refbadge{display:inline-block;background:#B5532A;color:#fff;font-size:9px;font-weight:700;
  padding:1px 5px;border-radius:6px;letter-spacing:.05em;vertical-align:middle}
+.refbadge.inspo{background:#2e7d8a}
+.imore{margin-top:22px;text-align:center;min-height:20px}
+.morebtn{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--bd);
+ border-radius:999px;padding:11px 24px;cursor:pointer;transition:all .12s}
+.morebtn:hover{border-color:#bcbcbc;background:#fafafa}
+.moredone{font-size:12.5px;color:var(--mut)}
 .icard .ml{font-size:12.5px;color:#555;margin-top:3px;line-height:1.35;max-height:35px;overflow:hidden}
 /* lightbox */
 .lb{display:none;position:fixed;inset:0;background:rgba(20,20,20,.82);z-index:50;align-items:center;justify-content:center;padding:30px}

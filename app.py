@@ -27,7 +27,18 @@ for mp in glob.glob(os.path.join(DBV, "*", "meta.json")):
     m = json.load(open(mp, encoding="utf-8")); s = m.get("sheet", {})
     URL_MAP[m.get("video_id")] = s.get("url") or s.get("x_url") or s.get("linkedin_url") or ""
 URL_MAP["novella"] = "https://x.com/maxekane/status/2054909691210178968"
-EXCLUDE = {"paraform"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show as references/hooks (inspo enriches image search only)
+EXCLUDE = {"paraform"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show in the client recommender/hooks (they DO show in the references browse tab + image search)
+
+def _kind_source(e):
+    """Classify an index row as a non-Nen video and resolve its outbound source link.
+    External refs store the URL in 'source'; inspo stores its link on the profile 'url'."""
+    if e.get("source") == "inspo":
+        link = BYID.get(e["vid"], {}).get("url", "")
+        return "inspo", (link if str(link).startswith("http") else "")
+    if e.get("external"):
+        s = e.get("source", "")
+        return "ref", (s if str(s).startswith("http") else "")
+    return "", ""
 
 GOAL_ARCH = {"awareness": ["Cinematic Narrative","Kinetic / Motion-Graphics","Skit-Hybrid"],
              "leads": ["UI-Walkthrough Demo","Testimonial / Customer-Proof"],
@@ -268,7 +279,7 @@ def _lex_scores(qs, ql):
         out.append(s)
     return out
 
-def image_search(q, k=50):
+def image_search(q, k=50, offset=0):
     _ensure_lex(); _ensure_semantic()
     qs = set(_toks(q)); ql = (q or "").lower().strip()
     target = _detect_type(ql)
@@ -297,11 +308,11 @@ def image_search(q, k=50):
                 rws = BRAND_ROWS.get(t)
                 if rws is not None: bmask[rws] = 1.0
             fused = fused + BRAND_W * bmask
-        cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:400]]
+        cand = [(float(fused[i]), i) for i in _np.argsort(-fused)[:800]]
     else:
-        if not qs: return []
+        if not qs: return [], False
         cand = sorted(((lex[i], i) for i in range(len(IMG_INDEX)) if lex[i] > 0), key=lambda x: -x[0])
-        if not cand: return []
+        if not cand: return [], False
     out, per, picked = [], {}, []
     for sc, i in cand:
         e = IMG_INDEX[i]
@@ -312,12 +323,13 @@ def image_search(q, k=50):
             continue                                   # near-duplicate of an already-picked frame
         per[e["vid"]] = per.get(e["vid"], 0) + 1
         if r is not None: picked.append(r)
+        _kd, _lk = _kind_source(e)
         out.append({"id": e["id"], "vid": e["vid"], "brand": e["brand"], "arch": e.get("arch",""),
                     "sec": e["sec"], "t": fmt(e["sec"]), "line": e.get("line",""),
                     "tags": e.get("tags", [])[:3], "score": round(sc*1000, 2) if use_sem else round(sc, 1),
-                    "external": bool(e.get("external")), "source": e.get("source", "")})
-        if len(out) >= k: break
-    return out
+                    "external": bool(e.get("external")), "kind": _kd, "source": _lk})
+        if len(out) > offset + k: break
+    return out[offset:offset+k], len(out) > offset + k
 
 app = Flask(__name__)
 
@@ -359,9 +371,11 @@ def img():
 
 @app.route("/api/image_search")
 def api_image_search():
-    q = request.args.get("q", ""); k = request.args.get("k", "15")
+    q = request.args.get("q", ""); k = request.args.get("k", "50"); off = request.args.get("offset", "0")
     k = int(k) if k.isdigit() else 50
-    return jsonify({"query": q, "count": len(IMG_INDEX), "results": image_search(q, min(k, 60))})
+    off = int(off) if off.isdigit() else 0
+    results, has_more = image_search(q, min(k, 60), off)
+    return jsonify({"query": q, "count": len(IMG_INDEX), "results": results, "offset": off, "has_more": has_more})
 
 @app.route("/api/videos")
 def api_videos():
@@ -373,16 +387,18 @@ def api_videos():
 
 @app.route("/api/references")
 def api_references():
-    """External (non-Nen) reference videos, grouped — each with a hero frame + source link."""
+    """Non-Nen videos people shared, grouped: external refs + inspiration (source=inspo).
+    Each with a hero frame + source link. (Inspo is kept out of the client recommender, not out of here.)"""
     refs = {}
     for e in IMG_INDEX:
-        if not e.get("external"): continue
+        kind, link = _kind_source(e)
+        if not kind: continue
         v = e["vid"]
         if v not in refs:
-            refs[v] = {"vid": v, "brand": e.get("brand", v), "source": e.get("source", ""),
+            refs[v] = {"vid": v, "brand": e.get("brand", v), "source": link, "kind": kind,
                        "hero": e["id"], "count": 0}
         refs[v]["count"] += 1
-    out = sorted(refs.values(), key=lambda x: x["brand"].lower())
+    out = sorted(refs.values(), key=lambda x: (x["kind"] != "inspo", x["brand"].lower()))
     return jsonify({"count": len(out), "references": out})
 
 @app.route("/api/video_frames")
@@ -391,11 +407,13 @@ def api_video_frames():
     vid = request.args.get("vid", "")
     rs = sorted((e for e in IMG_INDEX if e["vid"] == vid), key=lambda e: e["sec"])
     brand = rs[0]["brand"] if rs else (BYID.get(vid, {}).get("brand", vid))
-    return jsonify({"vid": vid, "brand": brand, "count": len(rs),
-                    "results": [{"id": e["id"], "vid": e["vid"], "brand": e["brand"],
-                                 "arch": e.get("arch",""), "sec": e["sec"], "t": fmt(e["sec"]),
-                                 "line": e.get("line",""), "tags": e.get("tags", [])[:3],
-                                 "external": bool(e.get("external")), "source": e.get("source","")} for e in rs]})
+    def _row(e):
+        kind, link = _kind_source(e)
+        return {"id": e["id"], "vid": e["vid"], "brand": e["brand"],
+                "arch": e.get("arch",""), "sec": e["sec"], "t": fmt(e["sec"]),
+                "line": e.get("line",""), "tags": e.get("tags", [])[:3],
+                "external": bool(e.get("external")), "kind": kind, "source": link}
+    return jsonify({"vid": vid, "brand": brand, "count": len(rs), "results": [_row(e) for e in rs]})
 
 @app.route("/api/recommend", methods=["POST"])
 def api_recommend():
