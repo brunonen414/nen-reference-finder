@@ -342,13 +342,42 @@ def style(): return send_from_directory(HERE, "style.css")
 @app.route("/fonts/<path:fn>")
 def fonts(fn): return send_from_directory(os.path.join(HERE, "fonts"), fn)
 
+# The "nen videos" tab historically pulls hero thumbnails from ./frames, but the
+# ingest pipeline only exports HD frames to ./imgs. So /frame now falls back to imgs/
+# (exact second, else the nearest kept second for that video) — every video's hero
+# renders, old or newly-ingested, and future drops can't reintroduce broken thumbs.
+# Optional ?w= downscales (mirrors /img); frames/ hits still serve first (unchanged).
+_IMG_SECS = {}
+def _img_secs(vid):
+    if vid not in _IMG_SECS:
+        secs = []
+        for fp in glob.glob(os.path.join(IMGS, vid + "__*.jpg")):
+            tail = os.path.basename(fp)[len(vid)+2:-4]
+            if tail.lstrip("-").isdigit(): secs.append(int(tail))
+        _IMG_SECS[vid] = sorted(secs)
+    return _IMG_SECS[vid]
+
 @app.route("/frame")
 def frame():
     vid = request.args.get("vid", ""); sec = request.args.get("sec", "0")
-    fn = f"{vid}__{int(sec)}.jpg" if sec.lstrip("-").isdigit() else None
-    p = os.path.join(FRAMES, fn) if fn else None
-    if not p or not os.path.abspath(p).startswith(os.path.abspath(FRAMES)) or not os.path.exists(p):
+    if not re.fullmatch(r"[A-Za-z0-9_.\-]+", vid or "") or not sec.lstrip("-").isdigit():
         return ("not found", 404)
+    sec = int(sec); fn = f"{vid}__{sec}.jpg"
+    p = os.path.join(FRAMES, fn)
+    if not (os.path.abspath(p).startswith(os.path.abspath(FRAMES)) and os.path.exists(p)):
+        p = os.path.join(IMGS, fn)                       # fallback: HD store (new ingests)
+        if not os.path.exists(p):
+            secs = _img_secs(vid)                        # final fallback: nearest kept second
+            if not secs: return ("not found", 404)
+            p = os.path.join(IMGS, f"{vid}__{min(secs, key=lambda s: abs(s - sec))}.jpg")
+    w = request.args.get("w", "")
+    if w.isdigit() and Image is not None:
+        try:
+            im = Image.open(p).convert("RGB"); W = min(int(w), im.width)
+            if W < im.width: im = im.resize((W, int(im.height*W/im.width)), Image.LANCZOS)
+            buf = io.BytesIO(); im.save(buf, "JPEG", quality=82); buf.seek(0)
+            return send_file(buf, mimetype="image/jpeg")
+        except Exception: pass
     return send_file(p, mimetype="image/jpeg")
 
 @app.route("/img")
