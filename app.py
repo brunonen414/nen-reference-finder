@@ -410,7 +410,7 @@ def api_image_search():
 def api_videos():
     """Full list of Nen videos for the browsable library (each links to its script)."""
     vs = [{"vid": v["id"], "brand": v["brand"], "broad": v["broad"], "fine": v.get("fine", ""),
-           "hero_sec": v.get("hero_sec", 1)} for v in VIDS if v["id"] not in EXCLUDE]
+           "hero_sec": v.get("hero_sec", 1), "orig": URL_MAP.get(v["id"], "")} for v in VIDS if v["id"] not in EXCLUDE]
     vs.sort(key=lambda x: x["brand"].lower())
     return jsonify({"count": len(vs), "videos": vs})
 

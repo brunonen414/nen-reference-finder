@@ -104,8 +104,10 @@ async function loadVideos(){
   $('vgrid').innerHTML=d.videos.map(v=>`<a class="hcard" data-name="${esc((v.brand+' '+v.broad+' '+(v.fine||'')).toLowerCase())}" href="/script?vid=${encodeURIComponent(v.vid)}">
     <img loading="lazy" src="/frame?vid=${encodeURIComponent(v.vid)}&sec=${v.hero_sec}&w=440">
     <div class="b"><div class="bn">${esc(v.brand)}</div>
-    <div class="q">${esc(v.broad)}${v.fine?' — '+esc(v.fine):''}</div></div></a>`).join('');
+    <div class="q">${esc(v.broad)}${v.fine?' — '+esc(v.fine):''}</div>
+    ${v.orig?`<span class="cardsrc" data-src="${esc(v.orig)}" onclick="openOrig(event,this)">↗ original post</span>`:''}</div></a>`).join('');
 }
+function openOrig(e,el){ e.stopPropagation(); e.preventDefault(); const u=el.dataset.src; if(u) window.open(u,'_blank','noopener'); }
 
 /* ---- references (non-nen) list ---- */
 async function loadRefs(){

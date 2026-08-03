@@ -57,6 +57,8 @@ h1{font-size:30px;font-weight:700;margin:18px 0 2px}
 .hcard .b{padding:11px 13px}
 .hcard .bn{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
 .hcard .q{font-size:15px;font-weight:600;margin-top:4px;line-height:1.42}
+.hcard .cardsrc{display:inline-block;margin-top:8px;font-size:12px;font-weight:600;color:#9a9a9a;cursor:pointer}
+.hcard .cardsrc:hover{color:var(--ink);text-decoration:underline}
 
 .banner{background:#fff;border:1px solid var(--bd);border-radius:11px;padding:10px 14px;
  font-size:13px;color:#6f6f6f;text-align:center;margin-bottom:20px}
