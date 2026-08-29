@@ -1,0 +1,174 @@
+{
+  "_comment": "Master dictionary of words learned. One entry per headword. Entries with source='sample' are placeholder data shipped so the app is usable before the screenshots land - build_deck.py drops them as soon as real entries exist.",
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "shunbian",
+      "simplified": "顺便",
+      "pinyin": "shùnbiàn",
+      "english": "by the way; while you're at it",
+      "pos": "adv",
+      "example": {
+        "simplified": "你去超市的时候，顺便帮我买点牛奶。",
+        "pinyin": "Nǐ qù chāoshì de shíhou, shùnbiàn bāng wǒ mǎi diǎn niúnǎi.",
+        "english": "When you go to the supermarket, grab me some milk while you're at it."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "qishi",
+      "simplified": "其实",
+      "pinyin": "qíshí",
+      "english": "actually; in fact",
+      "pos": "adv",
+      "example": {
+        "simplified": "其实我不太喜欢咖啡。",
+        "pinyin": "Qíshí wǒ bú tài xǐhuan kāfēi.",
+        "english": "Actually, I don't really like coffee."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "mafan",
+      "simplified": "麻烦",
+      "pinyin": "máfan",
+      "english": "trouble; troublesome; to bother (someone)",
+      "pos": "n/adj/v",
+      "example": {
+        "simplified": "麻烦你帮我看一下这个。",
+        "pinyin": "Máfan nǐ bāng wǒ kàn yíxià zhège.",
+        "english": "Could I trouble you to take a look at this?"
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "xiguan",
+      "simplified": "习惯",
+      "pinyin": "xíguàn",
+      "english": "habit; to be used to",
+      "pos": "n/v",
+      "example": {
+        "simplified": "我还没习惯这里的天气。",
+        "pinyin": "Wǒ hái méi xíguàn zhèlǐ de tiānqì.",
+        "english": "I'm not used to the weather here yet."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "chabuduo",
+      "simplified": "差不多",
+      "pinyin": "chàbuduō",
+      "english": "almost; about the same",
+      "pos": "adj/adv",
+      "example": {
+        "simplified": "我们差不多准备好了。",
+        "pinyin": "Wǒmen chàbuduō zhǔnbèi hǎo le.",
+        "english": "We're just about ready."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "dasuan",
+      "simplified": "打算",
+      "pinyin": "dǎsuàn",
+      "english": "to plan to; a plan",
+      "pos": "v/n",
+      "example": {
+        "simplified": "你周末打算做什么？",
+        "pinyin": "Nǐ zhōumò dǎsuàn zuò shénme?",
+        "english": "What are you planning to do this weekend?"
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "zhide",
+      "simplified": "值得",
+      "pinyin": "zhídé",
+      "english": "to be worth it; worthwhile",
+      "pos": "v",
+      "example": {
+        "simplified": "这部电影值得看两遍。",
+        "pinyin": "Zhè bù diànyǐng zhídé kàn liǎng biàn.",
+        "english": "This movie is worth watching twice."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "xiaolv",
+      "simplified": "效率",
+      "pinyin": "xiàolǜ",
+      "english": "efficiency",
+      "pos": "n",
+      "example": {
+        "simplified": "用这个工具效率高多了。",
+        "pinyin": "Yòng zhège gōngjù xiàolǜ gāo duō le.",
+        "english": "Using this tool is way more efficient."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "houhui",
+      "simplified": "后悔",
+      "pinyin": "hòuhuǐ",
+      "english": "to regret",
+      "pos": "v",
+      "example": {
+        "simplified": "我有点后悔昨天说的话。",
+        "pinyin": "Wǒ yǒudiǎn hòuhuǐ zuótiān shuō de huà.",
+        "english": "I kind of regret what I said yesterday."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "shuxi",
+      "simplified": "熟悉",
+      "pinyin": "shúxī",
+      "english": "familiar with; to know well",
+      "pos": "adj/v",
+      "example": {
+        "simplified": "我对这个城市还不太熟悉。",
+        "pinyin": "Wǒ duì zhège chéngshì hái bú tài shúxī.",
+        "english": "I'm not very familiar with this city yet."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "kaopu",
+      "simplified": "靠谱",
+      "pinyin": "kàopǔ",
+      "english": "reliable; legit (colloquial)",
+      "pos": "adj",
+      "example": {
+        "simplified": "这个人挺靠谱的。",
+        "pinyin": "Zhège rén tǐng kàopǔ de.",
+        "english": "This guy is pretty reliable."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    },
+    {
+      "id": "shunli",
+      "simplified": "顺利",
+      "pinyin": "shùnlì",
+      "english": "smooth; going well; without a hitch",
+      "pos": "adj",
+      "example": {
+        "simplified": "希望你面试顺利。",
+        "pinyin": "Xīwàng nǐ miànshì shùnlì.",
+        "english": "Hope your interview goes smoothly."
+      },
+      "source": "sample",
+      "added": "2026-08-29"
+    }
+  ]
+}

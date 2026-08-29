@@ -1,0 +1,559 @@
+<title>Shoebox Hanzi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Serif+SC:wght@500;700&display=swap">
+<style>
+:root{
+  --paper:#E8E9E4; --card:#F7F7F4; --sunk:#E2E4DE;
+  --ink:#1B1F1D; --ink-soft:#5F6763; --ink-faint:#8A928C;
+  --rule:#CDD0C9; --grid:#C4C9C0;
+  --seal:#A83A2C; --celadon:#40705D;
+  --shadow:0 1px 2px rgba(27,31,29,.06), 0 12px 32px -18px rgba(27,31,29,.35);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#131614; --card:#1C201D; --sunk:#22261F;
+    --ink:#E7E9E3; --ink-soft:#9BA49D; --ink-faint:#6E7872;
+    --rule:#31372F; --grid:#39403A;
+    --seal:#D4594A; --celadon:#7FAE96;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -20px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131614; --card:#1C201D; --sunk:#22261F;
+  --ink:#E7E9E3; --ink-soft:#9BA49D; --ink-faint:#6E7872;
+  --rule:#31372F; --grid:#39403A;
+  --seal:#D4594A; --celadon:#7FAE96;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 16px 40px -20px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh; display:flex; flex-direction:column;
+}
+.wrap{width:100%; max-width:44rem; margin:0 auto; padding:1.25rem 1.25rem 2rem;
+  flex:1; display:flex; flex-direction:column; gap:1.25rem}
+
+/* ---- masthead ---- */
+header{display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap}
+h1{
+  font-family:Newsreader,Georgia,serif; font-weight:500;
+  font-size:1.35rem; margin:0; letter-spacing:-.01em;
+}
+h1 .zh{font-family:"Noto Serif SC",Newsreader,serif; margin-right:.45rem}
+.tally{
+  margin-left:auto; display:flex; gap:.9rem; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint);
+  font-variant-numeric:tabular-nums;
+}
+.tally b{font-weight:600; color:var(--ink-soft)}
+.rail{height:2px; background:var(--rule); position:relative; overflow:hidden}
+.rail i{position:absolute; inset:0 auto 0 0; background:var(--celadon);
+  width:0%; transition:width .35s ease}
+
+/* ---- tabs ---- */
+nav{display:flex; gap:1.25rem; border-bottom:1px solid var(--rule); padding-bottom:.1rem}
+nav button{
+  background:none; border:0; padding:0 0 .5rem; cursor:pointer; color:var(--ink-faint);
+  font:inherit; font-size:.78rem; letter-spacing:.09em; text-transform:uppercase;
+  border-bottom:2px solid transparent; margin-bottom:-1px;
+}
+nav button[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--seal)}
+nav button:hover{color:var(--ink-soft)}
+
+/* ---- the card ---- */
+.stage{perspective:1400px; display:flex}
+.card{
+  background:var(--card); box-shadow:var(--shadow);
+  border:1px solid var(--rule); padding:2rem 1.5rem;
+  display:flex; flex-direction:column; justify-content:center; gap:1.5rem;
+  min-height:26rem; width:100%; position:relative; cursor:pointer;
+  transition:transform .16s ease; transform-style:preserve-3d;
+}
+.card.turning{transform:rotateY(90deg)}
+.card:focus-visible{outline:2px solid var(--seal); outline-offset:3px}
+#face{display:flex; flex-direction:column; gap:1.3rem}
+#face p{margin:0}
+.eyebrow{
+  font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-faint); text-align:center;
+}
+
+/* front */
+.front-word{
+  font-family:Newsreader,Georgia,serif; font-weight:400;
+  font-size:clamp(2rem,8.5vw,3.1rem); line-height:1.15; text-align:center;
+  text-wrap:balance; margin:0; letter-spacing:-.015em;
+}
+.hint{text-align:center; font-size:.75rem; color:var(--ink-faint)}
+
+/* back */
+.pinyin{
+  text-align:center; font-size:1.05rem; font-weight:500; letter-spacing:.05em;
+  color:var(--celadon);
+}
+.hanzi{display:flex; justify-content:center; gap:.4rem;
+  font-size:clamp(3rem,17vw,4.6rem)}
+.zi{
+  position:relative; width:1.18em; height:1.18em; display:grid; place-items:center;
+  box-shadow:inset 0 0 0 1px var(--grid);
+  font-family:"Noto Serif SC",serif; font-weight:500; line-height:1;
+}
+.zi::before,.zi::after{content:""; position:absolute}
+.zi::before{left:0; right:0; top:50%; border-top:1px dashed var(--grid)}
+.zi::after{top:0; bottom:0; left:50%; border-left:1px dashed var(--grid)}
+.zi span{position:relative; font-size:.84em}
+.gloss{
+  text-align:center; font-family:Newsreader,Georgia,serif; font-size:1.15rem;
+  color:var(--ink); text-wrap:balance; margin:0;
+}
+.usage{border-top:1px solid var(--rule); padding-top:1.15rem; display:grid; gap:.55rem}
+.usage .eyebrow{text-align:left; margin-bottom:.15rem}
+.ex-zh{font-family:"Noto Serif SC",serif; font-size:1.15rem; line-height:1.65}
+.ex-py{font-size:.86rem; color:var(--celadon); line-height:1.5}
+.ex-en{font-size:.9rem; color:var(--ink-soft); line-height:1.55}
+
+/* seal stamp */
+.seal{
+  position:absolute; right:1.1rem; bottom:1.1rem; width:2.6rem; height:2.6rem;
+  display:grid; place-items:center; border:2px solid var(--seal); color:var(--seal);
+  font-family:"Noto Serif SC",serif; font-weight:700; font-size:1.3rem;
+  opacity:0; transform:rotate(-8deg) scale(.7); pointer-events:none;
+}
+.seal.stamped{animation:stamp .45s cubic-bezier(.2,1.5,.4,1) forwards}
+@keyframes stamp{to{opacity:.85; transform:rotate(-8deg) scale(1)}}
+
+/* ---- controls ---- */
+.controls{display:grid; grid-template-columns:1fr 1fr; gap:.75rem}
+.controls button{
+  font:inherit; font-size:.82rem; letter-spacing:.06em; text-transform:uppercase;
+  padding:.95rem 1rem; background:var(--card); cursor:pointer;
+  border:1px solid var(--rule); color:var(--ink-soft); transition:all .12s ease;
+}
+.controls button:hover{border-color:currentColor}
+.controls button:focus-visible{outline:2px solid var(--seal); outline-offset:2px}
+.controls .again{color:var(--seal)}
+.controls .got{color:var(--celadon)}
+.controls kbd{
+  font:inherit; font-size:.7rem; opacity:.5; margin-left:.4rem;
+}
+.utility{display:flex; gap:1.25rem; justify-content:center; flex-wrap:wrap}
+.utility button{
+  background:none; border:0; padding:.3rem; cursor:pointer; font:inherit;
+  font-size:.74rem; color:var(--ink-faint); text-decoration:underline;
+  text-underline-offset:3px; text-decoration-color:var(--rule);
+}
+.utility button:hover{color:var(--ink-soft)}
+
+/* ---- notice ---- */
+.notice{
+  border-left:2px solid var(--seal); padding:.7rem .9rem; background:var(--sunk);
+  font-size:.82rem; line-height:1.55; color:var(--ink-soft);
+}
+.notice b{color:var(--ink); font-weight:600}
+
+/* ---- list view ---- */
+.search{
+  width:100%; font:inherit; font-size:.95rem; padding:.7rem .85rem;
+  background:var(--card); border:1px solid var(--rule); color:var(--ink);
+}
+.search:focus-visible{outline:2px solid var(--celadon); outline-offset:-1px}
+.entries{display:flex; flex-direction:column}
+.entry{border-bottom:1px solid var(--rule); padding:1rem 0; display:grid; gap:.3rem}
+.entry-head{display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap}
+.entry-zh{font-family:"Noto Serif SC",serif; font-size:1.45rem; font-weight:500}
+.entry-py{font-size:.88rem; color:var(--celadon); letter-spacing:.03em}
+.entry-pos{font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-faint); margin-left:auto}
+.entry-en{font-family:Newsreader,Georgia,serif; font-size:1.02rem}
+.entry-ex{font-size:.82rem; color:var(--ink-faint); line-height:1.6; margin-top:.15rem}
+.entry-ex .zh{font-family:"Noto Serif SC",serif}
+.empty{padding:2.5rem 0; text-align:center; color:var(--ink-faint); font-size:.9rem}
+[hidden]{display:none !important}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important; transition-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1><span class="zh">生词</span>Words I&rsquo;ve Looked Up</h1>
+    <div class="tally">
+      <span><b id="t-known">0</b> known</span>
+      <span><b id="t-left">0</b> to go</span>
+      <span><b id="t-all">0</b> total</span>
+    </div>
+  </header>
+  <div class="rail"><i id="rail"></i></div>
+
+  <nav>
+    <button id="tab-study" aria-selected="true">Study</button>
+    <button id="tab-list" aria-selected="false">Dictionary</button>
+  </nav>
+
+  <div class="notice" id="sample-notice" hidden>
+    <b>Sample deck.</b> These twelve words ship with the app so it works out of the
+    box &mdash; they are not from your screenshots. Drop your screenshots in
+    <code>screenshots/</code> and run the build; they&rsquo;ll be replaced.
+  </div>
+
+  <!-- STUDY -->
+  <section id="view-study">
+    <div class="stage">
+      <div class="card" id="card" tabindex="0" role="button" aria-label="Flashcard. Press space to flip.">
+        <div id="face"></div>
+        <div class="seal" id="seal" aria-hidden="true">熟</div>
+      </div>
+    </div>
+    <div class="controls" style="margin-top:1.25rem">
+      <button class="again" id="btn-again">Again <kbd>1</kbd></button>
+      <button class="got" id="btn-got">Got it <kbd>2</kbd></button>
+    </div>
+    <div class="utility" style="margin-top:1rem">
+      <button id="btn-shuffle">Shuffle deck</button>
+      <button id="btn-reset">Reset progress</button>
+    </div>
+  </section>
+
+  <!-- DICTIONARY -->
+  <section id="view-list" hidden>
+    <input class="search" id="search" type="search" placeholder="Search characters, pinyin or English" autocomplete="off">
+    <div class="entries" id="entries" style="margin-top:.5rem"></div>
+  </section>
+</div>
+
+<script>
+/* DECK:START */
+const DECK = [
+  {
+    "id": "chabuduo",
+    "simplified": "差不多",
+    "pinyin": "chàbuduō",
+    "english": "almost; about the same",
+    "pos": "adj/adv",
+    "example": {
+      "simplified": "我们差不多准备好了。",
+      "pinyin": "Wǒmen chàbuduō zhǔnbèi hǎo le.",
+      "english": "We're just about ready."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "dasuan",
+    "simplified": "打算",
+    "pinyin": "dǎsuàn",
+    "english": "to plan to; a plan",
+    "pos": "v/n",
+    "example": {
+      "simplified": "你周末打算做什么？",
+      "pinyin": "Nǐ zhōumò dǎsuàn zuò shénme?",
+      "english": "What are you planning to do this weekend?"
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "houhui",
+    "simplified": "后悔",
+    "pinyin": "hòuhuǐ",
+    "english": "to regret",
+    "pos": "v",
+    "example": {
+      "simplified": "我有点后悔昨天说的话。",
+      "pinyin": "Wǒ yǒudiǎn hòuhuǐ zuótiān shuō de huà.",
+      "english": "I kind of regret what I said yesterday."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "kaopu",
+    "simplified": "靠谱",
+    "pinyin": "kàopǔ",
+    "english": "reliable; legit (colloquial)",
+    "pos": "adj",
+    "example": {
+      "simplified": "这个人挺靠谱的。",
+      "pinyin": "Zhège rén tǐng kàopǔ de.",
+      "english": "This guy is pretty reliable."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "mafan",
+    "simplified": "麻烦",
+    "pinyin": "máfan",
+    "english": "trouble; troublesome; to bother (someone)",
+    "pos": "n/adj/v",
+    "example": {
+      "simplified": "麻烦你帮我看一下这个。",
+      "pinyin": "Máfan nǐ bāng wǒ kàn yíxià zhège.",
+      "english": "Could I trouble you to take a look at this?"
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "qishi",
+    "simplified": "其实",
+    "pinyin": "qíshí",
+    "english": "actually; in fact",
+    "pos": "adv",
+    "example": {
+      "simplified": "其实我不太喜欢咖啡。",
+      "pinyin": "Qíshí wǒ bú tài xǐhuan kāfēi.",
+      "english": "Actually, I don't really like coffee."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "shunbian",
+    "simplified": "顺便",
+    "pinyin": "shùnbiàn",
+    "english": "by the way; while you're at it",
+    "pos": "adv",
+    "example": {
+      "simplified": "你去超市的时候，顺便帮我买点牛奶。",
+      "pinyin": "Nǐ qù chāoshì de shíhou, shùnbiàn bāng wǒ mǎi diǎn niúnǎi.",
+      "english": "When you go to the supermarket, grab me some milk while you're at it."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "shunli",
+    "simplified": "顺利",
+    "pinyin": "shùnlì",
+    "english": "smooth; going well; without a hitch",
+    "pos": "adj",
+    "example": {
+      "simplified": "希望你面试顺利。",
+      "pinyin": "Xīwàng nǐ miànshì shùnlì.",
+      "english": "Hope your interview goes smoothly."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "shuxi",
+    "simplified": "熟悉",
+    "pinyin": "shúxī",
+    "english": "familiar with; to know well",
+    "pos": "adj/v",
+    "example": {
+      "simplified": "我对这个城市还不太熟悉。",
+      "pinyin": "Wǒ duì zhège chéngshì hái bú tài shúxī.",
+      "english": "I'm not very familiar with this city yet."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "xiaolv",
+    "simplified": "效率",
+    "pinyin": "xiàolǜ",
+    "english": "efficiency",
+    "pos": "n",
+    "example": {
+      "simplified": "用这个工具效率高多了。",
+      "pinyin": "Yòng zhège gōngjù xiàolǜ gāo duō le.",
+      "english": "Using this tool is way more efficient."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "xiguan",
+    "simplified": "习惯",
+    "pinyin": "xíguàn",
+    "english": "habit; to be used to",
+    "pos": "n/v",
+    "example": {
+      "simplified": "我还没习惯这里的天气。",
+      "pinyin": "Wǒ hái méi xíguàn zhèlǐ de tiānqì.",
+      "english": "I'm not used to the weather here yet."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  },
+  {
+    "id": "zhide",
+    "simplified": "值得",
+    "pinyin": "zhídé",
+    "english": "to be worth it; worthwhile",
+    "pos": "v",
+    "example": {
+      "simplified": "这部电影值得看两遍。",
+      "pinyin": "Zhè bù diànyǐng zhídé kàn liǎng biàn.",
+      "english": "This movie is worth watching twice."
+    },
+    "source": "sample",
+    "added": "2026-08-29"
+  }
+];
+/* DECK:END */
+
+const KEY = "hanzi-progress-v1";
+const $ = (id) => document.getElementById(id);
+
+let progress = {};
+try { progress = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { progress = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(progress)); } catch (e) {} };
+
+let queue = [], showingBack = false;
+
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => (
+  { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* Split a headword into 田字格 cells, one per character. */
+const cells = (word) =>
+  [...word].map(ch => `<div class="zi"><span>${esc(ch)}</span></div>`).join("");
+
+function buildQueue(shuffle) {
+  queue = DECK.filter(c => progress[c.id] !== "known");
+  if (!queue.length) queue = DECK.slice();
+  if (shuffle !== false) {
+    for (let i = queue.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [queue[i], queue[j]] = [queue[j], queue[i]];
+    }
+  }
+}
+
+function tally() {
+  const known = DECK.filter(c => progress[c.id] === "known").length;
+  $("t-known").textContent = known;
+  $("t-left").textContent = Math.max(queue.length - (showingBack ? 0 : 0), 0);
+  $("t-all").textContent = DECK.length;
+  $("rail").style.width = DECK.length ? (known / DECK.length * 100) + "%" : "0%";
+}
+
+function render() {
+  const card = queue[0];
+  if (!card) {
+    $("face").innerHTML =
+      `<p class="eyebrow">Deck complete</p>
+       <p class="front-word">All caught up</p>
+       <p class="hint">Every word marked known. Reset progress to run through them again.</p>`;
+    tally();
+    return;
+  }
+  if (!showingBack) {
+    $("face").innerHTML =
+      `<p class="eyebrow">${esc(card.pos || "word")}</p>
+       <p class="front-word">${esc(card.english)}</p>
+       <p class="hint">Tap or press space to see the Chinese</p>`;
+  } else {
+    const ex = card.example || null;
+    $("face").innerHTML =
+      `<p class="pinyin">${esc(card.pinyin)}</p>
+       <div class="hanzi">${cells(card.simplified)}</div>
+       <p class="gloss">${esc(card.english)}</p>` +
+      (ex ? `<div class="usage">
+         <p class="eyebrow">In use</p>
+         <p class="ex-zh">${esc(ex.simplified)}</p>
+         <p class="ex-py">${esc(ex.pinyin)}</p>
+         <p class="ex-en">${esc(ex.english)}</p>
+       </div>` : "");
+  }
+  tally();
+}
+
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function flip() {
+  if (!queue.length) return;
+  showingBack = !showingBack;
+  if (reduced) return render();
+  const card = $("card");
+  card.classList.add("turning");
+  setTimeout(() => { render(); card.classList.remove("turning"); }, 160);
+}
+
+function grade(known) {
+  const card = queue.shift();
+  if (!card) return;
+  progress[card.id] = known ? "known" : "learning";
+  save();
+  if (!known) queue.push(card);          // send it to the back of the pile
+  if (known) {
+    const seal = $("seal");
+    seal.classList.remove("stamped");
+    void seal.offsetWidth;
+    seal.classList.add("stamped");
+    setTimeout(() => seal.classList.remove("stamped"), 700);
+  }
+  showingBack = false;
+  render();
+}
+
+/* ---- dictionary view ---- */
+function renderList(filter) {
+  const q = (filter || "").trim().toLowerCase();
+  const bare = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const hits = DECK.filter(c => !q ||
+    c.simplified.includes(q) || bare(c.pinyin).includes(bare(q)) ||
+    c.english.toLowerCase().includes(q));
+  $("entries").innerHTML = hits.length ? hits.map(c => {
+    const ex = c.example;
+    return `<div class="entry">
+      <div class="entry-head">
+        <span class="entry-zh">${esc(c.simplified)}</span>
+        <span class="entry-py">${esc(c.pinyin)}</span>
+        <span class="entry-pos">${esc(c.pos || "")}</span>
+      </div>
+      <div class="entry-en">${esc(c.english)}</div>` +
+      (ex ? `<div class="entry-ex"><span class="zh">${esc(ex.simplified)}</span><br>
+        ${esc(ex.pinyin)}<br>${esc(ex.english)}</div>` : "") +
+      `</div>`;
+  }).join("") : `<p class="empty">No word matches &ldquo;${esc(filter)}&rdquo;.</p>`;
+}
+
+/* ---- wiring ---- */
+$("card").addEventListener("click", flip);
+$("btn-again").addEventListener("click", () => grade(false));
+$("btn-got").addEventListener("click", () => grade(true));
+$("btn-shuffle").addEventListener("click", () => { buildQueue(true); showingBack = false; render(); });
+$("btn-reset").addEventListener("click", () => {
+  progress = {}; save(); buildQueue(true); showingBack = false; render();
+});
+$("search").addEventListener("input", (e) => renderList(e.target.value));
+
+function tab(study) {
+  $("tab-study").setAttribute("aria-selected", String(study));
+  $("tab-list").setAttribute("aria-selected", String(!study));
+  $("view-study").hidden = !study;
+  $("view-list").hidden = study;
+}
+$("tab-study").addEventListener("click", () => tab(true));
+$("tab-list").addEventListener("click", () => { tab(false); renderList($("search").value); });
+
+document.addEventListener("keydown", (e) => {
+  if (e.target.matches("input, textarea")) return;
+  if (e.key === " " || e.key === "Enter") { e.preventDefault(); flip(); }
+  else if (e.key === "1") grade(false);
+  else if (e.key === "2") grade(true);
+});
+
+/* swipe: left = again, right = got it */
+let x0 = null;
+$("card").addEventListener("pointerdown", (e) => { x0 = e.clientX; });
+$("card").addEventListener("pointerup", (e) => {
+  if (x0 === null) return;
+  const dx = e.clientX - x0; x0 = null;
+  if (Math.abs(dx) > 70) { e.preventDefault(); grade(dx > 0); }
+});
+
+if (DECK.length && DECK.every(c => c.source === "sample")) $("sample-notice").hidden = false;
+buildQueue(true);
+render();
+renderList("");
+</script>

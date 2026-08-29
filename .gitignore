@@ -4,3 +4,7 @@ __pycache__/
 _eval/
 _search_eval.py
 _data_backup_*/
+
+# Chinese flashcards: source screenshots stay local
+chinese-flashcards/screenshots/*
+!chinese-flashcards/screenshots/.gitkeep
