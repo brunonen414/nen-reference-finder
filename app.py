@@ -204,6 +204,12 @@ def _ensure_lex():
         for t in e["_brand"]:
             if len(t) >= 5 and t not in _BRAND_BOOST_STOP:
                 BRAND_VOCAB.add(t); rows.setdefault(t, []).append(i)
+        # a ref's context (its human description, e.g. "liquid glass live-activity sidebars") is also
+        # findable via the brand-boost path, so clean titles don't cost searchability. Cap logic below
+        # still keys off _brand only, so ctx matches don't over-expand a single video.
+        for t in _toks(e.get("ctx", "")):
+            if len(t) >= 5 and t not in _BRAND_BOOST_STOP:
+                BRAND_VOCAB.add(t); rows.setdefault(t, []).append(i)
     BRAND_ROWS = {t: _np.array(r, dtype="int64") for t, r in rows.items()}
     _LEX_READY = True
 
