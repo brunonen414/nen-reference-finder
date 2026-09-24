@@ -200,7 +200,7 @@ def _ensure_lex():
         e["_tags"] = set(_toks(tg))
         e["_arch"] = set(_toks(e.get("arch", "")))
         e["_brand"] = set(_toks(e.get("brand", "")))
-        e["_blob"] = (e.get("line","") + " " + e.get("ocr","") + " " + tg).lower()
+        e["_blob"] = (e.get("line","") + " " + e.get("ctx","") + " " + e.get("ocr","") + " " + tg).lower()
         for t in e["_brand"]:
             if len(t) >= 5 and t not in _BRAND_BOOST_STOP:
                 BRAND_VOCAB.add(t); rows.setdefault(t, []).append(i)
