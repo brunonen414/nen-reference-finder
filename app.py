@@ -228,7 +228,7 @@ def _ensure_semantic():
         _tok = _STok(os.path.join(DATA, "bpe_simple_vocab_16e6.txt.gz"))
         _sess = _ort.InferenceSession(os.path.join(DATA, "clip_text_int8.onnx"),
                                       providers=["CPUExecutionProvider"])
-        IMG_EMB = _np.load(os.path.join(DATA, "img_emb.npy")).astype("float32")
+        IMG_EMB = _np.load(os.path.join(DATA, "img_emb.npy"))   # kept float16 to fit free-tier RAM; f16@f32 matmul upcasts fine
         _IMG_IDS = json.load(open(os.path.join(DATA, "img_ids.json"), encoding="utf-8"))
         ID2ROW = {fid: i for i, fid in enumerate(_IMG_IDS)}
         SEMANTIC = IMG_EMB.shape[0] == len(_IMG_IDS) > 0
