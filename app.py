@@ -563,5 +563,33 @@ def script():
 </div></body></html>"""
     return Response(html, mimetype="text/html")
 
+@app.route("/unify")
+def unify():
+    """Hidden gallery: the Unify office scout stills, in order, to browse + choose."""
+    files = sorted(glob.glob(os.path.join(IMGS, "unifyoffice__*.jpg")),
+                   key=lambda p: int(re.search(r"__(\d+)\.jpg$", p).group(1)))
+    try: man = json.load(open(os.path.join(DATA, "unify_manifest.json"), encoding="utf-8"))
+    except Exception: man = {}
+    cells = []
+    for p in files:
+        n = int(re.search(r"__(\d+)\.jpg$", p).group(1)); fid = "unifyoffice__%d" % n
+        cells.append(
+            '<a class="icard" href="/img?id=%s&w=1600" target="_blank" rel="noopener">'
+            '<img loading="lazy" draggable="true" ondragstart="dragImg(event,\'%s\')" src="/img?id=%s&w=360">'
+            '<div class="m"><div class="mb">#%03d</div><div class="ml">%s</div></div></a>'
+            % (fid, fid, fid, n, esc(man.get(str(n), ""))))
+    drag = ("<script>function dragImg(e,id){var hd=location.origin+'/img?id='+"
+            "encodeURIComponent(id)+'&w=1600';try{e.dataTransfer.setData('text/uri-list',hd);"
+            "e.dataTransfer.setData('text/plain',hd);e.dataTransfer.effectAllowed='copy';}catch(_){}}</script>")
+    html = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            '<title>unify office · stills</title><link rel="stylesheet" href="/style.css">' + drag +
+            '</head><body><div class="wrap"><a class="back" href="/">← back</a>'
+            '<div class="kicker" style="margin-top:18px">nen · unify office scout</div>'
+            '<div class="title">unify office</div>'
+            '<div class="ver">%d stills from the scout, in order — click any to open full size, or drag straight into a doc</div>'
+            '<div class="igrid">%s</div></div></body></html>' % (len(files), "".join(cells)))
+    return Response(html, mimetype="text/html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False, threaded=True)
