@@ -93,7 +93,7 @@ h1{font-size:30px;font-weight:700;margin:18px 0 2px}
  border-radius:999px;padding:11px 24px;cursor:pointer;transition:all .12s}
 .morebtn:hover{border-color:#bcbcbc;background:#fafafa}
 .moredone{font-size:12.5px;color:var(--mut)}
-.totop{position:fixed;right:20px;bottom:20px;z-index:45;padding:11px 16px;border-radius:999px;
+.totop{position:fixed;right:20px;bottom:72px;z-index:45;padding:11px 16px;border-radius:999px;
  border:1px solid var(--bd);background:var(--field);color:var(--ink);font:inherit;font-size:13.5px;font-weight:700;
  cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.16);opacity:0;pointer-events:none;transition:opacity .15s}
 .totop.on{opacity:1;pointer-events:auto}
@@ -114,3 +114,24 @@ h1{font-size:30px;font-weight:700;margin:18px 0 2px}
 .lbtn:hover{border-color:#bbb;background:#fafafa}
 .lbmsg{font-size:13px;color:#3b9c5a;font-weight:600;margin-left:2px}
 @media(max-width:560px){.igrid{grid-template-columns:1fr 1fr}}
+/* Cora Amir/Liz selects — lower-right corner tab (internal WIP) */
+.coratab{position:fixed;right:20px;bottom:20px;z-index:46;padding:10px 15px;border-radius:999px;
+ border:1px solid var(--ink);background:var(--ink);color:#fff;font:inherit;font-size:13px;font-weight:700;
+ cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.18);transition:all .12s}
+.coratab:hover{background:#000}
+.coratab.open{background:var(--field);color:var(--ink);border-color:#cfcfcf}
+.corapanel{position:fixed;right:20px;bottom:66px;z-index:46;width:min(340px,92vw);max-height:64vh;
+ background:var(--field);border:1px solid var(--bd);border-radius:14px;box-shadow:0 10px 34px rgba(0,0,0,.22);
+ display:none;flex-direction:column;overflow:hidden}
+.corapanel.on{display:flex}
+.corahd{display:flex;justify-content:space-between;align-items:center;padding:12px 14px 4px}
+.corah-t{font-size:11.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.corah-x{cursor:pointer;color:var(--mut);font-size:19px;line-height:1;padding:0 2px}
+.corah-x:hover{color:var(--ink)}
+.corasub{font-size:12px;color:#6f6f6f;padding:0 14px 10px}
+.corasub a{color:var(--ink);font-weight:600;text-decoration:none}
+.corasub a:hover{text-decoration:underline}
+.coragrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 12px 14px;overflow-y:auto}
+.corathumb{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:7px;background:#eee;cursor:pointer;display:block}
+.corathumb:hover{outline:2px solid #B5532A;outline-offset:-1px}
+.coraerr{grid-column:1/-1;font-size:12px;color:var(--mut);padding:10px 2px}

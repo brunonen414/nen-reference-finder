@@ -27,8 +27,7 @@ for mp in glob.glob(os.path.join(DBV, "*", "meta.json")):
     m = json.load(open(mp, encoding="utf-8")); s = m.get("sheet", {})
     URL_MAP[m.get("video_id")] = s.get("url") or s.get("x_url") or s.get("linkedin_url") or ""
 URL_MAP["novella"] = "https://x.com/maxekane/status/2054909691210178968"
-EXCLUDE = {"paraform", "nen-cora-amirliz"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show in the client recommender/hooks (they DO show in the references browse tab + image search). "nen-cora-amirliz" = Nen's own WIP selects, searchable in image search but kept out of the client recommender.
-BROWSABLE_WIP = {"nen-cora-amirliz"}  # WIP that SHOULD still appear in the browsable /api/videos library (internal) so it's findable, even though it stays out of the client recommender/hooks.
+EXCLUDE = {"paraform", "nen-cora-amirliz"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show in the client recommender/hooks (they DO show in the references browse tab + image search). "nen-cora-amirliz" = Nen's own WIP selects; reachable via its own lower-right "Cora selects" tab (a direct /api/video_frames call), kept out of the main library + client recommender.
 
 def _kind_source(e):
     """Classify an index row as a non-Nen video and resolve its outbound source link.
@@ -417,7 +416,7 @@ def api_image_search():
 def api_videos():
     """Full list of Nen videos for the browsable library (each links to its script)."""
     vs = [{"vid": v["id"], "brand": v["brand"], "broad": v["broad"], "fine": v.get("fine", ""),
-           "hero_sec": v.get("hero_sec", 1), "orig": URL_MAP.get(v["id"], "")} for v in VIDS if v["id"] not in (EXCLUDE - BROWSABLE_WIP)]
+           "hero_sec": v.get("hero_sec", 1), "orig": URL_MAP.get(v["id"], "")} for v in VIDS if v["id"] not in EXCLUDE]
     vs.sort(key=lambda x: x["brand"].lower())
     return jsonify({"count": len(vs), "videos": vs})
 

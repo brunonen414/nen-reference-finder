@@ -47,6 +47,17 @@
 
 <button id="totop" class="totop" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ back to top</button>
 
+<!-- Cora · Amir/Liz selects — internal WIP, tucked in a lower-right tab (not in the main library) -->
+<div id="corapanel" class="corapanel">
+  <div class="corahd">
+    <span class="corah-t">Cora · Amir/Liz selects</span>
+    <span class="corah-x" title="close" onclick="toggleCora()">×</span>
+  </div>
+  <div class="corasub"><span id="coracount">…</span> · drag into a doc, or <a href="#" onclick="coraExpand();return false;">open in search ↗</a></div>
+  <div id="coragrid" class="coragrid"></div>
+</div>
+<button id="coratab" class="coratab" title="Cora Amir/Liz selects" onclick="toggleCora()">◱ Cora selects</button>
+
 <!-- lightbox -->
 <div id="lb" class="lb" onclick="closeLb(event)">
   <div class="lbx" onclick="event.stopPropagation()">
@@ -201,6 +212,24 @@ async function showFrames(vid){
 async function allFrames(){
   if(!CUR)return; const vid=CUR.vid; closeLb(); showFrames(vid);
 }
+
+/* ---- Cora Amir/Liz selects: lower-right tab (internal WIP, not in the library) ---- */
+const CORA_VID='nen-cora-amirliz'; let CORA_LOADED=false;
+async function loadCora(){
+  if(CORA_LOADED)return; CORA_LOADED=true;
+  try{
+    const d=await (await fetch('/api/video_frames?vid='+encodeURIComponent(CORA_VID))).json();
+    $('coracount').textContent=(d.count||0)+' frames';
+    $('coragrid').innerHTML=(d.results||[]).map(x=>
+      `<img class="corathumb" loading="lazy" draggable="true" ondragstart="dragImg(event,'${x.id}')" onclick="window.open('/img?id=${encodeURIComponent(x.id)}&w=1100','_blank')" src="/img?id=${encodeURIComponent(x.id)}&w=220" title="drag into a doc · click to enlarge">`).join('');
+  }catch(e){ CORA_LOADED=false; $('coragrid').innerHTML='<div class="coraerr">could not load — try again</div>'; }
+}
+function toggleCora(){
+  const open=$('corapanel').classList.toggle('on');
+  $('coratab').classList.toggle('open',open);
+  if(open)loadCora();
+}
+function coraExpand(){ $('corapanel').classList.remove('on'); $('coratab').classList.remove('open'); showFrames(CORA_VID); }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 window.addEventListener('scroll',()=>{const b=$('totop'); if(b) b.classList.toggle('on', window.scrollY>360);});
 $('iq').addEventListener('keydown',e=>{if(e.key==='Enter')isearch();});
