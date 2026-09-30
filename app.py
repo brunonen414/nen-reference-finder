@@ -27,7 +27,7 @@ for mp in glob.glob(os.path.join(DBV, "*", "meta.json")):
     m = json.load(open(mp, encoding="utf-8")); s = m.get("sheet", {})
     URL_MAP[m.get("video_id")] = s.get("url") or s.get("x_url") or s.get("linkedin_url") or ""
 URL_MAP["novella"] = "https://x.com/maxekane/status/2054909691210178968"
-EXCLUDE = {"paraform"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show in the client recommender/hooks (they DO show in the references browse tab + image search)
+EXCLUDE = {"paraform", "nen-cora-amirliz"} | {v["id"] for v in VIDS if v.get("source") == "inspo"}  # videos NOT produced by Nen — never show in the client recommender/hooks (they DO show in the references browse tab + image search). "nen-cora-amirliz" = Nen's own WIP selects, searchable in image search but kept out of the client recommender.
 
 def _kind_source(e):
     """Classify an index row as a non-Nen video and resolve its outbound source link.
