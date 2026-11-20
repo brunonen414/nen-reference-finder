@@ -120,6 +120,8 @@ h1{font-size:30px;font-weight:700;margin:18px 0 2px}
  cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.18);transition:all .12s}
 .coratab:hover{background:#000}
 .coratab.open{background:var(--field);color:var(--ink);border-color:#cfcfcf}
+.eftab{bottom:64px}
+.efpanel{bottom:110px}
 .corapanel{position:fixed;right:20px;bottom:66px;z-index:46;width:min(340px,92vw);max-height:64vh;
  background:var(--field);border:1px solid var(--bd);border-radius:14px;box-shadow:0 10px 34px rgba(0,0,0,.22);
  display:none;flex-direction:column;overflow:hidden}

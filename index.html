@@ -58,6 +58,17 @@
 </div>
 <button id="coratab" class="coratab" title="Cora Amir/Liz selects" onclick="toggleCora()">◱ Cora selects</button>
 
+<!-- Earthflow · selects — internal WIP, stacked in the lower-right (not in the main library) -->
+<div id="efpanel" class="corapanel efpanel">
+  <div class="corahd">
+    <span class="corah-t">Earthflow · selects</span>
+    <span class="corah-x" title="close" onclick="toggleEf()">×</span>
+  </div>
+  <div class="corasub"><span id="efcount">…</span> · drag into a doc, or <a href="#" onclick="efExpand();return false;">open in search ↗</a></div>
+  <div id="efgrid" class="coragrid"></div>
+</div>
+<button id="eftab" class="coratab eftab" title="Earthflow selects" onclick="toggleEf()">◱ Earthflow selects</button>
+
 <!-- lightbox -->
 <div id="lb" class="lb" onclick="closeLb(event)">
   <div class="lbx" onclick="event.stopPropagation()">
@@ -225,11 +236,31 @@ async function loadCora(){
   }catch(e){ CORA_LOADED=false; $('coragrid').innerHTML='<div class="coraerr">could not load — try again</div>'; }
 }
 function toggleCora(){
+  if($('efpanel')){$('efpanel').classList.remove('on'); $('eftab').classList.remove('open');}
   const open=$('corapanel').classList.toggle('on');
   $('coratab').classList.toggle('open',open);
   if(open)loadCora();
 }
 function coraExpand(){ $('corapanel').classList.remove('on'); $('coratab').classList.remove('open'); showFrames(CORA_VID); }
+
+/* ---- Earthflow selects: lower-right tab (internal WIP, not in the library) ---- */
+const EF_VID='nen-earthflow'; let EF_LOADED=false;
+async function loadEf(){
+  if(EF_LOADED)return; EF_LOADED=true;
+  try{
+    const d=await (await fetch('/api/video_frames?vid='+encodeURIComponent(EF_VID))).json();
+    $('efcount').textContent=(d.count||0)+' frames';
+    $('efgrid').innerHTML=(d.results||[]).map(x=>
+      `<img class="corathumb" loading="lazy" draggable="true" ondragstart="dragImg(event,'${x.id}')" onclick="window.open('/img?id=${encodeURIComponent(x.id)}&w=1100','_blank')" src="/img?id=${encodeURIComponent(x.id)}&w=220" title="drag into a doc · click to enlarge">`).join('');
+  }catch(e){ EF_LOADED=false; $('efgrid').innerHTML='<div class="coraerr">could not load — try again</div>'; }
+}
+function toggleEf(){
+  $('corapanel').classList.remove('on'); $('coratab').classList.remove('open');
+  const open=$('efpanel').classList.toggle('on');
+  $('eftab').classList.toggle('open',open);
+  if(open)loadEf();
+}
+function efExpand(){ $('efpanel').classList.remove('on'); $('eftab').classList.remove('open'); showFrames(EF_VID); }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 window.addEventListener('scroll',()=>{const b=$('totop'); if(b) b.classList.toggle('on', window.scrollY>360);});
 $('iq').addEventListener('keydown',e=>{if(e.key==='Enter')isearch();});
